@@ -633,27 +633,27 @@ input::-webkit-search-results-decoration {
 .f_btn._solidLblue {
   background: #6d84f6;
   color: #fff;
-  order-color: #6d84f6;
+  border-color: #6d84f6;
 }
 .f_btn._solidLred {
   background: #dd5353;
   color: #fff;
-  order-color: #dd5353;
+  border-color: #dd5353;
 }
 .f_btn._solidLgreen {
   background: #6fbd94;
   color: #fff;
-  order-color: #6fbd94;
+  border-color: #6fbd94;
 }
 .f_btn._solidPuple {
   background: #71618e;
   color: #fff;
-  order-color: #71618e;
+  border-color: #71618e;
 }
 .f_btn._solidSkyblue {
   background: #0eb6ca;
   color: #fff;
-  order-color: #0eb6ca;
+  border-color: #0eb6ca;
 }
 
 /* pages */
