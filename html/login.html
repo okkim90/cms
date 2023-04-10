@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="Generator" content="KIC">
+		<meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+		<meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+		<meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+		<title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+        <!-- 기존 cms css -->
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+        <!--// 기존 cms css -->
+
+        <!-- 신규 css -->
+		<link rel="stylesheet" href="../assets/css/common.css">
+        <!--// 신규 css -->
+	</head>
+<body>
+    <div id="skip-nav">
+        <a href="#container"></a>
+    </div>
+    <main class="container">
+		<div class="login_wrap">
+			
+			<div class="login_box">
+                <div class="login_box_top">
+                    <div class="img_box">
+                        <img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트(주)">
+                    </div>
+                    <div class="tit">교정관리 시스템 관리자</div>
+                </div>
+                <form method="post" id="frm" action="" class="login_form">
+					<label for="member_id" class="login_form_label">아이디</label>
+                    <input type="text" name="member_id" id="member_id" placeholder="아이디를 입력하세요." class="f_input w100" value="">
+					<label for="member_pw" class="login_form_label">비밀번호</label>
+                    <input type="password" name="member_pw" id="member_pw" placeholder="비밀번호를 입력하세요." class="f_input w100" value="">
+                    <input type="submit" value="로그인" class="f_btn ty_big _key w100">
+                </form>
+				<ul class="login_btns">
+					<li><a href="login_id.html">아이디 찾기</a></li>
+					<li><a href="login_pw.html">비밀번호 재설정</a></li>
+				</ul>
+				<div class="login_bot">
+					<a href="" class="f_btn ty_big _key_line w100">교정관리 시스템 서비스 신청</a>
+					<p class="msg_tel">시스템 이용 문의 : 1600-4245</p>
+				</div>
+            </div>
+		</div>
+    </main>
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="inner">
+                <ul class="footer_top_nav ">
+                    <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bot">
+            <div class="inner">
+                <div class="footer_logo">
+                    <a href=""><img src="../assets/images/common/logo_footer.svg" alt=""></a>
+                </div>
+                <div class="footer_cont">
+                    <div class="footer_branch">
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[서울본사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>서울 구로구 남부순환로 1303 KIC빌딩</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:1600-4245">1600-4245</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>02-863-1905</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:k8631901@kic21.co.kr">k8631901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[부산지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>부산 사상구 광장로 56번길 45</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:051-322-0880">051-322-0880</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>051-322-4066</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:calworld@kic21.co.kr">calworld@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[대전지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>대전 유성구 테크노11로 32</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:042-931-1901">042-931-1901</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>042-931-1902</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">grand1901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[지안지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>경기 가평군 설악면 유명산길 37</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:031-585-8511">031-585-8511</a>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">gongrong@empal.com</a>
+                                </li>
+                                <li>
+                                    <strong>홈페이지</strong>
+                                    <a href="www.ji-an.co.kr" target="_blank">www.ji-an.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <span>코리아인스트루먼트(주)</span>
+                        <span>사업자등록번호 : 101-81-45861</span>
+                        <span>대표이사 : 정재호</span>
+                    </div>
+                    <p class="copyright">
+                        Copyright@KIC, Korea Instrument All Rights Reserved.
+                    </p>
+                    <div class="footer_contact">
+                        <span class="tit"><i></i> CONTACT US</span>
+                        <span class="num">1600 - 4245</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* printsero.css */
+@media print{
+	body {
+		color: #000;
+		background: #fff;
+	}
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		width: 100%;
+	}
+	.no-print {
+		display: none;
+	}
+	select {
+		font-size: 10px;
+	}
+	.taCenter {
+		text-align: center;
+	}
+
+	.smallUl li {
+		display: block;
+		width: 130px;
+		margin-top: 50px;
+	}
+	.smallUl li:first-child {
+		margin-top: 0;
+	}
+	.smallUl li table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	.smallUl li table td.fst {
+		padding-top: 13px;
+	}
+	.smallUl li table td {		
+		padding: 0;
+		text-align: center;		
+	}
+	.smallUl li table td span {
+		display: block;
+		text-align: center;
+		font-size: 10px;
+		font-weight: 700;
+		color: #000;
+		font-family: sans-serif;
+		line-height: 1;
+	}
+	.smallUl li table td span.longText {
+		letter-spacing: -1px;
+	}
+}

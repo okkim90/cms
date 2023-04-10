@@ -1,0 +1,109 @@
+.clearFix:after {
+	content:"";
+	display:block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+ul:after,ol:after,dl:after {
+	content:"";
+	display:block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+.left_header.nu {
+	width: auto;
+}
+.right_header.nu {
+	margin-left: 21px;
+}
+#container.nu {
+	width: 100%;
+	background: none;
+	padding-bottom: 0;
+	min-height: auto;
+}
+.right_area.nu {
+    width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.right_area.nu .right_content {
+	padding-bottom: 0;
+}
+.allMenuWrap {
+	position: absolute;
+	width: 100%;	
+	background-color: #fff;
+	z-index:1;
+	top: 55px;
+	left: 0;
+}
+.allMenuWrap .lnb_depth1 {
+	background: url("../images/dot.jpg") left bottom repeat-x;
+}
+.allMenuWrap .lnb_depth1 > li {
+	float: left;
+	width: 181px;
+	/*height: 234px;*/
+	height: 0;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 10px;
+	border-right: 1px solid #d2d2d2;
+}
+.allMenuWrap .lnb_depth1 > li > h2 {
+	padding-top: 12px;
+	font-size: 12px;
+	color: #4c4c4c;
+	padding-left: 20px;
+	background: url("../images/ico_folder_open.png") left bottom no-repeat;
+}
+.allMenuWrap .lnb_depth2 {
+	display: block !important;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+.allMenuWrap .lnb_depth2 li:first-child {
+	margin-top: 0;
+}
+.allMenuWrap .lnb_depth2 li {
+	display: block;
+	margin-top: 10px;
+}
+.allMenuWrap .lnb_depth2 a {
+	font-size: 12px;
+	color: #666;
+	padding-left: 11px;
+	background: url("../images/arrow_menu_off.png") left center no-repeat;
+}
+.upperGnb {
+	position: absolute;
+	top: 4px;
+	/* width: 100vw; */
+	width: 100%;
+    left: 0;
+	font-size: 0;
+	text-align: right;
+}
+.upperGnb li {
+	display: inline-block;
+	padding: 2px 6px;
+	background: #5e7499;
+	margin-left: 3px;
+	border-radius: 4px;
+}
+.upperGnb li:last-child {
+	margin-right: 34px;
+}
+.upperGnb li a {
+	display: block;
+	font-size: 11px;
+	color: #fff;
+}

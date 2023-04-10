@@ -1,0 +1,96 @@
+.f_input {
+    max-width: 100%;
+    border: 1px solid #444;
+    box-sizing: border-box;
+    &.w100 {
+        width: 100%;
+    }
+    &.ty_small {
+        height: 30px;
+        padding: 0 4px;
+    }
+    &.ty_mid {
+        height: 40px;
+        padding: 0 8px;
+    }
+    &.ty_big {
+        height: 50px;
+        padding: 0 10px;
+    }
+}
+
+.f_btn {
+    display: inline-block;
+    max-width: 100%;
+    text-align: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    &.w100 {
+        width: 100%;
+    }
+    &.ty_small {
+        height: 30px;
+        padding: 0 4px;
+        font-size: 12px;
+        line-height: 28px;
+    }
+    &.ty_mid {
+        height: 40px;
+        padding: 0 8px;
+        font-size: 14px;
+        line-height: 38px;
+    }
+    &.ty_big {
+        height: 50px;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 48px;
+    }
+
+    &._key {
+        background-color: $c_key;
+        color: #fff;
+        border-color: $c_key;
+    }
+    &._key_line {
+        background-color: #fff;
+        color: $c_key;
+        border-color: $c_key;
+    }
+    &._solidGray {
+        background:#414141;
+        color:#fff;
+        border-color:#2c2c2c;
+    } /*그레이*/
+    &._solidLgray {
+        background:#848aa4;
+        color:#fff;
+        border-color: #848aa4;
+    } /*라이트그레이*/
+    &._solidLblue {
+        background:#6d84f6;
+        color:#fff;
+        order-color: #6d84f6;
+    } /*라이트블루*/
+    &._solidLred {
+        background:#dd5353;
+        color:#fff;
+        order-color: #dd5353;
+    } /*라이트레드*/
+    &._solidLgreen {
+        background:#6fbd94;
+        color:#fff;
+        order-color: #6fbd94;
+    } /*라이트그린*/
+    &._solidPuple {
+        background:#71618e;
+        color:#fff;
+        order-color: #71618e;
+    } /*퍼플*/
+    &._solidSkyblue {
+        background:#0eb6ca;
+        color:#fff;
+        order-color: #0eb6ca;
+    } /*스카이블루*/
+}

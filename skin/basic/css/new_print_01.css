@@ -1,0 +1,235 @@
+/* printsero.css */
+@media print{
+	@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:900&subset=korean');
+
+	@font-face { 
+		font-family: 'S-CoreDream-9Black'; 
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff'); font-weight: normal; font-style: normal; 
+	}
+	body {
+		color: #000;
+		background: #fff;
+	}
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		width: 100%;
+	}
+	.no-print {
+		display: none;
+	}
+	select {
+		font-size: 10px;
+	}
+	.taCenter {
+		text-align: center;
+	}
+	/* 접수표찰 */
+
+	/* 교정필증(소) */
+	.smallUl li {
+		margin-top: 150px;
+	}
+	.smallUl li:first-child {
+		margin-top: 0;
+	}	
+	.type01 {
+		padding-top: 7px;
+	}
+	.type01 dt {
+		width: 0px;
+		display: none;
+	}
+	.type01 dd {
+		display: block;
+		text-align: center;
+		width: 110px;
+		font-family: 'S-CoreDream-9Black'; 
+		font-weight: 900;
+		font-size: 15px;
+		height: 17px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 2px;
+	}
+	.type01 .text dd {
+		font-size: 13px;
+		letter-spacing: -0.5px;
+	}
+
+	/* http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License:none (public domain) */
+
+	html,
+	body,
+	div,
+	span,
+	applet,
+	object,
+	iframe,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	blockquote,
+	pre,
+	a,
+	abbr,
+	acronym,
+	address,
+	big,
+	cite,
+	code,
+	del,
+	dfn,
+	em,
+	ins,
+	kbd,
+	q,
+	s,
+	samp,
+	small,
+	strike,
+	strong,
+	sub,
+	sup,
+	tt,
+	var,
+	b,
+	u,
+	i,
+	center,
+	dl,
+	dt,
+	dd,
+	ol,
+	ul,
+	li,
+	fieldset,
+	form,
+	label,
+	legend,
+	table,
+	caption,
+	tbody,
+	tfoot,
+	thead,
+	tr,
+	th,
+	td,
+	article,
+	aside,
+	canvas,
+	details,
+	embed,
+	figure,
+	figcaption,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	output,
+	ruby,
+	section,
+	summary,
+	time,
+	mark,
+	audio,
+	video,
+	button,
+	input
+	{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+	   
+		vertical-align: baseline;
+	}
+	img {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+	   
+		vertical-align: top;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol,
+	ul {
+		list-style: none;
+	}
+	blockquote,
+	q {
+		quotes: none;
+	}
+	blockquote:before,
+	blockquote:after,
+	q:before,
+	q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	button {
+		border: 0 none;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	input, select, textarea, button {
+		border-radius: 0;
+		vertical-align: middle;
+	}
+	th, td, input, select, textarea, button {
+		font-size: 13px;
+		line-height: 1;
+		font-family: AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+		color: #222;
+		letter-spacing: -1px;
+	}
+	.clearFix:after {
+		content:"";
+		display:block;
+		width:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+	}
+
+	ul:after,ol:after,dl:after {
+		content:"";
+		display:block;
+		width:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+	}
+}

@@ -1,0 +1,51 @@
+
+
+/*반응형 화면 크기*/
+$breakpoint-m: 767px;
+$breakpoint-t: 1024px;
+$breakpoint-pcrm: 1700px;
+
+
+@mixin pcrm {
+    @media (max-width: #{$breakpoint-pcrm}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$breakpoint-t}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$breakpoint-m}) {
+        @content;
+    }
+}
+
+@mixin text-hidden-single {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@mixin text-hidden($line: 1, $lineHeight: 19, $auto: null) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: calc(($lineHeight * $line) / $line) + px;
+    //word-break: break-all;
+    white-space: initial;
+
+    @if $auto ==auto {
+        //영역 자동
+        max-height: $lineHeight * $line + px;
+    }
+
+    @else {
+        //처음부터 영역잡히게
+        height: $lineHeight * $line + px;
+    }
+}

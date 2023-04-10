@@ -1,0 +1,53 @@
+// Breakpoints
+$breakpoint-m: 768px;
+$breakpoint-t: 1024px;
+$breakpoint-pc_h: 1460px;
+$breakpoint-pc_bm: 1800px;
+
+
+//Color
+$CBrand: #1f2085;
+$CLine: #d9d9d9;
+$CLine2: #ccc;
+
+$CTmain: #303030;
+$CTsub: #666;
+$CTsub2: #999;
+$CTsub3: #aaa;
+
+$CBg_sky: #f6f7fa;
+$CBg_grey: #f3f3f3;
+
+
+
+/* colors */
+$colors: (
+    _key: #1f2085,
+    _blue: #1e90ff,
+    _sky: #f6f7fa,
+    _red: #f02727,
+    _lblue: #46b8ff,
+    _orange: #ff7328,
+    _green: #50c785,
+    _yellow: #ff0,
+    _purple: #3b1e9e,
+);
+
+// colors
+@each $key, $color in $colors {
+    .fc#{$key} {
+        color: $color;
+    }
+}
+$c_key : map-get($colors, _key);
+$c_red : map-get($colors, _red);
+$c_sky : map-get($colors, _sky);
+
+//Font
+$font: 'Noto Sans KR', sans-serif;
+$font_tit: 'Montserrat';
+
+$form_fz : 18px;
+
+//innerBox
+$inner: 1280px;

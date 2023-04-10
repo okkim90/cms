@@ -1,0 +1,107 @@
+/* printsero.css */
+@media print{
+	body {
+		color: #000;
+		background: #fff;
+	}
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		width: 100%;
+	}
+	.no-print {
+		display: none;
+	}
+	select {
+		font-size: 10px;
+	}
+	.taCenter {
+		text-align: center;
+	}
+	/* 교정 접수 표찰 */	
+	.inner.cfp  {
+		width: 190px;
+	}
+	.cfpUl.cfp table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	.cfpUl.cfp table td.fst {
+		padding-top: 40px;
+	}
+	.cfpUl.cfp table td {
+		padding: 3px 0 3px;
+		text-align: center;
+		font-family: "hy";
+	}
+	.cfpUl.cfp li {
+		margin-top: 40px;
+	}
+	.cfpUl.cfp li:first-child {
+		margin-top: 0;
+	}
+	/*소*/
+	.calliWrap  {
+		width: 130px;
+	}
+	.calliWrap table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	.calliWrap table td.fst {
+		padding-top: 10px;
+	}
+	.calliWrap table td {
+		text-align: center;
+		font-weight: bold;
+		font-size: 8px;
+		padding-top: 2px;
+	}
+	/* 대 */
+	.calliWrapBig  {
+		width: 220px;
+	}
+	.calliWrapBig table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	.calliWrapBig table td.fst {
+		padding-top: 35px;
+	}
+	.calliWrapBig table td {
+		font-size: 11px;
+		font-weight: 700;
+		height: 15px;
+		color: #000;
+		padding: 0px 0 15px;
+		text-align: center;
+		font-family: "hy";
+	}
+	/* 대 */
+	.calliWrapBig  {
+		width: 180px;
+	}
+	.calliWrapBig table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	.calliWrapBig table td.fst {
+		padding-top: 0px;
+	}
+	.calliWrapBig table td {
+		font-size: 12px;
+		font-weight: 700;
+		height: 15px;
+		color: #000;
+		padding: 0px 0 13px;
+		text-align: center;
+		font-family: "hy";
+	}
+
+	/*
+	@page { size: c6; page-break-after: avoid;margin-top: 2cm; margin-left: 1cm; margin-right: 1cm; margin-bottom: 2cm;}
+	*/
+}

@@ -1,0 +1,313 @@
+/* printsero.css */
+@media print{
+	@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:900&subset=korean');
+
+	body {
+		color: #000;
+		background: #fff;
+	}
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		width: 100%;
+	}
+	.no-print {
+		display: none;
+	}
+	select {
+		font-size: 10px;
+	}
+	.taCenter {
+		text-align: center;
+	}
+	/* 접수표찰 */
+	 .jspc > li:first-child {
+		margin-top: 0;
+	}
+	.jspc li {
+		display: block;	
+	}
+	.jspc > li {
+		margin-top: 100px;
+	}
+	.jspc > li:first-child {
+		margin-top: 0;
+	}
+	.jspc li.type0 {
+		font-size: 0;
+		text-align: center;
+		display: block;
+		width: 300px;
+	}
+	.jspc li.type0 .pl {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.jspc li.type0 .pl01 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 900;
+		font-size: 22px;
+		padding-left: 60px;
+	}
+	.jspc li.type0 .pl02 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		padding-left: 40px;
+		margin-top: 10px;
+	}
+	.jspc li.type0 .pl03 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 700;
+		font-size: 18px;
+		padding-left: 60px;
+		margin-top: 8px;
+	}
+	.jspc li.type0 .pl04 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 700;
+		font-size: 18px;
+		padding-left: 60px;
+		margin-top: 5px;
+	}
+	.jspc li.type0 .pl05 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 700;
+		font-size: 20px;
+		padding-left: 0;
+		margin-top: 8px;
+		letter-spacing: -1.5px;
+	}
+	.jspc li.type0 .pl06 {
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 700;
+		font-size: 24px;
+		padding-left: 0;
+		margin-top: 6px;
+	}
+	.type0 li {
+		width: 240px;
+		font-weight: 800;
+		color: #333;
+		font-size: 15px;
+	}
+
+	/* 교정필증(소) */
+	.smallUl li {
+		margin-top: 150px;
+	}
+	.smallUl li:first-child {
+		margin-top: 0;
+	}	
+	.type01 {
+		padding-top: 7px;
+	}
+	.type01 dt {
+		width: 0px;
+		display: none;
+	}
+	.type01 dd {
+		display: block;
+		text-align: center;
+		width: 110px;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 900;
+		font-size: 15px;
+		height: 16px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 2px;
+	}
+	.type01 .text dd {
+		font-size: 13px;
+		letter-spacing: -1.5px;
+	}
+	.type01 dd.long {
+		text-overflow: clip;
+		white-space:nowrap;
+		word-wrap:normal;	
+		overflow:hidden;
+		font-size: 11px;
+		margin-top: 3px;
+	}
+
+	/* http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License:none (public domain) */
+
+	html,
+	body,
+	div,
+	span,
+	applet,
+	object,
+	iframe,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	blockquote,
+	pre,
+	a,
+	abbr,
+	acronym,
+	address,
+	big,
+	cite,
+	code,
+	del,
+	dfn,
+	em,
+	ins,
+	kbd,
+	q,
+	s,
+	samp,
+	small,
+	strike,
+	strong,
+	sub,
+	sup,
+	tt,
+	var,
+	b,
+	u,
+	i,
+	center,
+	dl,
+	dt,
+	dd,
+	ol,
+	ul,
+	li,
+	fieldset,
+	form,
+	label,
+	legend,
+	table,
+	caption,
+	tbody,
+	tfoot,
+	thead,
+	tr,
+	th,
+	td,
+	article,
+	aside,
+	canvas,
+	details,
+	embed,
+	figure,
+	figcaption,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	output,
+	ruby,
+	section,
+	summary,
+	time,
+	mark,
+	audio,
+	video,
+	button,
+	input
+	{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+	   
+		vertical-align: baseline;
+	}
+	img {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+	   
+		vertical-align: top;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol,
+	ul {
+		list-style: none;
+	}
+	blockquote,
+	q {
+		quotes: none;
+	}
+	blockquote:before,
+	blockquote:after,
+	q:before,
+	q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	button {
+		border: 0 none;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	input, select, textarea, button {
+		border-radius: 0;
+		vertical-align: middle;
+	}
+	th, td, input, select, textarea, button {
+		font-size: 13px;
+		line-height: 1;
+		font-family: AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+		color: #222;
+		letter-spacing: -1px;
+	}
+	.clearFix:after {
+		content:"";
+		display:block;
+		width:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+	}
+
+	ul:after,ol:after,dl:after {
+		content:"";
+		display:block;
+		width:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+	}
+	/*
+	@page { size: c6; page-break-after: avoid;margin-top: 2cm; margin-left: 1cm; margin-right: 1cm; margin-bottom: 2cm;}
+	*/
+}

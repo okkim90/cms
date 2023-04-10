@@ -1,0 +1,31 @@
+/* printsero.css */
+@media print{
+	/*
+	body {
+		color: #000;
+		background: #f00;
+	}
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		width: 100%;
+	}
+	.no-print {
+		display: none;
+	}
+	select {
+		font-size: 10px;
+	}
+	.taCenter {
+		text-align: center;
+	}
+	*/
+
+	/* 교정 접수 표찰 */
+	/*
+	@page { size: c6; page-break-after: avoid;margin-top: 2cm; margin-left: 1cm; margin-right: 1cm; margin-bottom: 2cm;}
+	*/
+}

@@ -1,0 +1,58 @@
+.paging {
+    &_wrap {
+        display: flex;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @include mobile {
+            margin-top: 40px;
+        }
+    }
+    &_btn {
+        display: block;
+        min-width: 30px;
+        height: 30px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        line-height: 28px;
+        font-size: 16px;
+        color: #999;
+        //font-family: 'Montserrat';
+        margin: 0 2px;
+        flex-shrink: 0;
+        border: 1px solid transparent;
+        @include mobile {
+            min-width: 24px;
+            height: 24px;
+            font-size: 13px;
+            line-height: 22px;
+            margin: 0 1px;
+            padding: 0 3px;
+        }
+        &.current {
+            border: 1px solid $CBrand;
+            color: $CBrand;
+            font-weight: bold;
+        }
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+        &.ty_first {
+            background-image: url(../images/common/paging_first.svg);
+        }
+        &.ty_prev {
+            background-image: url(../images/common/paging_prev.svg);
+        }
+        &.ty_next {
+            background-image: url(../images/common/paging_next.svg);
+        }
+        &.ty_last {
+            background-image: url(../images/common/paging_last.svg);
+        }
+    }
+    &_list {
+        display: flex;
+        margin: 0 4px;
+    }
+}
