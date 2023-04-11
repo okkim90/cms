@@ -31,6 +31,7 @@ $colors: (
     _green: #50c785,
     _yellow: #ff0,
     _purple: #3b1e9e,
+    _lightGrey: #999
 );
 
 // colors
@@ -42,6 +43,7 @@ $colors: (
 $c_key : map-get($colors, _key);
 $c_red : map-get($colors, _red);
 $c_sky : map-get($colors, _sky);
+$c_lightGrey : map-get($colors, _lightGrey);
 
 //Font
 $font: 'Noto Sans KR', sans-serif;

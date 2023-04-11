@@ -1,6 +1,6 @@
 .f_input {
     max-width: 100%;
-    border: 1px solid #444;
+    border: 1px solid #ccc;
     box-sizing: border-box;
     &.w100 {
         width: 100%;
@@ -8,14 +8,17 @@
     &.ty_small {
         height: 30px;
         padding: 0 4px;
+        border-radius: 4px;
     }
     &.ty_mid {
         height: 40px;
-        padding: 0 8px;
+        padding: 0 10px;
+        border-radius: 4px;
     }
     &.ty_big {
         height: 50px;
-        padding: 0 10px;
+        padding: 0 15px;
+        border-radius: 6px;
     }
 }
 
@@ -25,6 +28,8 @@
     text-align: center;
     border: 1px solid transparent;
     box-sizing: border-box;
+    cursor: pointer;
+
     &.w100 {
         width: 100%;
     }
@@ -33,12 +38,14 @@
         padding: 0 4px;
         font-size: 12px;
         line-height: 28px;
+        border-radius: 4px;
     }
     &.ty_mid {
         height: 40px;
-        padding: 0 8px;
+        padding: 0 10px;
         font-size: 14px;
         line-height: 38px;
+        border-radius: 4px;
     }
     &.ty_big {
         height: 50px;
@@ -46,6 +53,8 @@
         font-size: 16px;
         font-weight: bold;
         line-height: 48px;
+        border-radius: 6px;
+        width: 200px;
     }
 
     &._key {
@@ -58,10 +67,15 @@
         color: $c_key;
         border-color: $c_key;
     }
+    &._lightGray {
+        background: $c_lightGrey;
+        color:#fff;
+        border-color: $c_lightGrey;
+    } /*그레이*/
     &._solidGray {
         background:#414141;
         color:#fff;
-        border-color:#2c2c2c;
+        border-color:#414141;
     } /*그레이*/
     &._solidLgray {
         background:#848aa4;
@@ -93,4 +107,11 @@
         color:#fff;
         border-color: #0eb6ca;
     } /*스카이블루*/
+}
+
+.f_chk {
+    &.ty_big {
+        width: 16px;
+        height: 16px;
+    }
 }

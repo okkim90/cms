@@ -23,6 +23,7 @@
         <!--// 기존 cms css -->
 
         <!-- 신규 css -->
+        <script src="https://kit.fontawesome.com/a9123cc962.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../assets/css/common.css">
         <!--// 신규 css -->
 	</head>
@@ -42,15 +43,15 @@
                 </div>
                 <div class="login_tab">
                     <!--[D] 활성화 'on' class-->
-                    <a href="login_id.html" class="login_tab_item on">아이디 찾기</a>
+                    <a href="login_id.html" class="login_tab_item on">이메일 찾기</a>
                     <a href="login_pw.html" class="login_tab_item">비밀번호 재설정</a>
                 </div>
 
                 <form method="post" id="frm" action="" class="login_form">
 					<label for="member_name" class="login_form_label">이름</label>
-                    <input type="text" name="member_name" id="member_name" placeholder="이름을 입력하세요." class="f_input w100" value="">
-					<label for="member_email" class="login_form_label">이메일</label>
-                    <input type="email" name="member_email" id="member_email" placeholder="이메일을 입력하세요." class="f_input w100" value="">
+                    <input type="text" name="member_name" id="member_name" placeholder="이름을 입력하세요." class="f_input w100" value="" required>
+                    <label for="member_tel" class="login_form_label">휴대폰 번호</label>
+                    <input type="tel"  name="member_tel" id="member_tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="f_input w100" placeholder="휴대폰 번호를 입력해주세요." maxlength="11"  required>
                     <input type="submit" value="확인" class="f_btn ty_big _key w100">
                 </form>
 				<div class="login_info_msg">

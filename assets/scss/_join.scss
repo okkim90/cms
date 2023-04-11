@@ -1,0 +1,184 @@
+.join {
+    &_info {
+        color: #fff;
+        background-color: $c_key;
+        background: rgb(43,44,166);
+        background: radial-gradient(circle, rgba(43,44,166,1) 0%, rgba(0,1,59,1) 100%);
+        padding: 70px 0 80px;
+        text-align: center;
+        &_tit {
+            margin-bottom: 60px;
+            .tit {
+                font-size: 50px;
+                font-weight: bold;
+            }
+            .desc {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+        }
+        &_step {
+            display: flex;
+            
+            width: 1200px;
+            margin: 0 auto;
+            &_item {
+                flex: 1;
+                .ico_box {
+                    position: relative;
+                }
+                i {
+                    font-size: 110px;
+                    &.i-arrow {
+                        font-size: 80px;
+                        position: absolute;
+                        right: -40px;
+                        top: 50%;
+                        margin-top: -40px;
+                        width: 80px;   
+                        opacity: 0.4;
+                    }
+                }
+                .txt_box {
+                    font-size: 18px;
+                    line-height: 1.5;
+                    margin-top: 20px;
+                }
+            }
+        }
+        &_txt {
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+    }
+    &_form {
+        padding: 80px 0 100px;
+        margin: 0 auto;
+        width: 500px;
+        .msg_required {
+            text-align: right;
+            font-size: 14px;
+            height: 1px;
+            transform: translateY(50px);
+        }
+        .ico_required {
+            color:rgb(249, 59, 59);   
+            font-size: 10px;
+            transform: translateY(-2px) scale(0.9);
+        }
+        &_tit {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        &_tit_s {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        &_sec {       
+            margin-top: 50px;
+        }
+        &_item {
+            .tit {
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            & + & {
+                margin-top: 20px;
+            }
+        }
+
+        .b_num_wrap {
+            display: flex;
+            align-items: center;
+            .f_input {
+                text-align: center;
+            }
+            .dash {
+                margin: 0 4px;
+                font-size: 16px;
+            }
+            .b_num1 {
+                width: 94px;
+            }
+            .b_num2 {
+                width: 84px;
+            }
+            .b_num3 {
+                width: 110px;
+            }
+            .f_btn {
+                margin-left: 10px;
+            }
+        }
+        .address_set {
+            display: flex;
+            .f_btn {
+                margin-left: 10px;
+            }
+            & + .address_set {
+                margin-top: 10px;
+            }
+            .f_input.ty_address_num {
+                width: 120px;
+            }
+        }
+        &_agree {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f2f2f4;
+            &_item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 16px;
+                line-height: 30px;
+                label {
+                    user-select: none; 
+                    cursor: pointer;
+                }
+                .f_btn {
+                    min-width: 80px;
+                    font-size: 14px;
+                }
+                & + .join_form_agree_item {
+                    margin-top: 16px;
+                }
+            }
+        }
+        &_btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+            .f_btn {
+                flex: 1;
+            }
+        }
+        .f_input_box {
+            display: flex;
+            .f_btn {
+                flex-shrink: 0;
+                margin-left: 10px;
+            }
+        }
+        .msg_feedback {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 6px;
+            &.ty_true {
+                color: rgb(55, 107, 253);
+            }
+            &.ty_false {
+                color: #f00;
+            }
+        }
+    }
+}

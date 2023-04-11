@@ -134,6 +134,13 @@ textarea {
     color: #000;
     font-family: $font;
 }
+
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
 // input[type="submit"],
 // input[type="file"]
 // {
