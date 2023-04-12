@@ -292,6 +292,30 @@
             </ul>
         </div>
 
+        
+
+        <script>
+            let all_menu = document.querySelector('#all_menu');
+            let btn_all_menu = document.querySelector('#btn_all_menu');
+            let gnb = document.querySelector('#gnb');
+
+
+            
+
+            btn_all_menu.addEventListener('click', function(){
+                if(this.classList.contains('on')){
+                    btn_all_menu.classList.remove('on');
+                    all_menu.classList.remove('on');
+                    gnb.classList.remove('gnb_off');
+                }else{
+                    btn_all_menu.classList.add('on');
+                    all_menu.classList.add('on');
+                    gnb.classList.add('gnb_off');
+                }
+            }); 
+        </script>
+    </header>
+    <main class="container">
         <!-- [D] tab_nav_toggle 클릭시 tab_nav 토글 -->
         <div id="tab_nav" class="tab_nav">
             <ul class="tab_nav_list">
@@ -406,26 +430,10 @@
                 <i class="fa-solid fa-square-caret-up"></i>
             </button>
         </div>
-
         <script>
-            let all_menu = document.querySelector('#all_menu');
-            let btn_all_menu = document.querySelector('#btn_all_menu');
-            let gnb = document.querySelector('#gnb');
             let tab_nav = document.querySelector('#tab_nav');
             let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
-
-            btn_all_menu.addEventListener('click', function(){
-                if(this.classList.contains('on')){
-                    btn_all_menu.classList.remove('on');
-                    all_menu.classList.remove('on');
-                    gnb.classList.remove('gnb_off');
-                }else{
-                    btn_all_menu.classList.add('on');
-                    all_menu.classList.add('on');
-                    gnb.classList.add('gnb_off');
-                }
-            }); 
-
+            
             tab_nav_toggle.addEventListener('click', function(){
                 if(tab_nav.classList.contains('off')){
                     tab_nav.classList.remove('off');
@@ -433,10 +441,8 @@
                     tab_nav.classList.add('off');
                 }
             }); 
-
         </script>
-    </header>
-    <main class="container">
+
         <!--개발시 삭제-->
         <div style="min-height: 600px;font-size: 100px;display: flex;align-items: center;justify-content: center;">contents</div>
         <!--// 개발시 삭제-->

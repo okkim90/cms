@@ -671,10 +671,11 @@ input::-webkit-search-results-decoration {
 .header .all_menu_dep2 .link_dep2:hover::after {
   width: 100%;
 }
-.header .tab_nav {
+
+.tab_nav {
   position: relative;
 }
-.header .tab_nav_toggle {
+.tab_nav_toggle {
   position: absolute;
   right: 30px;
   top: 9px;
@@ -682,25 +683,25 @@ input::-webkit-search-results-decoration {
   line-height: 0;
   color: #333;
 }
-.header .tab_nav.off .tab_nav_list {
+.tab_nav.off .tab_nav_list {
   display: none;
 }
-.header .tab_nav.off .tab_nav_toggle {
+.tab_nav.off .tab_nav_toggle {
   transform: rotate(180deg);
 }
-.header .tab_nav_list {
+.tab_nav_list {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   background-color: #f2f2f6;
-  padding: 10px 30px 8px;
+  padding: 9px 30px 8px;
   padding-right: 60px;
   border-bottom: 1px solid #ddd;
 }
-.header .tab_nav_item {
+.tab_nav_item {
   position: relative;
 }
-.header .tab_nav_item .del_item {
+.tab_nav_item .del_item {
   position: absolute;
   right: -4px;
   top: -4px;
@@ -714,10 +715,10 @@ input::-webkit-search-results-decoration {
   background-color: #5455c6;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
-.header .tab_nav_item.on .tab_nav_link {
+.tab_nav_item.on .tab_nav_link {
   background-color: #1f2085;
 }
-.header .tab_nav_link {
+.tab_nav_link {
   display: block;
   border-radius: 4px;
   background-color: rgba(31, 32, 133, 0.4);
