@@ -168,6 +168,16 @@
                         bottom: 0;
                     }
                 }
+                &.on {
+                    &::before {
+                        opacity: 1;
+                        top: 0;
+                    }
+                    &::after {
+                        opacity: 1;
+                        bottom: 0;
+                    }
+                }
 
                 &::before {
                     content:'';
@@ -344,6 +354,74 @@
                 }
             }
         }
+    }
+
+    .tab_nav {
+       position: relative;
+        &_toggle {
+            position: absolute;
+            right: 30px;
+            top: 9px;
+            font-size: 24px;
+            line-height: 0;
+            color: #333;
+        }
+
+        &.off {
+            .tab_nav_list {
+                display: none;
+            }
+            .tab_nav_toggle {
+                transform: rotate(180deg);
+            }
+        }
+
+        &_list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            background-color: #f2f2f6;
+            padding: 10px 30px 8px;
+            padding-right: 60px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        &_item {
+            position: relative;
+            .del_item {
+                position: absolute;
+                right: -4px;
+                top: -4px;
+                width: 16px;
+                height: 16px;
+                background-image: url(../images/common/ico_x_w.svg);
+                background-position: center center;
+                background-size: 12px;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                background-color: #5455c6;
+                box-shadow: 1px 1px 2px rgba(#000, 0.3);
+
+            }
+            &.on {
+                .tab_nav_link {
+                    background-color: rgba($c_key, 1);
+                }
+            }
+        }
+        &_link {
+            display: block;
+            border-radius: 4px;
+            background-color: rgba($c_key, .4);
+            color: #fff;
+            font-size: 12px;
+            line-height: 24px;
+            white-space: nowrap;
+            padding: 0 10px;
+            padding-right: 16px;
+            box-shadow: 1px 1px 2px rgba(#000, 0.3);
+        }
+
     }
 }
 

@@ -34,7 +34,7 @@
     <header class="header">
         <div class="header_top">
             <h1 class="logo">
-                <img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템">
+                <a href=""><img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템"></a>
             </h1>
             <div class="h_util">
                 <div class="h_util_sec h_user">
@@ -68,7 +68,7 @@
                 <li class="gnb_item">
                     <a href="" class="link_dep1">전체 조회</a>
                 </li>
-                <li class="gnb_item on">
+                <li class="gnb_item">
                     <a href="" class="link_dep1">입고</a>
                     <ul class="gnb_dep2">
                         <li><a href="" class="link_dep2">입고 조회</a></li>
@@ -291,11 +291,130 @@
                 </li>
             </ul>
         </div>
+
+        <!-- [D] tab_nav_toggle 클릭시 tab_nav 토글 -->
+        <div id="tab_nav" class="tab_nav">
+            <ul class="tab_nav_list">
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">메인</a>
+                </li>
+                <!--[D] 활성화 "on" class -->
+                <li class="tab_nav_item on">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">전체 조회</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                
+            </ul>
+            <button type="button" class="tab_nav_toggle">
+                <i class="fa-solid fa-square-caret-up"></i>
+            </button>
+        </div>
+
         <script>
             let all_menu = document.querySelector('#all_menu');
             let btn_all_menu = document.querySelector('#btn_all_menu');
             let gnb = document.querySelector('#gnb');
-            btn_all_menu.addEventListener('click', function(event){
+            let tab_nav = document.querySelector('#tab_nav');
+            let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
+
+            btn_all_menu.addEventListener('click', function(){
                 if(this.classList.contains('on')){
                     btn_all_menu.classList.remove('on');
                     all_menu.classList.remove('on');
@@ -306,6 +425,15 @@
                     gnb.classList.add('gnb_off');
                 }
             }); 
+
+            tab_nav_toggle.addEventListener('click', function(){
+                if(tab_nav.classList.contains('off')){
+                    tab_nav.classList.remove('off');
+                }else{
+                    tab_nav.classList.add('off');
+                }
+            }); 
+
         </script>
     </header>
     <main class="container">
