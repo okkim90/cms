@@ -31,6 +31,7 @@
     <div id="skip-nav">
         <a href="#container"></a>
     </div>
+    <!--header-->
     <header class="header">
         <div class="header_top">
             <h1 class="logo">
@@ -55,6 +56,7 @@
                 </div>
             </div>
         </div>
+        <!--gnb-->
         <nav id="gnb" class="gnb">
             <button type="button" id="btn_all_menu" class="btn_all_menu">
                 <span class="blind">전체메뉴 토글버튼</span>
@@ -175,6 +177,8 @@
                 </li>
             </ul>
         </nav>
+        <!--//gnb-->
+        <!--전체메뉴-->
         <div id="all_menu" class="all_menu">
             <ul class="all_menu_list">
                 <li class="all_menu_item">
@@ -291,9 +295,7 @@
                 </li>
             </ul>
         </div>
-
-        
-
+        <!--//전체메뉴-->
         <script>
             let all_menu = document.querySelector('#all_menu');
             let btn_all_menu = document.querySelector('#btn_all_menu');
@@ -315,6 +317,8 @@
             }); 
         </script>
     </header>
+    <!--//header-->
+    <!--container-->
     <main class="container">
         <!-- [D] tab_nav_toggle 클릭시 tab_nav 토글 -->
         <div id="tab_nav" class="tab_nav">
@@ -433,7 +437,7 @@
         <script>
             let tab_nav = document.querySelector('#tab_nav');
             let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
-            
+
             tab_nav_toggle.addEventListener('click', function(){
                 if(tab_nav.classList.contains('off')){
                     tab_nav.classList.remove('off');
@@ -447,6 +451,8 @@
         <div style="min-height: 600px;font-size: 100px;display: flex;align-items: center;justify-content: center;">contents</div>
         <!--// 개발시 삭제-->
     </main>
+    <!--//container-->
+    <!--footer-->
     <footer class="footer">
         <div class="footer_top">
             <div class="inner">
@@ -564,5 +570,6 @@
             </div>
         </div>  
     </footer>
+    <!--//footer-->
 </body>
 </html>
