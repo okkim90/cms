@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="KIC">
+    <meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+    <!-- 기존 cms css -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+    <!--// 기존 cms css -->
+
+    <!-- 신규 css -->
+    <script src="https://kit.fontawesome.com/a9123cc962.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <!--// 신규 css -->
+</head>
+<body>
+    <div id="skip-nav">
+        <a href="#container"></a>
+    </div>
+    <header class="header">
+        <div class="header_top">
+            <h1 class="logo">
+                <img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템">
+            </h1>
+            <div class="h_util">
+                <div class="h_util_sec h_user">
+                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님 
+                </div>
+                <div class="h_util_sec h_branch">
+                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
+                    <ul class="h_branch_list">
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a></li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a></li>
+                    </ul>
+                </div>
+                <div class="h_util_sec h_btns">
+                    <a href="" class="h_btn"><i class="fa-solid fa-comment-sms"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-print"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                    <a href="" class="h_btn ty_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav id="gnb" class="gnb">
+            <button type="button" id="btn_all_menu" class="btn_all_menu">
+                <span class="blind">전체메뉴 토글버튼</span>
+                <span class="bar_box">
+                    <span class="bar_item bar_top"></span>
+                    <span class="bar_item bar_mid"></span>
+                    <span class="bar_item bar_bot"></span>
+                </span>
+            </button>
+            <ul class="gnb_list">
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">전체 조회</a>
+                </li>
+                <li class="gnb_item on">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="all_menu" class="all_menu">
+            <ul class="all_menu_list">
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">마이페이지</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내정보</a></li>
+                        <li><a href="" class="link_dep2">자료실</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            let all_menu = document.querySelector('#all_menu');
+            let btn_all_menu = document.querySelector('#btn_all_menu');
+            let gnb = document.querySelector('#gnb');
+            btn_all_menu.addEventListener('click', function(event){
+                if(this.classList.contains('on')){
+                    btn_all_menu.classList.remove('on');
+                    all_menu.classList.remove('on');
+                    gnb.classList.remove('gnb_off');
+                }else{
+                    btn_all_menu.classList.add('on');
+                    all_menu.classList.add('on');
+                    gnb.classList.add('gnb_off');
+                }
+            }); 
+        </script>
+    </header>
+    <main class="container">
+        <!--개발시 삭제-->
+        <div style="min-height: 600px;font-size: 100px;display: flex;align-items: center;justify-content: center;">contents</div>
+        <!--// 개발시 삭제-->
+    </main>
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="inner">
+                <ul class="footer_top_nav ">
+                    <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bot">
+            <div class="inner">
+                <div class="footer_logo">
+                    <a href=""><img src="../assets/images/common/logo_footer.svg" alt=""></a>
+                </div>
+                <div class="footer_cont">
+                    <div class="footer_branch">
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[서울본사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>서울 구로구 남부순환로 1303 KIC빌딩</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:1600-4245">1600-4245</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>02-863-1905</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:k8631901@kic21.co.kr">k8631901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[부산지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>부산 사상구 광장로 56번길 45</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:051-322-0880">051-322-0880</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>051-322-4066</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:calworld@kic21.co.kr">calworld@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[대전지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>대전 유성구 테크노11로 32</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:042-931-1901">042-931-1901</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>042-931-1902</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">grand1901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[지안지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>경기 가평군 설악면 유명산길 37</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:031-585-8511">031-585-8511</a>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">gongrong@empal.com</a>
+                                </li>
+                                <li>
+                                    <strong>홈페이지</strong>
+                                    <a href="www.ji-an.co.kr" target="_blank">www.ji-an.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <span>코리아인스트루먼트(주)</span>
+                        <span>사업자등록번호 : 101-81-45861</span>
+                        <span>대표이사 : 정재호</span>
+                    </div>
+                    <p class="copyright">
+                        Copyright@KIC, Korea Instrument All Rights Reserved.
+                    </p>
+                    <div class="footer_contact">
+                        <span class="tit"><i></i> CONTACT US</span>
+                        <span class="num">1600 - 4245</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </footer>
+</body>
+</html>
