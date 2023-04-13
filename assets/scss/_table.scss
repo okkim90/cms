@@ -67,6 +67,9 @@
             border: 1px solid $c_line;
             max-width: 0;
             text-align: center;
+            &.taL {
+                text-align: left;
+            }
             &:first-child {
                 border-left: none;
             }
@@ -97,6 +100,9 @@
                 &:hover {
                     border-bottom-color: #000;
                 }
+                &.on {
+                    border-bottom-color: #000;
+                }
             }
             &.ty_down {
                 margin-top: 4px;
@@ -104,6 +110,9 @@
                 border-left: 4px solid transparent;
                 border-right: 4px solid transparent;
                 &:hover {
+                    border-top-color: #000;
+                }
+                &.on {
                     border-top-color: #000;
                 }
             }

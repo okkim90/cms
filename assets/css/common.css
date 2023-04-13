@@ -1446,6 +1446,16 @@ input::-webkit-search-results-decoration {
 .container .sec {
   margin-top: 40px;
 }
+.container .sec_tit {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.container .sec_tit .tit {
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .date_set {
   display: flex;
@@ -1761,16 +1771,37 @@ input::-webkit-search-results-decoration {
 }
 
 .btn_refresh {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   text-align: center;
   line-height: 20px;
   font-size: 18px;
   color: #777;
+  transition: all 0.2s ease-in-out;
 }
 .btn_refresh:hover {
   color: #222;
+  transform: rotate(180deg);
+}
+
+.btn_set {
+  display: flex;
+  gap: 10px;
+}
+.btn_set.taC {
+  align-items: center;
+  justify-content: center;
+}
+.btn_set.taL {
+  align-items: center;
+  justify-content: flex-start;
+}
+.btn_set.taR {
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .f_btn {
@@ -1785,12 +1816,28 @@ input::-webkit-search-results-decoration {
 .f_btn.w100 {
   width: 100%;
 }
+.f_btn.disable {
+  background-color: #999;
+  border-color: #999;
+  cursor: not-allowed;
+}
+.f_btn.disable:hover {
+  background-color: #999;
+  border-color: #999;
+}
 .f_btn.ty_small {
   min-width: 40px;
   height: 26px;
   padding: 0 4px;
   font-size: 12px;
   line-height: 24px;
+  border-radius: 4px;
+}
+.f_btn.ty_s_mid {
+  height: 34px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 32px;
   border-radius: 4px;
 }
 .f_btn.ty_mid {
@@ -1910,6 +1957,9 @@ input::-webkit-search-results-decoration {
   max-width: 0;
   text-align: center;
 }
+.h_tbl tbody td.taL {
+  text-align: left;
+}
 .h_tbl tbody td:first-child {
   border-left: none;
 }
@@ -1936,6 +1986,9 @@ input::-webkit-search-results-decoration {
 .h_tbl .col_sort .btn_sort.ty_up:hover {
   border-bottom-color: #000;
 }
+.h_tbl .col_sort .btn_sort.ty_up.on {
+  border-bottom-color: #000;
+}
 .h_tbl .col_sort .btn_sort.ty_down {
   margin-top: 4px;
   border-top: 5px solid #999;
@@ -1943,6 +1996,9 @@ input::-webkit-search-results-decoration {
   border-right: 4px solid transparent;
 }
 .h_tbl .col_sort .btn_sort.ty_down:hover {
+  border-top-color: #000;
+}
+.h_tbl .col_sort .btn_sort.ty_down.on {
   border-top-color: #000;
 }
 

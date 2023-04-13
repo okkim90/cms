@@ -2,15 +2,35 @@
 
 
 .btn_refresh {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 20px;
     height: 20px;
     text-align: center;
     line-height: 20px;
     font-size: 18px;
     color: #777;
+    transition: all .2s ease-in-out;
     &:hover {
         color: #222;
+        transform: rotate(180deg);
+    }
+}
+.btn_set {
+    display: flex;
+    gap: 10px;
+    &.taC {
+        align-items: center;
+        justify-content: center;
+    }
+    &.taL {
+        align-items: center;
+        justify-content: flex-start;
+    }
+    &.taR {
+        align-items: center;
+        justify-content: flex-end;
     }
 }
 
@@ -25,12 +45,28 @@
     &.w100 {
         width: 100%;
     }
+    &.disable {
+        background-color: $c_lightGrey;
+        border-color: $c_lightGrey;
+        cursor: not-allowed;
+        &:hover {
+            background-color: $c_lightGrey;
+            border-color: $c_lightGrey;
+        }
+    }
     &.ty_small {
         min-width: 40px;
         height: 26px;
         padding: 0 4px;
         font-size: 12px;
         line-height: 24px;
+        border-radius: 4px;
+    }
+    &.ty_s_mid {
+        height: 34px;
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 32px;
         border-radius: 4px;
     }
     &.ty_mid {
