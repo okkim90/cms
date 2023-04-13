@@ -1,0 +1,52 @@
+
+
+
+.btn_refresh {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    color: #777;
+    &:hover {
+        color: #222;
+    }
+}
+
+.f_btn {
+    display: inline-block;
+    max-width: 100%;
+    text-align: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 500;
+    &.w100 {
+        width: 100%;
+    }
+    &.ty_small {
+        min-width: 40px;
+        height: 26px;
+        padding: 0 4px;
+        font-size: 12px;
+        line-height: 24px;
+        border-radius: 4px;
+    }
+    &.ty_mid {
+        height: 40px;
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 38px;
+        border-radius: 4px;
+    }
+    &.ty_big {
+        height: 50px;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 48px;
+        border-radius: 6px;
+        width: 200px;
+    }
+}

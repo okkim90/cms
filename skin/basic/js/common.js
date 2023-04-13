@@ -52,7 +52,7 @@ $(function(){
 
 
 
-    //
+    
     $.mCustomScrollbar.defaults.theme="light-2"; //set "light-2" as the default theme
 
 

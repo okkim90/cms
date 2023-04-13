@@ -1,0 +1,112 @@
+.v_tbl {
+    width: 100%;
+    border-top: 1px solid #000;
+    th, td {
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 1.6;
+        height: 37px;
+    }
+    th {
+        background-color: $c_bg_grey;
+        border-bottom: 1px solid $c_line;
+    }
+    td {
+        border-bottom: 1px solid $c_line;
+    }
+}
+
+
+
+
+.h_tbl {
+    &_wrap {
+        border: 1px solid $c_line;
+        border-top: 1px solid #000;
+    }
+
+    width: 100%;
+    font-size: 12px;
+    //border: 1px solid $c_line;
+    border-left: none;
+    border-collapse: collapse;
+    
+    
+    thead {
+        th {
+            background-color: $c_bg_grey;
+            text-align: center;
+            padding: 5px;
+            height: 32px;
+            cursor: pointer;
+            border: 1px solid $c_line;
+            border-top: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:first-child {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+            &.th_fixed {
+                position: sticky;
+                top: 0px;
+                
+            }
+        }
+    }
+    tbody {
+        tr:hover {
+            background-color: rgba(rgb(249, 246, 61), .1);
+            cursor: pointer;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid $c_line;
+            max-width: 0;
+            text-align: center;
+            &:first-child {
+                border-left: none;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+        tr:last-child {
+            td {
+                border-bottom: none;
+                
+            }
+        }
+    }
+
+    .col_sort {
+        display: inline-flex;
+        margin-left: 6px;
+        flex-direction: column;
+        vertical-align: middle;
+        
+        .btn_sort {
+            display: block;
+            &.ty_up {
+                border-bottom: 5px solid #999;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                &:hover {
+                    border-bottom-color: #000;
+                }
+            }
+            &.ty_down {
+                margin-top: 4px;
+                border-top: 5px solid #999;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                &:hover {
+                    border-top-color: #000;
+                }
+            }
+        }
+    }
+}

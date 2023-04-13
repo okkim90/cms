@@ -8,42 +8,76 @@ $breakpoint-pc_bm: 1800px;
 //Color
 $CBrand: #1f2085;
 $CLine: #d9d9d9;
-$CLine2: #ccc;
 
-$CTmain: #303030;
-$CTsub: #666;
-$CTsub2: #999;
-$CTsub3: #aaa;
-
-$CBg_sky: #f6f7fa;
-$CBg_grey: #f3f3f3;
 
 
 
 /* colors */
 $colors: (
     _key: #1f2085,
-    _blue: #1e90ff,
-    _sky: #f6f7fa,
-    _red: #f02727,
-    _lblue: #46b8ff,
-    _orange: #ff7328,
-    _green: #50c785,
-    _yellow: #ff0,
-    _purple: #3b1e9e,
-    _lightGrey: #999
+    _line: #ccc,
+    _bg_grey: #efefef,
+    _blue: #007bff,
+    _sky: #acbdee,
+    _red: #d61c1c,
+    _lblue: #63c1fc,
+    _orange: #f8742e,
+    _green: #40b474,
+    _yellow: #ffc107,
+    _purple: #4f389a,
+    _lightGrey: #999,
+    _solidGrey: #414141
 );
+
+
+@mixin btn($bg, $bd){
+    transition: all .1s ease-in-out;
+    background-color: $bg;
+    border-color: $bd;
+    color: #fff;
+    &:hover {
+        background-color: darken( $bg, 9%);
+        border-color: darken($bd, 9%);
+    }
+}
+
+@mixin btn_ol($bd ,$color){
+    transition: all .1s ease-in-out;
+    background-color: transparent;
+    border-color: $bd;
+    color: $color;
+    &:hover {
+        background-color: $color;
+        color: #fff;
+    }
+}
+
 
 // colors
 @each $key, $color in $colors {
     .fc#{$key} {
         color: $color;
     }
+    .f_btn {
+        &.#{$key} {
+            @include btn($color, $color)
+        }
+        &.#{$key}_ol {
+            @include btn_ol($color ,$color)
+        }
+    }
+    
 }
+
+
+
 $c_key : map-get($colors, _key);
+$c_line : map-get($colors, _line);
+$c_bg_grey : map-get($colors, _bg_grey);
 $c_red : map-get($colors, _red);
 $c_sky : map-get($colors, _sky);
 $c_lightGrey : map-get($colors, _lightGrey);
+$c_solidGrey : map-get($colors, _solidGrey);
 
 //Font
 $font: 'Noto Sans KR', sans-serif;
@@ -53,3 +87,13 @@ $form_fz : 18px;
 
 //innerBox
 $inner: 1280px;
+
+
+
+
+@for $i from 1 through 100 {
+    $w : 10*$i;
+    .w_#{$w} {
+        width: #{$w}px
+    }
+}

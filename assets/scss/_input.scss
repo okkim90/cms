@@ -6,112 +6,64 @@
         width: 100%;
     }
     &.ty_small {
-        height: 30px;
+        height: 26px;
         padding: 0 4px;
         border-radius: 4px;
+        font-size: 12px;
     }
     &.ty_mid {
         height: 40px;
         padding: 0 10px;
         border-radius: 4px;
+        font-size: 14px;
     }
     &.ty_big {
         height: 50px;
         padding: 0 15px;
         border-radius: 6px;
     }
+    &.inp_date {
+        width: 110px;
+        padding-right: 24px;
+        background-repeat: no-repeat;
+        background-image: url(../images/common/ico_cal.svg);
+        background-size: 14px;
+        background-position: calc(100% - 4px) center;
+        cursor: pointer;
+    }
 }
 
-.f_btn {
-    display: inline-block;
-    max-width: 100%;
-    text-align: center;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    cursor: pointer;
 
-    &.w100 {
-        width: 100%;
-    }
-    &.ty_small {
-        height: 30px;
-        padding: 0 4px;
-        font-size: 12px;
-        line-height: 28px;
-        border-radius: 4px;
-    }
-    &.ty_mid {
-        height: 40px;
-        padding: 0 10px;
-        font-size: 14px;
-        line-height: 38px;
-        border-radius: 4px;
-    }
-    &.ty_big {
-        height: 50px;
-        padding: 0 10px;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 48px;
-        border-radius: 6px;
-        width: 200px;
-    }
-
-    &._key {
-        background-color: $c_key;
-        color: #fff;
-        border-color: $c_key;
-    }
-    &._key_line {
-        background-color: #fff;
-        color: $c_key;
-        border-color: $c_key;
-    }
-    &._lightGray {
-        background: $c_lightGrey;
-        color:#fff;
-        border-color: $c_lightGrey;
-    } /*그레이*/
-    &._solidGray {
-        background:#414141;
-        color:#fff;
-        border-color:#414141;
-    } /*그레이*/
-    &._solidLgray {
-        background:#848aa4;
-        color:#fff;
-        border-color: #848aa4;
-    } /*라이트그레이*/
-    &._solidLblue {
-        background:#6d84f6;
-        color:#fff;
-        border-color: #6d84f6;
-    } /*라이트블루*/
-    &._solidLred {
-        background:#dd5353;
-        color:#fff;
-        border-color: #dd5353;
-    } /*라이트레드*/
-    &._solidLgreen {
-        background:#6fbd94;
-        color:#fff;
-        border-color: #6fbd94;
-    } /*라이트그린*/
-    &._solidPuple {
-        background:#71618e;
-        color:#fff;
-        border-color: #71618e;
-    } /*퍼플*/
-    &._solidSkyblue {
-        background:#0eb6ca;
-        color:#fff;
-        border-color: #0eb6ca;
-    } /*스카이블루*/
-}
 
 .f_chk {
     &.ty_big {
         width: 16px;
         height: 16px;
+    }
+}
+
+.f_select {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    &.w100 {
+        width: 100%;
+    }
+    &.ty_small {
+        height: 26px;
+        padding: 0 4px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    &.ty_mid {
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    &.ty_big {
+        height: 50px;
+        padding: 0 15px;
+        border-radius: 6px;
     }
 }

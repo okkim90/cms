@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="KIC">
+    <meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+
+    <!-- 기존 cms js -->
+    <script type="text/javascript" src="../common/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.print.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui-custom.min.js?123123132" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.form.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/common.js" charset="utf-8"></script>
+    <!--
+    <script type="text/javascript" src="../skin/basic/js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.treeview.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.cookie.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../skin/basic/js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/zebra_datepicker.js"></script>
+    <script type="text/javascript" src="../skin/basic/js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/fullcalendar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/colResizable-1-6.js" charset="utf-8"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    -->
+    <!--// 기존 cms js -->
+    
+    <!-- 기존 cms css -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+    <!--// 기존 cms css -->
+
+
+    
+    <!-- 신규 css -->
+    <script src="https://kit.fontawesome.com/a9123cc962.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <!--// 신규 css -->
+
+    <!-- 신규 js -->
+    <script>
+        $(function(){
+            $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy-mm-dd',
+            firstDay: 0,
+            isRTL: false,
+            showMonthAfterYear: true,
+            changeMonth: true,
+            changeYear: true
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ko']);
+            
+            $(".inp_date").datepicker({
+                //showOn: "button",
+                //buttonImage: "../img/ico_calendar1.svg",
+                //buttonImageOnly: true,
+                //showButtonPanel: true
+            });
+            
+
+            
+        });
+        function set_today(){
+            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            $(".inp_date.date_end").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        }
+        function set_7d(){
+            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            $(".inp_date.date_end").datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        }
+        function set_1m(){
+            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            $(".inp_date.date_end").datepicker('setDate', '-1M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        }
+        function set_3m(){
+            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            $(".inp_date.date_end").datepicker('setDate', '-3M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        }
+        function set_1y(){
+            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            $(".inp_date.date_end").datepicker('setDate', '-1Y'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        }
+    </script>
+    <!--// 신규 js -->
+    
+</head>
+<body>
+    <div id="skip-nav">
+        <a href="#container"></a>
+    </div>
+    <!--header-->
+    <header class="header">
+        <div class="header_top">
+            <h1 class="logo">
+                <a href=""><img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템"></a>
+            </h1>
+            <div class="h_util">
+                <div class="h_util_sec h_user">
+                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님 
+                </div>
+                <div class="h_util_sec h_branch">
+                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
+                    <ul class="h_branch_list">
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a></li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a></li>
+                    </ul>
+                </div>
+                <div class="h_util_sec h_btns">
+                    <a href="" class="h_btn"><i class="fa-solid fa-comment-sms"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-print"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                    <a href="" class="h_btn ty_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--gnb-->
+        <nav id="gnb" class="gnb">
+            <button type="button" id="btn_all_menu" class="btn_all_menu">
+                <span class="blind">전체메뉴 토글버튼</span>
+                <span class="bar_box">
+                    <span class="bar_item bar_top"></span>
+                    <span class="bar_item bar_mid"></span>
+                    <span class="bar_item bar_bot"></span>
+                </span>
+            </button>
+            <ul class="gnb_list">
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">전체 조회</a>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--//gnb-->
+        <!--전체메뉴-->
+        <div id="all_menu" class="all_menu">
+            <ul class="all_menu_list">
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">마이페이지</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내정보</a></li>
+                        <li><a href="" class="link_dep2">자료실</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//전체메뉴-->
+        <script>
+            let all_menu = document.querySelector('#all_menu');
+            let btn_all_menu = document.querySelector('#btn_all_menu');
+            let gnb = document.querySelector('#gnb');
+
+
+            
+
+            btn_all_menu.addEventListener('click', function(){
+                if(this.classList.contains('on')){
+                    btn_all_menu.classList.remove('on');
+                    all_menu.classList.remove('on');
+                    gnb.classList.remove('gnb_off');
+                }else{
+                    btn_all_menu.classList.add('on');
+                    all_menu.classList.add('on');
+                    gnb.classList.add('gnb_off');
+                }
+            }); 
+        </script>
+    </header>
+    <!--//header-->
+    <!--container-->
+    <main class="container">
+        <!--탭 네비게이션-->
+        <!-- [D] tab_nav_toggle 클릭시 tab_nav 토글 -->
+        <div id="tab_nav" class="tab_nav">
+            <ul class="tab_nav_list">
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">메인</a>
+                </li>
+                <!--[D] 활성화 "on" class -->
+                <li class="tab_nav_item on">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">전체 조회</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">기준정보</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">사외</a>
+                </li>
+                <li class="tab_nav_item">
+                    <button class="del_item"></button>
+                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
+                </li>
+                
+            </ul>
+            <button type="button" class="tab_nav_toggle">
+                <i class="fa-solid fa-square-caret-up"></i>
+            </button>
+        </div>
+        <script>
+            let tab_nav = document.querySelector('#tab_nav');
+            let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
+
+            tab_nav_toggle.addEventListener('click', function(){
+                if(tab_nav.classList.contains('off')){
+                    tab_nav.classList.remove('off');
+                }else{
+                    tab_nav.classList.add('off');
+                }
+            }); 
+        </script>
+        <!--//탭 네비게이션-->
+
+
+        <div id="contents" class="contents">
+            <div class="top_tit">
+                <h1 class="tit">전체 조회</h1>
+                <button type="button" class="btn_refresh">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span class="blind">전체조회</span>
+                </button>
+            </div>
+            <section class="sec">
+                <!-- tab list + cont -->
+                <ul class="tab_list">
+                    <li class="tab_list_item on"><a href="" class="tab_list_btn">일반 조회</a></li>
+                    <li class="tab_list_item"><a href="" class="tab_list_btn">구분 조회</a></li>
+                    <li class="tab_list_item"><a href="" class="tab_list_btn">사외 조회</a></li>
+                    <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
+                </ul>
+                <div class="tab_cont">
+                    <table class="v_tbl">
+                        <tbody>
+                            <colgroup>
+                                <col style="width: 160px;">
+                                <col>
+                                <col style="width: 160px;">
+                                <col>
+                                <col style="width: 160px;">
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <th>기간 조회</th>
+                                <td colspan="5">
+                                    <div class="date_set">
+                                        <select name="" id="" class="f_select ty_small">
+                                            <option value="">접수일</option>
+                                            <option value="">기간 선택 2</option>
+                                            <option value="">기간 선택 3</option>
+                                            <option value="">기간 선택 4</option>
+                                        </select>
+                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                        <button type="button" onclick="set_today();" class="f_btn ty_small _blue">오늘</button>
+                                        <button type="button" onclick="set_7d()" class="f_btn ty_small _red">7일</button>
+                                        <button type="button" onclick="set_1m()" class="f_btn ty_small _green">1개월</button>
+                                        <button type="button" onclick="set_3m()" class="f_btn ty_small _yellow">3개월</button>
+                                        <button type="button" onclick="set_1y()" class="f_btn ty_small _purple">1년</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>업체명</th>
+                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                <th>신청자</th>
+                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                <th>접수자</th>
+                                <td><input type="text" class="f_input ty_small w_200"></td>
+                            </tr>
+                            <tr>
+                                <th>접수번호</th>
+                                <td>
+                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                </td>
+                                <th>교정번호</th>
+                                <td>
+                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                </td>
+                                <th>기기번호</th>
+                                <td><input type="text" class="f_input ty_small w_200"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--// tab list + cont -->
+            </section>
+            <section class="sec">
+                <div class="h_tbl_wrap y_scroll_area" style="height: 280px;">
+                    <table class="h_tbl">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                            <col style="width: 80px;">
+                            <col style="width: 160px;">
+                            <col style="width: 80px;">
+                            <col style="width: 80px;">
+                            <col style="width: 120px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 60px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="th_fixed">접수번호 
+                                    <div class="col_sort">
+                                        <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
+                                        <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                    </div>
+                                </th>
+                                <th class="th_fixed">접수일자</th>
+                                <th class="th_fixed">입고구분</th>
+                                <th class="th_fixed">업체명</th>
+                                <th class="th_fixed">접수자</th>
+                                <th class="th_fixed">신청자</th>
+                                <th class="th_fixed">성적서 업체명</th>
+                                <th class="th_fixed">총수량</th>
+                                <th class="th_fixed">교정완료</th>
+                                <th class="th_fixed">명세서</th>
+                                <th class="th_fixed">계산서</th>
+                                <th class="th_fixed">수납</th>
+                                <th class="th_fixed">출고</th>
+                                <th class="th_fixed">저장위치</th>
+                                <th class="th_fixed">요구사항</th>
+                                <th class="th_fixed">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+            </section>
+            <section class="sec">
+                <div class="h_tbl_wrap y_scroll_area" style="height: 280px;">
+                    <table class="h_tbl">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col style="width: 100px;">
+                            <col style="width: 80px;">
+                            <col style="width: 160px;">
+                            <col style="width: 80px;">
+                            <col style="width: 80px;">
+                            <col style="width: 120px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 50px;">
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 60px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="th_fixed">접수번호 
+                                    <div class="col_sort">
+                                        <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
+                                        <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                    </div>
+                                </th>
+                                <th class="th_fixed">접수일자</th>
+                                <th class="th_fixed">입고구분</th>
+                                <th class="th_fixed">업체명</th>
+                                <th class="th_fixed">접수자</th>
+                                <th class="th_fixed">신청자</th>
+                                <th class="th_fixed">성적서 업체명</th>
+                                <th class="th_fixed">총수량</th>
+                                <th class="th_fixed">교정완료</th>
+                                <th class="th_fixed">명세서</th>
+                                <th class="th_fixed">계산서</th>
+                                <th class="th_fixed">수납</th>
+                                <th class="th_fixed">출고</th>
+                                <th class="th_fixed">저장위치</th>
+                                <th class="th_fixed">요구사항</th>
+                                <th class="th_fixed">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23000001</td>
+                                <td>2023-03-10</td>
+                                <td>택배</td>
+                                <td>미래공구주식회사 평택지점</td>
+                                <td>유재현</td>
+                                <td>이준성</td>
+                                <td>(주)삼성물산</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>234</td>
+                                <td>124</td>
+                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                <td>
+                                    <a href="" class="f_btn ty_small _blue">상세</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+            </section>
+        </div>
+    </main>
+    <!--//container-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="inner">
+                <ul class="footer_top_nav ">
+                    <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bot">
+            <div class="inner">
+                <div class="footer_logo">
+                    <a href=""><img src="../assets/images/common/logo_footer.svg" alt=""></a>
+                </div>
+                <div class="footer_cont">
+                    <div class="footer_branch">
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[서울본사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>서울 구로구 남부순환로 1303 KIC빌딩</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:1600-4245">1600-4245</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>02-863-1905</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:k8631901@kic21.co.kr">k8631901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[부산지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>부산 사상구 광장로 56번길 45</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:051-322-0880">051-322-0880</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>051-322-4066</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:calworld@kic21.co.kr">calworld@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[대전지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>대전 유성구 테크노11로 32</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:042-931-1901">042-931-1901</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>042-931-1902</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">grand1901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[지안지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>경기 가평군 설악면 유명산길 37</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:031-585-8511">031-585-8511</a>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">gongrong@empal.com</a>
+                                </li>
+                                <li>
+                                    <strong>홈페이지</strong>
+                                    <a href="www.ji-an.co.kr" target="_blank">www.ji-an.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <span>코리아인스트루먼트(주)</span>
+                        <span>사업자등록번호 : 101-81-45861</span>
+                        <span>대표이사 : 정재호</span>
+                    </div>
+                    <p class="copyright">
+                        Copyright@KIC, Korea Instrument All Rights Reserved.
+                    </p>
+                    <div class="footer_contact">
+                        <span class="tit"><i></i> CONTACT US</span>
+                        <span class="num">1600 - 4245</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </footer>
+    <!--//footer-->
+
+    <script>
+        $(function(){
+            $('.h_tbl').colResizable();
+        });
+    </script>
+</body>
+</html>
