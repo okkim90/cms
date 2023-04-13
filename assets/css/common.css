@@ -930,7 +930,7 @@ input[type=tel]:focus,
 input[type=email]:focus,
 input[type=search]:focus,
 textarea:focus {
-  border-color: rgb(242, 94, 153);
+  border-color: #007bff;
   background-color: #fff;
   outline: none;
 }
@@ -1791,17 +1791,31 @@ input::-webkit-search-results-decoration {
   display: flex;
   gap: 10px;
 }
+.btn_set.bg_box {
+  background-color: #efefef;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.btn_set.ai_b {
+  align-items: flex-end;
+}
+.btn_set.ai_t {
+  align-items: flex-start;
+}
 .btn_set.taC {
-  align-items: center;
   justify-content: center;
 }
 .btn_set.taL {
-  align-items: center;
   justify-content: flex-start;
 }
 .btn_set.taR {
-  align-items: center;
   justify-content: flex-end;
+}
+.btn_set .btn_set.pos_left {
+  margin-right: auto;
+}
+.btn_set .btn_set.pos_right {
+  margin-left: auto;
 }
 
 .f_btn {
@@ -1901,6 +1915,12 @@ input::-webkit-search-results-decoration {
   width: 100%;
   border-top: 1px solid #000;
 }
+.v_tbl tr.hidden_tr {
+  display: none;
+}
+.v_tbl tr.hidden_tr.on {
+  display: table-row;
+}
 .v_tbl th, .v_tbl td {
   padding: 5px 10px;
   font-size: 12px;
@@ -1913,6 +1933,21 @@ input::-webkit-search-results-decoration {
 }
 .v_tbl td {
   border-bottom: 1px solid #ccc;
+}
+.v_tbl_toggle {
+  display: flex;
+  margin: 0 auto;
+  width: 36px;
+  height: 18px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #414141;
+  border-radius: 0 0 5px 5px;
+}
+.v_tbl_toggle.on i {
+  transform: rotate(180deg);
 }
 
 .h_tbl {

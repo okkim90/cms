@@ -20,17 +20,33 @@
 .btn_set {
     display: flex;
     gap: 10px;
+    &.bg_box {
+        background-color: $c_bg_grey;
+        padding: 10px 15px;
+        border-radius: 10px;
+     }
+    &.ai_b {
+        align-items: flex-end;
+    }
+    &.ai_t {
+        align-items: flex-start;
+    }
     &.taC {
-        align-items: center;
         justify-content: center;
     }
     &.taL {
-        align-items: center;
         justify-content: flex-start;
     }
     &.taR {
-        align-items: center;
         justify-content: flex-end;
+    }
+    .btn_set {
+        &.pos_left {
+            margin-right: auto;
+        }
+        &.pos_right {
+            margin-left: auto;
+        }
     }
 }
 

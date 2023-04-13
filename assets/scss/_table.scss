@@ -1,6 +1,13 @@
 .v_tbl {
     width: 100%;
     border-top: 1px solid #000;
+    tr.hidden_tr {
+        display: none;
+        &.on {
+            display: table-row;
+        }
+    }
+
     th, td {
         padding: 5px 10px;
         font-size: 12px;
@@ -13,6 +20,23 @@
     }
     td {
         border-bottom: 1px solid $c_line;
+    }
+    &_toggle {
+        display: flex;
+        margin: 0 auto;
+        width: 36px;
+        height: 18px;
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: $c_solidGrey;
+        border-radius: 0 0 5px 5px;
+        &.on {
+            i {
+                transform: rotate(180deg);
+            }
+        }
     }
 }
 

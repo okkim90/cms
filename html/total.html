@@ -549,59 +549,95 @@
                     <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
                 </ul>
                 <div class="tab_cont">
-                    <table class="v_tbl">
-                        <tbody>
-                            <colgroup>
-                                <col style="width: 160px;">
-                                <col>
-                                <col style="width: 160px;">
-                                <col>
-                                <col style="width: 160px;">
-                                <col>
-                            </colgroup>
-                            <tr>
-                                <th>기간 조회</th>
-                                <td colspan="5">
-                                    <div class="date_set">
-                                        <select name="" id="" class="f_select ty_small">
-                                            <option value="">접수일</option>
-                                            <option value="">기간 선택 2</option>
-                                            <option value="">기간 선택 3</option>
-                                            <option value="">기간 선택 4</option>
-                                        </select>
-                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                        <button type="button" onclick="set_today();" class="f_btn ty_small _blue">오늘</button>
-                                        <button type="button" onclick="set_7d()" class="f_btn ty_small _red">7일</button>
-                                        <button type="button" onclick="set_1m()" class="f_btn ty_small _green">1개월</button>
-                                        <button type="button" onclick="set_3m()" class="f_btn ty_small _yellow">3개월</button>
-                                        <button type="button" onclick="set_1y()" class="f_btn ty_small _purple">1년</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>업체명</th>
-                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                <th>신청자</th>
-                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                <th>접수자</th>
-                                <td><input type="text" class="f_input ty_small w_200"></td>
-                            </tr>
-                            <tr>
-                                <th>접수번호</th>
-                                <td>
-                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
-                                </td>
-                                <th>교정번호</th>
-                                <td>
-                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
-                                </td>
-                                <th>기기번호</th>
-                                <td><input type="text" class="f_input ty_small w_200"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    <div class="v_tbl_wrap">
+                        <table class="v_tbl">
+                            <tbody>
+                                <colgroup>
+                                    <col style="width: 160px;">
+                                    <col>
+                                    <col style="width: 160px;">
+                                    <col>
+                                    <col style="width: 160px;">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th>기간 조회</th>
+                                    <td colspan="5">
+                                        <div class="date_set">
+                                            <select name="" id="" class="f_select ty_small">
+                                                <option value="">접수일</option>
+                                                <option value="">기간 선택 2</option>
+                                                <option value="">기간 선택 3</option>
+                                                <option value="">기간 선택 4</option>
+                                            </select>
+                                            <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                            <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                            <button type="button" onclick="set_today();" class="f_btn ty_small _blue">오늘</button>
+                                            <button type="button" onclick="set_7d()" class="f_btn ty_small _red">7일</button>
+                                            <button type="button" onclick="set_1m()" class="f_btn ty_small _green">1개월</button>
+                                            <button type="button" onclick="set_3m()" class="f_btn ty_small _yellow">3개월</button>
+                                            <button type="button" onclick="set_1y()" class="f_btn ty_small _purple">1년</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>업체명</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>신청자</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>접수자</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                </tr>
+                                <tr>
+                                    <th>접수번호</th>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                    </td>
+                                    <th>교정번호</th>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                    </td>
+                                    <th>기기번호</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                </tr>
+                                <tr class="hidden_tr">
+                                    <th>계측기명</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>모델명</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>관리번호</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                </tr>
+                                <tr class="hidden_tr">
+                                    <th>제조사</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>주소</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <th>비고</th>
+                                    <td><input type="text" class="f_input ty_small w_200"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
+                        <script>
+                            function v_tbl_toggle(_target){
+                                let v_tbl_wrap = _target.closest('.v_tbl_wrap');
+                                let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
+                                if(_target.classList.contains('on')){
+                                    _target.classList.remove('on');      
+                                    hidden_tr.forEach((e)=>{
+                                        e.classList.remove('on')
+                                    });
+                                }else{
+                                    _target.classList.add('on');
+                                    hidden_tr.forEach((e)=>{
+                                        e.classList.add('on')
+                                    });
+                                }
+                            }
+                        </script>
+                    </div>
+                    
                     <div class="btn_set taC mt15">
                         <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색">
                         <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
@@ -611,7 +647,7 @@
                 
                 <!--// tab list + cont -->
             </section>
-            <div class="btn_set taR mt15">
+            <div class="btn_set bg_box mt15">
                 <button type="button" class="f_btn ty_small _solidGrey w_80">내용인쇄</button>
                 <button type="button" class="f_btn ty_small _solidGrey w_80">성적서</button>
                 <button type="button" class="f_btn ty_small _solidGrey w_80">바코드 인쇄</button>
@@ -1343,11 +1379,5 @@
         </div>  
     </footer>
     <!--//footer-->
-
-    <script>
-        $(function(){
-            $('.h_tbl').colResizable();
-        });
-    </script>
 </body>
 </html>

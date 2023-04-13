@@ -204,7 +204,7 @@ input[type="tel"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-    border-color: rgb(242, 94, 153);
+    border-color: $c_blue;
     background-color: #fff;
     outline: none;
 }
