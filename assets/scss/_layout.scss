@@ -3,18 +3,19 @@
     position: relative;
     z-index: 9999;
     &_top {
-        height: 50px;
+        height: 70px;
         background-color: #EAEFFA;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        
         padding: 0 30px;
         position: relative;
         z-index: 101;
     }
     .logo {
         max-width: none;
-        height: 28px;
+        height: 33px;
         padding: 0;
         a {
             display: block;
@@ -25,6 +26,10 @@
         }
     }
     .h_util {
+        position: absolute;
+        margin-top: -25px;
+        right: 30px;
+        top: 50%;
         display: flex;
         align-items: center;
         font-size: 14px;
@@ -151,7 +156,7 @@
 
         &_list {
             display: flex;
-            height: 40px;
+            height: 50px;
             .gnb_item {
                 position: relative;
 
@@ -210,9 +215,9 @@
             }
             .link_dep1 {
                 display: block;
-                line-height: 40px;
-                padding: 0 20px;
-                font-size: 14px;
+                line-height: 50px;
+                padding: 0 22px;
+                font-size: 15px;
                 color: #fff;
                 font-weight: 400;
             }
@@ -225,7 +230,7 @@
                 top: 100%;
                 margin-top: -2px;
                 box-sizing: border-box;
-                padding: 10px 15px;
+                padding: 10px 0;
                 border: 2px solid $c_key;
                 background-color: #fff;
                 border-radius: 0 0 10px 10px;
@@ -237,19 +242,21 @@
                     display: block;
                     font-size: 14px;
                     line-height: 30px;
+                    padding: 0 15px;
                     &:hover {
                         text-shadow: 0 0 1px rgba(#000, .4);
+                        background-color: rgba($c_key, .1);
                     }
                 }
             }
         }
         .btn_all_menu {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            margin-left: -10px;
             .bar_box {
                 width: 20px;
                 height: 16px;
@@ -307,7 +314,7 @@
         transition: all .3s ease-in-out;
         &.on {
             visibility: visible;
-            top: 90px;
+            top: 120px;
         }
 
         &_list {
@@ -385,11 +392,11 @@
 
      &_list {
          display: flex;
-         gap: 8px;
+         gap: 10px;
          flex-wrap: wrap;
          background-color: #f2f2f6;
          padding: 10px 30px;
-         padding-right: 60px;
+         padding-right: 70px;
          border-bottom: 1px solid #ddd;
      }
      
@@ -422,7 +429,7 @@
          background-color: rgba($c_key, .4);
          color: #fff;
          font-size: 12px;
-         line-height: 24px;
+         line-height: 26px;
          white-space: nowrap;
          padding: 0 10px;
          padding-right: 16px;
@@ -477,7 +484,25 @@
     
  }
 
- 
+.c_num {
+    display: inline-block;
+    padding-left: 13px;
+    position: relative;
+    &_ico {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -6px;
+    }
+    &_link {
+        display: block;
+        color: darken($c_blue, 15%) ;
+        font-weight: 500;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
 
 
 .date_set {
