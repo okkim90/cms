@@ -1109,7 +1109,7 @@ input::-webkit-search-results-decoration {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  padding: 10px 18px;
+  padding: 10px 0;
   border-radius: 10px;
   line-height: 30px;
   transition: all 0.2s ease-in-out;
@@ -1123,6 +1123,13 @@ input::-webkit-search-results-decoration {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 8px solid #fff;
+}
+.header .h_util .h_branch_item a {
+  display: block;
+  padding: 0 18px;
+}
+.header .h_util .h_branch_item:hover {
+  background-color: rgba(31, 32, 133, 0.1);
 }
 .header .h_util .h_branch::before {
   content: "";
