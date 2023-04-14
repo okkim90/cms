@@ -1673,24 +1673,19 @@ input::-webkit-search-results-decoration {
 /* templetes */
 .paging_wrap {
   display: flex;
-  margin-top: 60px;
+  margin-top: 24px;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-@media (max-width: 767px) {
-  .paging_wrap {
-    margin-top: 40px;
-  }
-}
 .paging_btn {
   display: block;
-  min-width: 30px;
-  height: 30px;
+  min-width: 24px;
+  height: 24px;
   padding: 0 4px;
   box-sizing: border-box;
-  line-height: 28px;
-  font-size: 16px;
+  line-height: 22px;
+  font-size: 14px;
   color: #999;
   margin: 0 2px;
   flex-shrink: 0;
@@ -1698,20 +1693,20 @@ input::-webkit-search-results-decoration {
   background-repeat: no-repeat;
   background-position: center center;
 }
-@media (max-width: 767px) {
-  .paging_btn {
-    min-width: 24px;
-    height: 24px;
-    font-size: 13px;
-    line-height: 22px;
-    margin: 0 1px;
-    padding: 0 3px;
-  }
+.paging_btn:hover {
+  color: #222;
+  font-weight: 500;
 }
 .paging_btn.current {
   border: 1px solid #1f2085;
   color: #1f2085;
   font-weight: bold;
+}
+.paging_btn.paging_nav {
+  opacity: 0.6;
+}
+.paging_btn.paging_nav:hover {
+  opacity: 1;
 }
 .paging_btn.ty_first {
   background-image: url(../images/common/paging_first.svg);
