@@ -2032,7 +2032,7 @@ input::-webkit-search-results-decoration {
   flex-wrap: wrap;
 }
 .type_select .list_dep1 li, .type_select .list_dep2 li {
-  width: 33.3333%;
+  width: 25%;
   flex-shrink: 0;
 }
 .type_select .list_dep1 li:hover, .type_select .list_dep2 li:hover {
