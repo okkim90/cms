@@ -85,25 +85,40 @@
 
             
         });
-        function set_today(){
-            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-            $(".inp_date.date_end").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        function set_today(target){
+            let date_set = $(target).parents('.date_set');
+            let date_start = date_set.find('.date_start');
+            let date_end = date_set.find('.date_end');
+            date_start.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            date_end.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
         }
-        function set_7d(){
-            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-            $(".inp_date.date_end").datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        function set_7d(target){
+            let date_set = $(target).parents('.date_set');
+            let date_start = date_set.find('.date_start');
+            let date_end = date_set.find('.date_end');
+            date_start.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            date_end.datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
         }
-        function set_1m(){
-            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-            $(".inp_date.date_end").datepicker('setDate', '-1M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        function set_1m(target){
+            let date_set = $(target).parents('.date_set');
+            let date_start = date_set.find('.date_start');
+            let date_end = date_set.find('.date_end');
+            date_start.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            date_end.datepicker('setDate', '-1M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
         }
-        function set_3m(){
-            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-            $(".inp_date.date_end").datepicker('setDate', '-3M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        function set_3m(target){
+            let date_set = $(target).parents('.date_set');
+            let date_start = date_set.find('.date_start');
+            let date_end = date_set.find('.date_end');
+            date_start.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            date_end.datepicker('setDate', '-3M'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
         }
-        function set_1y(){
-            $(".inp_date.date_start").datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-            $(".inp_date.date_end").datepicker('setDate', '-1Y'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        function set_1y(target){
+            let date_set = $(target).parents('.date_set');
+            let date_start = date_set.find('.date_start');
+            let date_end = date_set.find('.date_end');
+            date_start.datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+            date_end.datepicker('setDate', '-1Y'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
         }
     </script>
     <!--// 신규 js -->
@@ -139,126 +154,128 @@
             </div>
         </div>
         <!--gnb-->
-        <nav id="gnb" class="gnb">
-            <button type="button" id="btn_all_menu" class="btn_all_menu">
-                <span class="blind">전체메뉴 토글버튼</span>
-                <span class="bar_box">
-                    <span class="bar_item bar_top"></span>
-                    <span class="bar_item bar_mid"></span>
-                    <span class="bar_item bar_bot"></span>
-                </span>
-            </button>
-            <ul class="gnb_list">
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">전체 조회</a>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">입고</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">입고 조회</a></li>
-                        <li><a href="" class="link_dep2">입고 등록</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">교정</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">내 교정방</a></li>
-                        <li><a href="" class="link_dep2">교정 조회</a></li>
-                        <li><a href="" class="link_dep2">교정 승인</a></li>
-                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
-                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">시험</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">내 시험방</a></li>
-                        <li><a href="" class="link_dep2">시험 조회</a></li>
-                        <li><a href="" class="link_dep2">시험 승인</a></li>
-                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
-                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">사외</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">사외 교정</a></li>
-                        <li><a href="" class="link_dep2">사외 수리</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">출고</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">출고 조회</a></li>
-                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
-                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">영업</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">견적 관리</a></li>
-                        <li><a href="" class="link_dep2">출장 관리</a></li>
-                        <li><a href="" class="link_dep2">일정 관리</a></li>
-                        <li><a href="" class="link_dep2">출장 달력</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">매출</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">거래명세서</a></li>
-                        <li><a href="" class="link_dep2">세금계산서</a></li>
-                        <li><a href="" class="link_dep2">수납</a></li>
-                        <li><a href="" class="link_dep2">수금현황</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">고객</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">업체 관리</a></li>
-                        <li><a href="" class="link_dep2">문자 관리</a></li>
-                        <li><a href="" class="link_dep2">이메일 관리</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">통계</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">실적 분석</a></li>
-                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
-                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
-                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
-                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
-                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
-                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
-                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
-                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">기준정보</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
-                        <li><a href="" class="link_dep2">표준기 관리</a></li>
-                        <li><a href="" class="link_dep2">계측기 관리</a></li>
-                        <li><a href="" class="link_dep2">교정 관리</a></li>
-                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
-                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
-                        <li><a href="" class="link_dep2">교객 관리</a></li>
-                        <li><a href="" class="link_dep2">정산 관리</a></li>
-                        <li><a href="" class="link_dep2">차량 관리</a></li>
-                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
-                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
-                    </ul>
-                </li>
-                <li class="gnb_item">
-                    <a href="" class="link_dep1">관리자</a>
-                    <ul class="gnb_dep2">
-                        <li><a href="" class="link_dep2">운영 관리</a></li>
-                        <li><a href="" class="link_dep2">직원 관리</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="gnb_wrap">
+            <nav id="gnb" class="gnb">
+                <button type="button" id="btn_all_menu" class="btn_all_menu">
+                    <span class="blind">전체메뉴 토글버튼</span>
+                    <span class="bar_box">
+                        <span class="bar_item bar_top"></span>
+                        <span class="bar_item bar_mid"></span>
+                        <span class="bar_item bar_bot"></span>
+                    </span>
+                </button>
+                <ul class="gnb_list">
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">전체 조회</a>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">입고</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">입고 조회</a></li>
+                            <li><a href="" class="link_dep2">입고 등록</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">교정</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">내 교정방</a></li>
+                            <li><a href="" class="link_dep2">교정 조회</a></li>
+                            <li><a href="" class="link_dep2">교정 승인</a></li>
+                            <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                            <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">시험</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">내 시험방</a></li>
+                            <li><a href="" class="link_dep2">시험 조회</a></li>
+                            <li><a href="" class="link_dep2">시험 승인</a></li>
+                            <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                            <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">사외</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">사외 교정</a></li>
+                            <li><a href="" class="link_dep2">사외 수리</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">출고</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">출고 조회</a></li>
+                            <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                            <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">영업</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">견적 관리</a></li>
+                            <li><a href="" class="link_dep2">출장 관리</a></li>
+                            <li><a href="" class="link_dep2">일정 관리</a></li>
+                            <li><a href="" class="link_dep2">출장 달력</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">매출</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">거래명세서</a></li>
+                            <li><a href="" class="link_dep2">세금계산서</a></li>
+                            <li><a href="" class="link_dep2">수납</a></li>
+                            <li><a href="" class="link_dep2">수금현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">고객</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">업체 관리</a></li>
+                            <li><a href="" class="link_dep2">문자 관리</a></li>
+                            <li><a href="" class="link_dep2">이메일 관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">통계</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">실적 분석</a></li>
+                            <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                            <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                            <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                            <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                            <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                            <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                            <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                            <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">기준정보</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                            <li><a href="" class="link_dep2">표준기 관리</a></li>
+                            <li><a href="" class="link_dep2">계측기 관리</a></li>
+                            <li><a href="" class="link_dep2">교정 관리</a></li>
+                            <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                            <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                            <li><a href="" class="link_dep2">교객 관리</a></li>
+                            <li><a href="" class="link_dep2">정산 관리</a></li>
+                            <li><a href="" class="link_dep2">차량 관리</a></li>
+                            <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                            <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb_item">
+                        <a href="" class="link_dep1">관리자</a>
+                        <ul class="gnb_dep2">
+                            <li><a href="" class="link_dep2">운영 관리</a></li>
+                            <li><a href="" class="link_dep2">직원 관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <!--//gnb-->
         <!--전체메뉴-->
         <div id="all_menu" class="all_menu">
@@ -549,96 +566,271 @@
                     <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
                 </ul>
                 <div class="tab_cont">
-                    <div class="v_tbl_wrap">
-                        <table class="v_tbl">
-                            <tbody>
-                                <colgroup>
-                                    <col style="width: 160px;">
-                                    <col>
-                                    <col style="width: 160px;">
-                                    <col>
-                                    <col style="width: 160px;">
-                                    <col>
-                                </colgroup>
-                                <tr>
-                                    <th>기간 조회</th>
-                                    <td colspan="5">
-                                        <div class="date_set">
-                                            <select name="" id="" class="f_select ty_small">
-                                                <option value="">접수일</option>
-                                                <option value="">기간 선택 2</option>
-                                                <option value="">기간 선택 3</option>
-                                                <option value="">기간 선택 4</option>
-                                            </select>
-                                            <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                            <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                            <button type="button" onclick="set_today();" class="f_btn ty_small _blue">오늘</button>
-                                            <button type="button" onclick="set_7d()" class="f_btn ty_small _red">7일</button>
-                                            <button type="button" onclick="set_1m()" class="f_btn ty_small _green">1개월</button>
-                                            <button type="button" onclick="set_3m()" class="f_btn ty_small _yellow">3개월</button>
-                                            <button type="button" onclick="set_1y()" class="f_btn ty_small _purple">1년</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>업체명</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>신청자</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>접수자</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                </tr>
-                                <tr>
-                                    <th>접수번호</th>
-                                    <td>
-                                        <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
-                                    </td>
-                                    <th>교정번호</th>
-                                    <td>
-                                        <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
-                                    </td>
-                                    <th>기기번호</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                </tr>
-                                <tr class="hidden_tr">
-                                    <th>계측기명</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>모델명</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>관리번호</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                </tr>
-                                <tr class="hidden_tr">
-                                    <th>제조사</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>주소</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                    <th>비고</th>
-                                    <td><input type="text" class="f_input ty_small w_200"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
-                        <script>
-                            function v_tbl_toggle(_target){
-                                let v_tbl_wrap = _target.closest('.v_tbl_wrap');
-                                let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
-                                if(_target.classList.contains('on')){
-                                    _target.classList.remove('on');      
-                                    hidden_tr.forEach((e)=>{
-                                        e.classList.remove('on')
-                                    });
-                                }else{
-                                    _target.classList.add('on');
-                                    hidden_tr.forEach((e)=>{
-                                        e.classList.add('on')
-                                    });
+                    <div class="tab_cont_item">
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <tbody>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                    </colgroup>
+                                    <tr>
+                                        <th>기간 조회</th>
+                                        <td colspan="5">
+                                            <div class="date_set">
+                                                <select name="" id="" class="f_select ty_small">
+                                                    <option value="">접수일</option>
+                                                    <option value="">기간 선택 2</option>
+                                                    <option value="">기간 선택 3</option>
+                                                    <option value="">기간 선택 4</option>
+                                                </select>
+                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>업체명</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>신청자</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>접수자</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>접수번호</th>
+                                        <td>
+                                            <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                        </td>
+                                        <th>교정번호</th>
+                                        <td>
+                                            <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                        </td>
+                                        <th>기기번호</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    </tr>
+                                    <tr class="hidden_tr">
+                                        <th>계측기명</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>모델명</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>관리번호</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    </tr>
+                                    <tr class="hidden_tr">
+                                        <th>제조사</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>주소</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>비고</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
+                            <script>
+                                function v_tbl_toggle(_target){
+                                    let v_tbl_wrap = _target.closest('.v_tbl_wrap');
+                                    let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
+                                    if(_target.classList.contains('on')){
+                                        _target.classList.remove('on');      
+                                        hidden_tr.forEach((e)=>{
+                                            e.classList.remove('on')
+                                        });
+                                    }else{
+                                        _target.classList.add('on');
+                                        hidden_tr.forEach((e)=>{
+                                            e.classList.add('on')
+                                        });
+                                    }
                                 }
-                            }
-                        </script>
+                            </script>
+                        </div>
                     </div>
-                    
-                    <div class="btn_set taC mt15">
+
+                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+
+                    <div class="tab_cont_item">
+                        <div class="type_select">
+                            <div class="type_select_sec dep1">
+                                <ul class="list_dep1"> 
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>입고구분</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type" checked><span>교정항목</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정결과</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>출고구분</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>현재상태</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정담당자</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>의뢰구분</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>업체구분</span></label></li>
+                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정처리자</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="type_select_sec dep2">
+                                <ul class="list_dep2 ">
+                                    <li><label class="btn_type"><input type="checkbox" checked><span>본사</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox" checked><span>현장교정</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox" checked><span>반입교정</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox" checked><span>화물차량</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>본사</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>현장교정</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>반입교정</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>화물차량</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
+                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="type_select_sec output">
+                                <ul class="output_list">
+                                    <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                    <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+
+                    <div class="tab_cont_item">
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <tbody>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                    </colgroup>
+                                    <tr>
+                                        <th>의뢰 기간</th>
+                                        <td colspan="5">
+                                            <div class="date_set">
+                                                <select name="" id="" class="f_select ty_small">
+                                                    <option value="">사외</option>
+                                                    <option value="">기간 선택 2</option>
+                                                    <option value="">기간 선택 3</option>
+                                                    <option value="">기간 선택 4</option>
+                                                </select>
+                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>회수 기간</th>
+                                        <td colspan="5">
+                                            <div class="date_set">
+                                                <select name="" id="" class="f_select ty_small">
+                                                    <option value="">사외</option>
+                                                    <option value="">기간 선택 2</option>
+                                                    <option value="">기간 선택 3</option>
+                                                    <option value="">기간 선택 4</option>
+                                                </select>
+                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>교정의뢰기관</th>
+                                        <td>
+                                            <select name="" id="" class="f_select ty_small w_200">
+                                                <option value="">선택</option>
+                                                <option value="">선택2</option>
+                                                <option value="">선택3</option>
+                                                <option value="">선택4</option>
+                                                <option value="">선택5</option>
+                                            </select>
+                                        </td>
+                                        <th>수리의뢰기관</th>
+                                        <td>
+                                            <select name="" id="" class="f_select ty_small w_200">
+                                                <option value="">선택</option>
+                                                <option value="">선택2</option>
+                                                <option value="">선택3</option>
+                                                <option value="">선택4</option>
+                                                <option value="">선택5</option>
+                                            </select>
+                                        </td>
+                                        <th>사외건만 조회</th>
+                                        <td>
+                                            <label><input type="checkbox" class="f_chk ty_big"> 사외건만 조회</label>  
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+
+                    <div class="tab_cont_item">
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <tbody>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                        <col style="width: 160px;">
+                                        <col>
+                                    </colgroup>
+                                    <tr class="">
+                                        <th>시험번호</th>
+                                        <td><input type="text" class="f_input ty_small w_100"> ~ <input type="text" class="f_input ty_small w_100"></td>
+                                        <th>요구사항</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <th>비고</th>
+                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="btn_set taC mt20">
                         <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색">
                         <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
                     </div>

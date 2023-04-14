@@ -44,3 +44,107 @@
     margin-top: -1px;
     border-radius: 0 10px 10px 10px;
 }
+
+.type_select {
+    display: flex;
+    border: 1px solid #ccc;
+    height: 140px;
+    &_sec {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+        &.dep1 {
+            background-color: rgba($c_key, .07);
+        }
+        & + & {
+            border-left: 1px solid #ccc;
+        }
+        
+    }
+    .btn_type {
+        cursor: pointer;
+        display: block;
+        padding: 4px;
+        font-size: 13px;
+        line-height: 22px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+
+        position: relative;
+        input[type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+            &:checked ~ span {
+                font-weight: 500;
+                color: $c_blue;
+                &::after {
+                    
+                    margin-left: 4px;
+                    content: '\f00c';
+                    font-family: "Font Awesome 6 Free";
+                    
+                    transform: translateY(1px);
+                    color: $c_blue;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+            &:checked ~ span {
+                font-weight: bold;
+                &::after {
+                    
+                    margin-left: 5px;
+                    content: '\f0d9';
+                    font-family: "Font Awesome 6 Free";
+                    
+                    transform: translateY(1px);
+                    color: $c_blue;
+                    font-weight: bold;
+                }
+            }
+        }
+        span {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .list_dep1, .list_dep2 {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 33.3333%;
+            flex-shrink: 0;
+            &:hover {
+                background-color: rgba($c_key, .1);
+            }
+        }
+    }
+    .output_list {
+        flex-wrap: wrap;
+        display: flex;
+        gap: 10px 15px;
+        .output_item {
+            position: relative;
+            background-color: rgba($c_key, .1);
+            border-radius: 4px;
+            padding: 0 10px;
+            padding-right: 16px;
+            white-space: nowrap;
+            font-size: 13px;
+            line-height: 24px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            .btn_delete {
+                position: absolute;
+                right: -4px;
+                top: -4px;
+            }
+        }
+    }
+
+}

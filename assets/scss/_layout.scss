@@ -158,6 +158,11 @@
         position: relative;
         z-index: 100;
         padding-top: 0 !important;
+
+        &_wrap {
+            height: 50px;
+            position: relative;
+        }
         &.gnb_off {
            .gnb_list .gnb_dep2 {
                 display: none;
