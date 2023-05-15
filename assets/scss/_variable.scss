@@ -204,6 +204,9 @@ $inner: 1280px;
 
 @for $i from 1 through 20 {
     $z : 5*$i;
+    .ma#{$i} {
+        margin: #{$i}px;
+    }
     .mt#{$i} {
         margin-top: #{$i}px;
     }
@@ -217,6 +220,9 @@ $inner: 1280px;
         margin-bottom: #{$i}px
     }
 
+    .pa#{$i} {
+        padding: #{$i}px;
+    }
     .pt#{$i} {
         padding-top: #{$i}px;
     }
@@ -289,6 +295,9 @@ $inner: 1280px;
 
 .d_flex {
     display: flex;
+    &.ty_inline {
+        display: inline-flex;
+    }
     @for $i from 1 through 30 {
         &._gap#{$i} {
             gap : #{$i}px

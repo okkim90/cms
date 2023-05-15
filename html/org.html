@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="KIC">
+    <meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+
+    <!-- 기존 cms js -->
+    <script type="text/javascript" src="../common/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.print.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui-custom.min.js?123123132" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.form.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/common.js" charset="utf-8"></script>
+    <!--
+    <script type="text/javascript" src="../skin/basic/js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.treeview.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.cookie.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../skin/basic/js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/zebra_datepicker.js"></script>
+    <script type="text/javascript" src="../skin/basic/js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/fullcalendar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/colResizable-1-6.js" charset="utf-8"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    -->
+    <!--// 기존 cms js -->
+    
+    <!-- 기존 cms css -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css"> -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+    <!--// 기존 cms css -->
+
+
+    
+    <!-- 신규 css -->
+    <script src="https://kit.fontawesome.com/a9123cc962.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <!--// 신규 css -->
+
+    <!-- 펴블적용js -->
+    <script type="text/javascript" src="../common/js/main.js" defer></script>
+    <!-- // 펴블적용js -->
+    
+</head>
+<body>
+    <div id="skip-nav">
+        <a href="#container"></a>
+    </div>
+    <!--header-->
+    <header class="header">
+        <div class="header_top">
+            <h1 class="logo">
+                <a href=""><img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템"></a>
+            </h1>
+            <div class="h_util">
+                <div class="h_util_sec h_user">
+                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님 
+                </div>
+                <div class="h_util_sec h_branch">
+                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
+                    <ul class="h_branch_list">
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a></li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a></li>
+                    </ul>
+                </div>
+                <div class="h_util_sec h_btns">
+                    <a href="" class="h_btn"><i class="fa-solid fa-comment-sms"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-print"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                    <a href="" class="h_btn ty_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--gnb-->
+        <nav id="gnb" class="gnb">
+            <button type="button" id="btn_all_menu" class="btn_all_menu">
+                <span class="blind">전체메뉴 토글버튼</span>
+                <span class="bar_box">
+                    <span class="bar_item bar_top"></span>
+                    <span class="bar_item bar_mid"></span>
+                    <span class="bar_item bar_bot"></span>
+                </span>
+            </button>
+            <ul class="gnb_list">
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">전체 조회</a>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--//gnb-->
+        <!--전체메뉴-->
+        <div id="all_menu" class="all_menu">
+            <ul class="all_menu_list">
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">마이페이지</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내정보</a></li>
+                        <li><a href="" class="link_dep2">자료실</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//전체메뉴-->
+        <script>
+            let all_menu = document.querySelector('#all_menu');
+            let btn_all_menu = document.querySelector('#btn_all_menu');
+            let gnb = document.querySelector('#gnb');
+
+
+            
+
+            btn_all_menu.addEventListener('click', function(){
+                if(this.classList.contains('on')){
+                    btn_all_menu.classList.remove('on');
+                    all_menu.classList.remove('on');
+                    gnb.classList.remove('gnb_off');
+                }else{
+                    btn_all_menu.classList.add('on');
+                    all_menu.classList.add('on');
+                    gnb.classList.add('gnb_off');
+                }
+            }); 
+        </script>
+    </header>
+    <!--//header-->
+    <!--container-->
+    <main class="container">
+        <div id="tabs" class="jqgtabs tab_nav ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="tab_nav_list ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="tab_nav_item ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-main" aria-labelledby="ui-id-1" aria-selected="false">
+                    <a href="#tabs-main" class="tabs-anchor ui-tabs-anchor" id="ui-id-1" role="presentation" tabindex="-1">메인</a>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_294" role="tab" tabindex="-1" aria-labelledby="ui-id-2" aria-selected="false">
+                    <a href="#tabs_294" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>전체 조회</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_201" role="tab" tabindex="-1" aria-labelledby="ui-id-3" aria-selected="false">
+                    <a href="#tabs_201" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>입고</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_214" role="tab" tabindex="-1" aria-labelledby="ui-id-4" aria-selected="false">
+                    <a href="#tabs_214" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>교정 코드 관리</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top ui-tabs-active ui-state-active" aria-controls="tabs_218" role="tab" tabindex="0" aria-labelledby="ui-id-5" aria-selected="true">
+                    <a href="#tabs_218" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>고객 코드 관리</span></a>
+                    <button class="del_item"></button>
+                </li>
+            </ul>
+            <!-- tabs 토글버튼 -->
+            <button type="button" class="tab_nav_toggle">
+                <i class="fa-solid fa-square-caret-up"></i>
+            </button>
+            <script>
+                let tab_nav = document.querySelector('#tabs');
+                let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
+        
+                tab_nav_toggle.addEventListener('click', function(){
+                    if(tab_nav.classList.contains('off')){
+                        tab_nav.classList.remove('off');
+                    }else{
+                        tab_nav.classList.add('off');
+                    }
+                }); 
+            </script>
+            <!--// tabs 토글버튼 -->
+            <div id="tabs-main" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true">
+                <div class="contents">
+                    <div class="top_tit">
+                        <h1 class="tit">회사관리</h1>
+                        <button type="button" class="btn_refresh">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <span class="blind">새로고침</span>
+                        </button>
+                    </div>  
+                    <div class="cont_inner">
+                        <div class="tab_wrap ty_nolink">
+                            <ul class="tab_list ">
+                                <!--[D] 활성화 'on' 클래스-->
+                                <li class="tab_list_item on">
+                                    <a href="javascript:void(0);" class="tab_list_btn" onclick="tab_btn(this)">조직도 관리</a>
+                                </li>
+                                <li class="tab_list_item">
+                                    <a href="javascript:void(0);" class="tab_list_btn" onclick="tab_btn(this)">회사 정보</a>
+                                </li>
+                            </ul>
+                            <div class="tab_cont">
+                                <div class="tab_cont_item on">
+                                    <div class="insa_container">
+                                        <div class="insa_top mb20">
+                                            <div class="txt_box mt20">
+                                                <h4 class="tit4 mb10">조직도 생성 방법</h4> 
+                                                <ol>
+                                                    <li>조직은 최대 레벨 5까지 생성 가능합니다.</li>
+                                                    <li>LV1은 입점 시 자동 생성되며 수정, 삭제가 불가합니다.</li>
+                                                    <li>LV2~LV5는 원하는 조직으로 설정 가능합니다. <br> ※ 지사가 있는 경우 LV2에 지사 생성 후 하위 조직을 생성하면 됩니다.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                        <ol id="orgMapHeader" class="org_map_header">
+                                            <li class="bg_red">레벨1</li>
+                                            <li class="bg_orange">레벨2</li>
+                                            <li class="bg_yellow">레벨3</li>
+                                            <li class="bg_green">레벨4</li>
+                                            <li class="bg_blue">레벨5</li>
+                                        </ol>
+                    
+                                        <ol id="orgMap" class="org_map">
+                                            <li class="1depth">
+                                                <div class="wrap1" style="z-index:0;" data-real-depth="1" data-parent-no="13989" depth="0" no="13990" loc="2"
+                                                    childs="61" no_depth="0" ori_name="코리아인스트루먼트(주)"><span class="name" title="코리아인스트루먼트(주)">코리아인스트루먼트(주)</span>
+                                                    <div class="menu">
+                                                        <a href="javascript:void(0)" class="people">173</a>
+                                                        <a href="javascript:void(0)" class="menu_all">
+                                                            <span class="sub">
+                                                                <span class="ggori"></span>
+                                                                <span class="ss v1">하위조직 생성</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="move_group">
+                                                        <a href="javascript:void(0)" class="left"></a>
+                                                        <a href="javascript:void(0)" class="right"></a>
+                                                        <a href="javascript:void(0)" class="top"></a>
+                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                    </div>
+                                                    <div class="name_modify">
+                                                        <input type="text"><a href="javascript:void(0)" class="btn_enter"></a>
+                                                    </div>
+                                                </div>
+                                                <ol>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="13990" depth="1" no="14980" loc="3" childs="32" no_depth="0" ori_name="서울본사">
+                                                            <span class="name" title="서울본사">서울본사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">100</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                        <ol>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ol>
+                                                                            <li>
+                                                                                <div class="wrap1" style="z-index:0;" data-real-depth="5" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                                    <div class="menu">
+                                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                                            <span class="sub" style="display:none;">
+                                                                                                <span class="ggori"></span>
+                                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                                
+                                                                                                <span class="ss v4">순서변경</span>
+                                                                                                <span class="ss v3">삭제</span>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div class="move_group">
+                                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                                    </div>
+                                                                                    <div class="name_modify" style="display:none;">
+                                                                                        <input type="text">
+                                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ol>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="4" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                            <span class="name" title="경영관리팀">대전지사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                        <ol>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="3" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="경영관리팀">경영관리팀</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                            <span class="name" title="부산지사">부산지사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                        <ol>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="부산지사">부산지사</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="부산지사">부산지사</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="부산지사">부산지사</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>
+                                                                <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                    <span class="name" title="부산지사">부산지사</span>
+                                                                    <div class="menu">
+                                                                        <a href="javascript:void(0)" class="people">10</a>
+                                                                        <a href="javascript:void(0)" class="menu_all">
+                                                                            <span class="sub" style="display:none;">
+                                                                                <span class="ggori"></span>
+                                                                                <span class="ss v1">하위조직 생성</span>
+                                                                                
+                                                                                <span class="ss v4">순서변경</span>
+                                                                                <span class="ss v3">삭제</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="move_group">
+                                                                        <a href="javascript:void(0)" class="left"></a>
+                                                                        <a href="javascript:void(0)" class="right"></a>
+                                                                        <a href="javascript:void(0)" class="top"></a>
+                                                                        <a href="javascript:void(0)" class="bottom"></a>
+                                                                    </div>
+                                                                    <div class="name_modify" style="display:none;">
+                                                                        <input type="text">
+                                                                        <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                    </div>
+                                                                </div>
+                                                                <ol>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="부산지사">부산지사</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="부산지사">부산지사</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                                            <span class="name" title="부산지사">부산지사</span>
+                                                                            <div class="menu">
+                                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                                    <span class="sub" style="display:none;">
+                                                                                        <span class="ggori"></span>
+                                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                                        
+                                                                                        <span class="ss v4">순서변경</span>
+                                                                                        <span class="ss v3">삭제</span>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="move_group">
+                                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                                            </div>
+                                                                            <div class="name_modify" style="display:none;">
+                                                                                <input type="text">
+                                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                            <span class="name" title="부산지사">부산지사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                            <span class="name" title="부산지사">부산지사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="wrap1" style="z-index:0;" data-real-depth="2" data-parent-no="14980" depth="2" no="14981" loc="4" childs="7" no_depth="0" ori_name="경영관리팀">
+                                                            <span class="name" title="부산지사">부산지사</span>
+                                                            <div class="menu">
+                                                                <a href="javascript:void(0)" class="people">10</a>
+                                                                <a href="javascript:void(0)" class="menu_all">
+                                                                    <span class="sub" style="display:none;">
+                                                                        <span class="ggori"></span>
+                                                                        <span class="ss v1">하위조직 생성</span>
+                                                                        
+                                                                        <span class="ss v4">순서변경</span>
+                                                                        <span class="ss v3">삭제</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="move_group">
+                                                                <a href="javascript:void(0)" class="left"></a>
+                                                                <a href="javascript:void(0)" class="right"></a>
+                                                                <a href="javascript:void(0)" class="top"></a>
+                                                                <a href="javascript:void(0)" class="bottom"></a>
+                                                            </div>
+                                                            <div class="name_modify" style="display:none;">
+                                                                <input type="text">
+                                                                <a href="javascript:void(0)" class="btn_enter"></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="tab_cont_item">
+                                    <div class="pa20">
+                                        <div class="sub_tit2">
+                                            <h3 class="tit4">회사 정보</h3>
+                                            <p class="tip ml_auto"><i class="ico_required"></i> 표시는 필수 기재 항목입니다.</p>
+                                        </div>
+                                        <div class="v_tbl_wrap">
+                                            <table class="v_tbl">
+                                                <colgroup>
+                                                    <col style="width: 200px;">
+                                                    <col>
+                                                </colgroup>
+                                                <tr>
+                                                    <th>상호명 <i class="ico_required"></i> </th>
+                                                    <td>
+                                                        <input type="text" value="코리아인스트루먼트(주)"  class="f_input ty_small w_500"> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>대표자 <i class="ico_required"></i> </th>
+                                                    <td>
+                                                        <input type="text" value="최병란,정재호" class="f_input ty_small w_500"> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>사업자등록번호</th>
+                                                    <td>
+                                                        <input type="text" value="1231212345" class="f_input ty_small w_500"> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>대표전화번호 </th>
+                                                    <td>
+                                                        <input type="tel" value="1600-1234" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>팩스번호 </th>
+                                                    <td>
+                                                        <input type="tel" value="02-1600-1234" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>대표 E-mail </th>
+                                                    <td>
+                                                        <input type="email" value="asdf1234@gmail.com" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>대표 E-mail 이름</th>
+                                                    <td>
+                                                        <input type="text" value="코리아인스투르먼트(주)" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>개인정보보호책임자</th>
+                                                    <td>
+                                                        <input type="text" value="안태민" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>개인정보보호책임자 이메일</th>
+                                                    <td>
+                                                        <input type="email" value="asdf1234@gmail.com" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>개인정보보호책임자 연락처</th>
+                                                    <td>
+                                                        <input type="tel" value="02-1234-1234" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>업태 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="text" value="서비스" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>종목 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="text" value="계측기설비교정" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>세금계산서 담당자명 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="text" value="코리아인스투르먼트" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>세금계산서 담당자 E-mail <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="email" value="asdf1234@gmail.com" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>세금계산서 담당자 연락처 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="tel" value="02-1234-1234" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>세금계산서 연동 아이디 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="text" value="asdf1234" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>세금계산서 연동 비밀번호 <i class="ico_required"></i></th>
+                                                    <td>
+                                                        <input type="text" value="kic1234123" class="f_input ty_small w_500">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>사업장 주소 (도로명)</th>
+                                                    <td>
+                                                        <div class="d_flex w_500 fw_w _gap5">
+                                                            <input type="text" value="123423" class="f_input ty_small w_70" readonly>
+                                                            <button class="f_btn ty_small _solidGrey">우편번호 찾기</button>
+                                                            <input type="text" value="서울구로구 남부순환로 1234" class="f_input ty_small w100" readonly>
+                                                            <input type="text" value="kic빌딩 7층" class="f_input ty_small w100">
+                                                        </div>
+                                                        
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </main>
+    <!--//container-->
+    <!--footer-->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="inner">
+                <ul class="footer_top_nav ">
+                    <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bot">
+            <div class="inner">
+                <div class="footer_logo">
+                    <a href=""><img src="../assets/images/common/logo_footer.svg" alt=""></a>
+                </div>
+                <div class="footer_cont">
+                    <div class="footer_branch">
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[서울본사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>서울 구로구 남부순환로 1303 KIC빌딩</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:1600-4245">1600-4245</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>02-863-1905</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:k8631901@kic21.co.kr">k8631901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[부산지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>부산 사상구 광장로 56번길 45</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:051-322-0880">051-322-0880</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>051-322-4066</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:calworld@kic21.co.kr">calworld@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[대전지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>대전 유성구 테크노11로 32</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:042-931-1901">042-931-1901</a>
+                                </li>
+                                <li>
+                                    <strong>팩스</strong>
+                                    <span>042-931-1902</span>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">grand1901@kic21.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_branch_sec">
+                            <h2 class="footer_branch_tit">[지안지사]</h2>
+                            <ul class="footer_branch_list">
+                                <li>
+                                    <strong>주소</strong>
+                                    <span>경기 가평군 설악면 유명산길 37</span>
+                                </li>
+                                <li>
+                                    <strong>전화번호</strong>
+                                    <a href="tel:031-585-8511">031-585-8511</a>
+                                </li>
+                                <li>
+                                    <strong>이메일</strong>
+                                    <a href="mailto:grand1901@kic21.co.kr">gongrong@empal.com</a>
+                                </li>
+                                <li>
+                                    <strong>홈페이지</strong>
+                                    <a href="www.ji-an.co.kr" target="_blank">www.ji-an.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <span>코리아인스트루먼트(주)</span>
+                        <span>사업자등록번호 : 101-81-45861</span>
+                        <span>대표이사 : 정재호</span>
+                    </div>
+                    <p class="copyright">
+                        Copyright@KIC, Korea Instrument All Rights Reserved.
+                    </p>
+                    <div class="footer_contact">
+                        <span class="tit"><i></i> CONTACT US</span>
+                        <span class="num">1600 - 4245</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </footer>
+    <!--//footer-->
+
+    <!--[D] 조직도-->
+    <script>
+         /* 조직도 헤더 노출 함수 */
+         var MAX_ORG_DEPTH = 5;
+
+        var orgmap = {
+            orgMapHeaderShow : function() {
+                $('#orgMapHeader').children('li').hide();
+                
+                var maxDepth = 1;
+                $('#orgMap').find('div.wrap1').each(function(k, v){
+                    var depth = $(v).data('realDepth');
+                    if(depth >= maxDepth){
+                        
+                        maxDepth = depth;
+                        
+                    }
+                })
+                
+                $('#orgMapHeader').children('li:lt(' + maxDepth + ')').show();
+            }
+        }
+
+        $(function(){
+            /* 조직명 수정 */
+            $(document).on('mouseover', '#orgMap .wrap1[ext_key] .name', function(e){
+                if($('#officeapi').length){
+                    $(this).css('background', '#e8ecef');
+                }
+            });
+            $(document).on('click', '#orgMap .wrap1 .name', function() {
+                if($(this).closest('.wrap1[ext_key]').length && $('#officeapi').length){
+                    return;
+                }
+                $(this).parent('.wrap1').find('.name_modify').fadeIn(200);
+                $(this).parent('.wrap1').find('.name_modify').children('input[type=text]').attr({'value' : $(this).text() });
+                $(this).parent('.wrap1').find('.name_modify').children('input[type=text]').select();
+            });
+            $(document).on('keydown', '#orgMap .wrap1 .name_modify>input[type=text]', function(e) {
+                $(this).closest('.wrap1').addClass('modified_name');
+                if(e.keyCode==13) {
+                    $(this).next('a').click();
+                }
+            });
+            $(document).on('blur', '#orgMap .wrap1 .name_modify>input[type=text]', function(e) {
+                $(this).next('a').click();
+            });
+            $(document).on('click', '#orgMap .wrap1 .name_modify>a.btn_enter', function() {
+                var nowInputBoxText = $(this).prev('input[type=text]').val();
+                console.log(nowInputBoxText);
+                $(this).closest('.wrap1').children('.name').text(nowInputBoxText);
+                $(this).parent('.name_modify').hide();
+                if($(this).closest('.wrap1').hasClass('modified_name')){
+                    //orgmanage.setNodeName(this);
+                    $(this).closest('.wrap1').removeClass('modified_name');
+                } 
+            });
+
+            /* ... 메뉴 열기/닫기 */
+            $(document).on('focus', '#orgMap .wrap1 .menu_all', function(e) {
+                $(this).children('.sub').show();
+                $(this).closest('.wrap1').css({'z-index' : '1'}).focus();
+            });
+
+            $(document).on('blur', '#orgMap .wrap1 .menu_all', function(e) {
+                $('#orgMap .wrap1 .menu_all .sub').hide();
+                $(this).closest('.wrap1').css({'z-index' : '0'});
+            });
+
+            /* 생성 */
+            $(document).on('mousedown', '#orgMap .ss.v1', function() {
+                
+            });
+
+            /* 삭제 */
+            $(document).on('mousedown', '.ss.v3', function(e) {
+                
+            });
+
+            /* 이동 버튼 디스플레이 */
+            $(document).on('click', '.move_group>a', function(e) {
+                $(this).closest('.wrap1').find('.ss.v4').click();
+            });
+
+            /* 이동 버튼 */
+            $(document).on('click', '.ss.v4', function(e) {
+                $(this).parent('.sub').hide();
+
+                $(this).closest('.wrap1').css({'z-index' : '0'});
+                $(this).closest('.wrap1').children('.move_group').find('a').show();
+                
+                
+                $(this).closest('.wrap1').css({'z-index' : '1'}).focus();
+                $(this).closest('.menu').next('.move_group').show();
+                
+                var div_parent = $(this).closest('div.wrap1');
+                var ol_parent = $(this).closest('ol');
+                
+                var top_tf = true;
+                var bottom_tf = true;
+                var right_tf = true;
+                var left_tf = true;
+
+                // 오른쪽 이동 버튼 제한
+                var max_child_depth = $(this).closest('.wrap1').data('realDepth');
+                $(this).closest('li').find('ol .wrap1').each(function(k, v){
+                    var depth = $(v).data('realDepth');
+                    if(max_child_depth <= depth){
+                        max_child_depth = depth;
+                    }
+                });
+
+                if(max_child_depth >= MAX_ORG_DEPTH){
+                    $(this).closest('.menu').next('.move_group').children('.right').hide();
+                    right_tf = false;
+                }
+                // 왼쪽 이동 버튼 제한
+                if (!ol_parent.prev('div').hasClass('noDepth')) {
+                    $(this).closest('.menu').next('.move_group').children('.left').hide();
+                    left_tf = false;
+                }
+
+                var no = $(this).closest('.wrap1').attr('no');
+                var parent_no = $(this).closest('.wrap1').data('parentNo');
+                var parent = $(this).parents('li:has(div.wrap1[no="' + parent_no + '"]):first');
+                
+                // 위로 이동 버튼 제한
+                if(parent.children('ol').children('li:has(div.wrap1[no="' + no + '"])').prev('li').length === 0){
+                    $(this).closest('.menu').next('.move_group').children('.top').hide();
+                    top_tf = false;
+                }
+                // 아래로 이동 버튼 제한
+                if(parent.children('ol').children('li:has(div.wrap1[no="' + no + '"])').next('li').length === 0){
+                    $(this).closest('.menu').next('.move_group').children('.bottom').hide();
+                    bottom_tf = false;
+                }
+                
+                if(top_tf === false && bottom_tf === false && right_tf === false && left_tf === false){
+                    alert('이동할 수 없습니다.');
+                }
+                
+                    return false;
+                });
+
+            /* Top Button */
+            $(document).on('click', '.move_group>.top', function() {
+                
+            });
+
+            /* Bottom Button */
+            $(document).on('click', '.move_group>.bottom', function() {
+                
+            });
+
+            /* Left Button */
+            $(document).on('click', '.move_group>.left', function() {
+                
+            });
+
+            /* Right Button */
+            $(document).on('click', '.move_group>.right', function() {
+            
+            });
+
+            // 바탕화면 클릭시 이동 버튼 제거
+            $(document).on('click', '.insa_container', function(e){
+                $('.wrap1>.move_group').find('a').show();
+                $('.wrap1>.move_group').hide();
+            });
+        });
+        orgmap.orgMapHeaderShow();
+    </script>
+</body>
+</html>
