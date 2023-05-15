@@ -45,6 +45,17 @@
     border-radius: 0 10px 10px 10px;
 }
 
+.tab_wrap {
+    &.ty_nolink {
+        .tab_cont_item {
+            display: none;
+            &.on {
+                display: block;
+            }
+        }
+    }
+}
+
 .type_select {
     display: flex;
     border: 1px solid #ccc;

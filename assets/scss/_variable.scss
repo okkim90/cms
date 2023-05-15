@@ -15,6 +15,11 @@ $CLine: #d9d9d9;
 /* colors */
 $colors: (
     _key: #1f2085,
+    _key2: #383976,
+    _key3: #0d0f88,
+    _key4: #393939,
+    _key5: #aaa, 
+    _key6: #EFEFEF,
     _line: #ccc,
     _bg_grey: #efefef,
     _blue: #007bff,
@@ -30,14 +35,42 @@ $colors: (
 );
 
 
+$fz: (
+    _normal: 13px, 
+    _big: 20px, 
+    _mid: 16px, 
+    _small: 12px, 
+);
+
+
 @mixin btn($bg, $bd){
     transition: all .1s ease-in-out;
     background-color: $bg;
     border-color: $bd;
     color: #fff;
     &:hover {
-        background-color: darken( $bg, 9%);
-        border-color: darken($bd, 9%);
+        background-color: darken( $bg, 8%);
+        border-color: darken($bd, 8%);
+        box-shadow: 0 2px 3px rgba(#000, 0.3);
+    }
+    &:active {
+        box-shadow: inset 0 0 4px rgba(#000, 0.3);
+        transform: scale(0.97);
+    }
+}
+
+@mixin btn_op($bd ,$color){
+    transition: all .1s ease-in-out;
+    background-color: rgba($color, .15);
+    border-color: $bd;
+    color: $color;
+    &:hover {
+        background-color: rgba($color, .3); 
+        //color: #fff;
+    }
+    &:active {
+        box-shadow: inset 0 0 4px rgba(#000, 0.3);
+        transform: scale(0.97);
     }
 }
 
@@ -50,6 +83,32 @@ $colors: (
         background-color: $color;
         color: #fff;
     }
+    &:active {
+        box-shadow: inset 0 0 4px rgba(#000, 0.3);
+        transform: scale(0.97);
+    }
+}
+
+
+@mixin tag($bg, $bd){
+   
+    background-color: $bg;
+    border-color: $bd;
+    color: #fff;
+}
+
+@mixin tag_op($bd ,$color){
+    
+    background-color: lighten($color, 43%);
+    border-color: $bd;
+    color: $color;
+}
+
+@mixin tag_ol($bd ,$color){
+    
+    background-color: transparent;
+    border-color: $bd;
+    color: $color;
 }
 
 
@@ -58,21 +117,53 @@ $colors: (
     .fc#{$key} {
         color: $color;
     }
-    .f_btn {
+    .bg#{$key} {
+        background-color: $color;
+    }
+    .bd#{$key} {
+        border-color: $color;
+    }
+    .f_btn  {
         &.#{$key} {
             @include btn($color, $color)
         }
         &.#{$key}_ol {
-            @include btn_ol($color ,$color)
+            @include btn_ol($color ,$color);
+
         }
+        &.#{$key}_op {
+            @include btn_op($color ,$color);
+        }
+    }
+
+    .f_tag {
+        &.#{$key} {
+            @include tag($color, $color)
+        }
+        &.#{$key}_ol {
+            @include tag_ol($color ,$color);
+
+        }
+        &.#{$key}_op {
+            @include tag_op($color ,$color);
+        }
+    }
+    
+}
+
+@each $key, $size in $fz {
+    .fz#{$key} {
+        font-size: $size;
     }
     
 }
 
 
 
+
 $c_key : map-get($colors, _key);
 $c_line : map-get($colors, _line);
+$c_bg : map-get($colors, _bg);
 $c_bg_grey : map-get($colors, _bg_grey);
 $c_blue : map-get($colors, _blue);
 $c_red : map-get($colors, _red);
@@ -83,8 +174,11 @@ $c_solidGrey : map-get($colors, _solidGrey);
 //Font
 $font: 'Noto Sans KR', sans-serif;
 $font_tit: 'Montserrat';
+@mixin fa {
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+}
 
-$form_fz : 18px;
 
 //innerBox
 $inner: 1280px;
@@ -97,4 +191,135 @@ $inner: 1280px;
     .w_#{$w} {
         width: #{$w}px
     }
+}
+
+
+@for $i from 1 through 100 {
+    $w : 10*$i;
+    
+    .w_#{$w} {
+        width: #{$w}px
+    }
+}
+
+@for $i from 1 through 20 {
+    $z : 5*$i;
+    .mt#{$i} {
+        margin-top: #{$i}px;
+    }
+    .ml#{$i} {
+        margin-left: #{$i}px
+    }
+    .mr#{$i} {
+        margin-right: #{$i}px
+    }
+    .mb#{$i} {
+        margin-bottom: #{$i}px
+    }
+
+    .pt#{$i} {
+        padding-top: #{$i}px;
+    }
+    .pl#{$i} {
+        padding-left: #{$i}px
+    }
+    .pr#{$i} {
+        padding-right: #{$i}px
+    }
+    .pb#{$i} {
+        padding-bottom: #{$i}px
+    }
+    
+    .mt#{$z} {
+        margin-top: #{$z}px;
+    }
+    .ml#{$z} {
+        margin-left: #{$z}px
+    }
+    .mr#{$z} {
+        margin-right: #{$z}px
+    }
+    .mb#{$z} {
+        margin-bottom: #{$z}px
+    }
+
+    .pt#{$z} {
+        padding-top: #{$z}px;
+    }
+    .pl#{$z} {
+        padding-left: #{$z}px
+    }
+    .pr#{$z} {
+        padding-right: #{$z}px
+    }
+    .pb#{$z} {
+        padding-bottom: #{$z}px
+    }
+}
+@mixin list_col($col ,$gapX:20px, $gapY:30px){
+    .col_#{$col} {
+        gap: $gapY $gapX;
+        .col_item {
+            width: calc((100% / $col) - ((($col - 1)/$col)*$gapX));
+        }
+    }
+}
+
+@mixin col_wrap($col ,$gapX){
+    gap: 0 $gapX;
+    .col_item {
+        width: calc((100% / $col) - ((($col - 1)/$col)*$gapX));
+    }
+}
+
+@for $i from 1 through 10 {
+    @include list_col($i ,20px, 30px);
+} 
+
+
+
+@mixin flex_box($gap:10px, $wrap:wrap, $align:null ,$justify:null){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+
+.d_flex {
+    display: flex;
+    @for $i from 1 through 30 {
+        &._gap#{$i} {
+            gap : #{$i}px
+        } 
+    } 
+    &.fw_w {
+        flex-wrap: wrap;
+    }
+    &.ai_t {
+        align-items: flex-start;
+    }
+    &.ai_c {
+        align-items: center;
+    }
+    &.ai_b {
+        align-items: flex-end;
+    }
+    &.jc_l {
+        justify-content: flex-start;
+    }
+    &.jc_c {
+        justify-content: center;
+    }
+    &.jc_r {
+        justify-content: flex-end;
+    }
+}
+
+.ml_auto {
+    margin-left: auto;
+}
+.mr_auto {
+    margin-right: auto;
 }

@@ -348,29 +348,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616683', end
     .btn_solid {display:inline-block; height:22px; line-height:20px; padding:0 8px;
     text-align:center; font-size:12px; color:#000; font-weight:bold;position:relative;border:1px solid #fff;
     background:#f5f5f6;border-color:#cbcbcb;}
-    ._solidGray {background:#414141;color:#fff;border-color:#2c2c2c;} /*그레이*/
-    ._solidLgray {background:#848aa4;color:#fff;} /*라이트그레이*/
-    ._solidLblue {background:#6d84f6;color:#fff;} /*라이트블루*/
-    ._solidLred {background:#dd5353;color:#fff;} /*라이트레드*/
-    ._solidLgreen {background:#6fbd94;color:#fff;} /*라이트그린*/
-    ._solidPuple {background:#71618e;color:#fff;} /*퍼플*/
-    ._solidSkyblue {background:#0eb6ca;color:#fff;} /*스카이블루*/
+    .btn_solid._solidGray {background:#414141;color:#fff;border-color:#2c2c2c;} /*그레이*/
+    .btn_solid._solidLgray {background:#848aa4;color:#fff;} /*라이트그레이*/
+    .btn_solid._solidLblue {background:#6d84f6;color:#fff;} /*라이트블루*/
+    .btn_solid._solidLred {background:#dd5353;color:#fff;} /*라이트레드*/
+    .btn_solid._solidLgreen {background:#6fbd94;color:#fff;} /*라이트그린*/
+    .btn_solid._solidPuple {background:#71618e;color:#fff;} /*퍼플*/
+    .btn_solid._solidSkyblue {background:#0eb6ca;color:#fff;} /*스카이블루*/
 
     /*크기별*/
-    ._xsmall {height:16px;line-height:14px;font-size:11px;font-weight:normal;}
-    ._small {height:20px;line-height:18px;font-size:11px;padding:0 2px;font-weight:normal;}
-    ._medium {height:22px;line-height:20px;}/*디폴트*/
-    ._large {height:26px;line-height:24px;font-size:13px;padding: 0 20px;}
-    ._xlarge {height:42px;line-height:40px;font-size:13px;padding: 0 20px;}
+    .btn_solid._xsmall {height:16px;line-height:14px;font-size:11px;font-weight:normal;}
+    .btn_solid._small {height:20px;line-height:18px;font-size:11px;padding:0 2px;font-weight:normal;}
+    .btn_solid._medium {height:22px;line-height:20px;}/*디폴트*/
+    .btn_solid._large {height:26px;line-height:24px;font-size:13px;padding: 0 20px;}
+    .btn_solid._xlarge {height:42px;line-height:40px;font-size:13px;padding: 0 20px;}
 
     /*형태별*/
     /*우측 화살표*/
-    ._arrowR {position:relative;padding-right: 17px;}
-    ._arrowR:before {content:'';display:inline-block;width:3px;height:5px;background:url(../images/arrow_btn.png) no-repeat;
+    .btn_solid._arrowR {position:relative;padding-right: 17px;}
+    .btn_solid._arrowR:before {content:'';display:inline-block;width:3px;height:5px;background:url(../images/arrow_btn.png) no-repeat;
     position:absolute;right:8px;top:50%;margin-top:-2px;}
     /*모서리라운드(상단-로그아웃,정보변경)*/
-    ._round {border-radius:1px;background:#f1f1f1;border:1px solid #fff;font-size:11px;color:#383737;}
-    ._round:after {content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;
+    .btn_solid._round {border-radius:1px;background:#f1f1f1;border:1px solid #fff;font-size:11px;color:#383737;}
+    .btn_solid._round:after {content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;
     display:block;border:1px solid #c9c8ce;border-radius:3px;background:transparent;}
 
 
