@@ -21,6 +21,7 @@ $colors: (
     _key5: #aaa, 
     _key6: #EFEFEF,
     _line: #ccc,
+    _bg: #f9f9f9,
     _bg_grey: #efefef,
     _blue: #007bff,
     _sky: #acbdee,
@@ -166,7 +167,10 @@ $c_line : map-get($colors, _line);
 $c_bg : map-get($colors, _bg);
 $c_bg_grey : map-get($colors, _bg_grey);
 $c_blue : map-get($colors, _blue);
+$c_lblue : map-get($colors, _lblue);
 $c_red : map-get($colors, _red);
+$c_green : map-get($colors, _green);
+$c_yellow : map-get($colors, _yellow);
 $c_sky : map-get($colors, _sky);
 $c_lightGrey : map-get($colors, _lightGrey);
 $c_solidGrey : map-get($colors, _solidGrey);
@@ -190,6 +194,9 @@ $inner: 1280px;
     $w : 10*$i;
     .w_#{$w} {
         width: #{$w}px
+    }
+    .h_#{$w} {
+        height: #{$w}px
     }
 }
 
@@ -297,6 +304,9 @@ $inner: 1280px;
     display: flex;
     &.ty_inline {
         display: inline-flex;
+    }
+    &.fd_col {
+        flex-direction: column;
     }
     @for $i from 1 through 30 {
         &._gap#{$i} {

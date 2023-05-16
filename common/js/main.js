@@ -103,3 +103,74 @@ function tab_btn(e){
     tab_btn_item.addClass('on').siblings().removeClass('on');
     tab_cont_item.eq(index).addClass('on').siblings().removeClass('on');
 }
+
+
+
+
+
+/* 카운트 이벤트 */
+let delay = 300;
+let delay2 = 500;
+let dur = 500;
+let dur2 = 1000;
+
+function count_wrap(target){
+    target.each(function(i){
+        //$(this).width($(this).width());
+        if($(this).hasClass('percent')){
+            $(this).delay(delay2 + 300).animate(
+                {
+                    Counter: $(this).data('value'),
+                },
+                {
+                    duration: dur2,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).html(now.toFixed(1));
+                    },
+                }
+            );
+        }else{
+            $(this).animate(
+                {
+                    Counter: $(this).data('value'),
+                },
+                {
+                    duration: dur2,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).html(commaSeparateNumber(Math.ceil(now)));
+                    },
+                }
+            );
+        }
+    });
+}
+
+/* 콤마찍기 */
+function commaSeparateNumber(val){
+    while (/(\d+)(\d{3})/.test(val.toString())){
+      val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    }
+    return val;
+}
+
+$(function(){
+    let count_box = $('.count');
+    /* 카운트박스 영역 잡기 */
+
+    // $('.sizing_box').each(function(){
+    //     let count_box = $(this).parents('.count');
+    //     let count_val = count_box.data('value');
+    //     let count_val_comma =  commaSeparateNumber(count_val);
+    //     $(this).html(count_val_comma);
+    //     //console.log(count_val_comma);
+
+    //     let width = $(this).width();
+    //     $(this).parents('.count').width(width);
+    // });
+    $(window).on('load',function(){
+        count_wrap(count_box);
+    });
+    
+});

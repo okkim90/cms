@@ -409,12 +409,12 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">입고대기</strong>
-                                            <div class="count" data-value="235653">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                         <div class="bar"></div>
                                         <div class="count_box">
                                             <strong class="count_box_tit">입고완료</strong>
-                                            <div class="count" data-value="321425">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                     </div>
                                 </div>
@@ -423,12 +423,12 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">교정대기</strong>
-                                            <div class="count" data-value="1643">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                         <div class="bar"></div>
                                         <div class="count_box">
                                             <strong class="count_box_tit">교정완료</strong>
-                                            <div class="count" data-value="5234">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                     </div>
                                 </div>
@@ -437,12 +437,12 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">승인대기</strong>
-                                            <div class="count" data-value="356534">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                         <div class="bar"></div>
                                         <div class="count_box">
                                             <strong class="count_box_tit">승인완료</strong>
-                                            <div class="count" data-value="321425">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                     </div>
                                 </div>
@@ -451,12 +451,12 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">출고대기</strong>
-                                            <div class="count" data-value="356534">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                         <div class="bar"></div>
                                         <div class="count_box">
                                             <strong class="count_box_tit">출고완료</strong>
-                                            <div class="count" data-value="321425">0</div>
+                                            <div class="count" data-value="0">0</div>
                                         </div>
                                     </div>
                                 </div>
@@ -468,7 +468,7 @@
                                 <div class="main_sec_tit">
                                     <h2 class="tit">월별 입고 추이</h2>
                                     <div class="count_box">
-                                        <span class="count" data-value="23123123">0</span>
+                                        <span class="count" data-value="0">0</span>
                                         <span class="unit">건</span> 
                                         <span class="info">(2023년 05월 기준)</span>
                                     </div>
@@ -481,7 +481,7 @@
                                 <div class="main_sec_tit">
                                     <h2 class="tit">월별 교정 추이</h2>
                                     <div class="count_box">
-                                        <span class="count" data-value="112341">0</span>
+                                        <span class="count" data-value="0">0</span>
                                         <span class="unit">건</span> 
                                         <span class="info">(2023년 05월 기준)</span>
                                     </div>
@@ -505,11 +505,11 @@
                                     columnData.addColumn('string', 'Topping');
                                     columnData.addColumn('number', '입고 수(건)');   
                                     columnData.addRows([
-                                        ['1월 입고', 8000],
-                                        ['2월 입고', 18000 ],
-                                        ['3월 입고', 32000 ],
-                                        ['4월 입고', 15000 ],
-                                        ['5월 입고', 43000 ],
+                                        ['1월 입고', 0],
+                                        ['2월 입고', 0 ],
+                                        ['3월 입고', 0 ],
+                                        ['4월 입고', 0 ],
+                                        ['5월 입고', 0 ],
                                     ]);
                                     var columnOptions = {
                                         legend: 'none',
@@ -534,11 +534,11 @@
 
                                     /* 월별 교정 */
                                     var lineDataArray = [
-                                        ['1월 교정', 5000],
-                                        ['2월 교정', 6000 ],
-                                        ['3월 교정', 22000 ],
-                                        ['4월 교정', 10000 ],
-                                        ['5월 교정', 35000 ],
+                                        ['1월 교정', 0],
+                                        ['2월 교정', 0 ],
+                                        ['3월 교정', 0 ],
+                                        ['4월 교정', 0 ],
+                                        ['5월 교정', 0 ],
                                     ];
                                     var lineData = new google.visualization.DataTable();
                                     lineData.addColumn('string', 'Topping');
@@ -584,82 +584,20 @@
                                     <h2 class="tit">일정</h2>
                                     <a href="" class="btn_view_more"></a>
                                 </div>
-                                <ul class="main_sked">
-                                    <!--
-                                        [D] 일정 컬러 태그 
-                                        회사일정 : <span class="sked_tag ty_company"></span>,
-                                        부서일정 : <span class="sked_tag ty_department"></span>,
-                                        공유일정 : <span class="sked_tag ty_share"></span>,
-                                        개인일정 : <span class="sked_tag ty_personal"></span>,
-                                        기타일정 : <span class="sked_tag ty_etc"></span>  
-                                    -->
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_company"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_department"></span>
-                                            <div class="txt">일정 내용 일정 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_share"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_personal"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_etc"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="no_result_msg h_320">
+                                    <i class="fa-solid fa-face-grin-beam-sweat"></i>
+                                    <p>등록된 일정이 없습니다.</p>
+                                </div>
                             </section>
                             <section class="main_sec">
                                 <div class="main_sec_tit">
                                     <h2 class="tit">공지사항</h2>
                                     <a href="" class="btn_view_more"></a>
                                 </div>
-                                <ul class="main_notice">
-                                    <!--
-                                        [D] 일정 컬러 태그 
-                                        회사일정 : <span class="sked_tag ty_company"></span>,
-                                        부서일정 : <span class="sked_tag ty_department"></span>,
-                                        공유일정 : <span class="sked_tag ty_share"></span>,
-                                        개인일정 : <span class="sked_tag ty_personal"></span>,
-                                        기타일정 : <span class="sked_tag ty_etc"></span>  
-                                    -->
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="no_result_msg h_170">
+                                    <i class="fa-solid fa-face-grin-beam-sweat"></i>
+                                    <p>등록된 공지사항이 없습니다.</p>
+                                </div>
                             </section>
                         </section>
                     </div>

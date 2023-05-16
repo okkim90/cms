@@ -29,7 +29,7 @@ $breakpoint-pcrm: 1700px;
     overflow: hidden;
     white-space: nowrap;
 }
-@mixin text-hidden($line: 1, $lineHeight: 19, $auto: null) {
+@mixin text-hidden($line: 1, $lineHeight: 19, $auto: auto) {
     display: -webkit-box;
     -webkit-line-clamp: $line;
     -webkit-box-orient: vertical;
@@ -43,8 +43,7 @@ $breakpoint-pcrm: 1700px;
         //영역 자동
         max-height: $lineHeight * $line + px;
     }
-
-    @else {
+    @if $auto ==fixed  {
         //처음부터 영역잡히게
         height: $lineHeight * $line + px;
     }
