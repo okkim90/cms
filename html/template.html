@@ -1612,6 +1612,60 @@
                             </div>
                         </div>
                         <!--// 레이어팝업-->
+
+                        <button class="f_btn ty_mid _key" onclick="open_popup('pop_small')">작은 팝업</button>
+                        <div class="layer_popup pop_small" onclick="close_popup(this)">
+                            <div class="layer_popup_inner">
+                                <div class="layer_popup_cont ty_small">
+                                    <button type="button" class="close_popup" onclick="close_popup(this)">
+                                        <span class="blind">팝업 닫기</span>
+                                    </button>
+                                    <div class="sub_tit">
+                                        <h1 class="tit1">팝업 타이틀</h1>
+                                    </div>
+                                    <form action="">
+                                        <table class="v_tbl">
+                                            <colgroup>
+                                                <col style="width: 80px;">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>test</th>
+                                                    <td>
+                                                        <input type="text" class="f_input ty_small w100">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>test</th>
+                                                    <td>
+                                                        <div class="chk_list">
+                                                            <label class="chk_item"><input type="checkbox"> checkbox1</label>
+                                                            <label class="chk_item"><input type="checkbox"> checkbox2</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>test</th>
+                                                    <td>
+                                                        <div class="chk_list">
+                                                            <label class="chk_item"><input type="radio" name="radio"> radiobox1</label>
+                                                            <label class="chk_item"><input type="radio" name="radio"> radiobox2</label>
+                                                            <label class="chk_item"><input type="radio" name="radio"> radiobox3</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="btn_set taC mt20">
+                                            <input type="submit" class="f_btn ty_small _key w_80" value="버튼버튼">
+                                            <button type="button" class="f_btn ty_small _lightGrey w_80" onclick="close_popup(this)">닫기</button>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="sec">
                         <div class="sec_tit">

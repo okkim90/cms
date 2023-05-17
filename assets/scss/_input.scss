@@ -327,21 +327,25 @@
     cursor: pointer;
     user-select: none;
     vertical-align: middle;
-    & + & {
-        position: relative;
-        padding-left: 10px;
-        margin-left: 9px;
-        &::before {
-            content:'';
-            width: 1px;
-            height: 16px;
-            background-color: $c_line;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            margin-top: -8px;
+    
+    
+    
+    &::after {
+        content:'';
+        width: 1px;
+        height: 16px;
+        background-color: $c_line;
+        margin: 0 8px;
+        
+    }
+    &:last-child {
+        &::after {
+            display: none;
         }
     }
+    
+    
+ 
     .input_toggle {
         display: none;
     }

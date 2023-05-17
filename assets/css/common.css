@@ -8057,20 +8057,15 @@ input::-webkit-search-results-decoration {
           user-select: none;
   vertical-align: middle;
 }
-.chk_item + .chk_item {
-  position: relative;
-  padding-left: 10px;
-  margin-left: 9px;
-}
-.chk_item + .chk_item::before {
+.chk_item::after {
   content: "";
   width: 1px;
   height: 16px;
   background-color: #ccc;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -8px;
+  margin: 0 8px;
+}
+.chk_item:last-child::after {
+  display: none;
 }
 .chk_item .input_toggle {
   display: none;
