@@ -152,7 +152,7 @@
         display: none;
         &:checked + .slider {
             background: $c_key;
-            background: linear-gradient(90deg, rgba(255,122,0,1) 0%, rgba(255,163,80,1) 100%);
+            background: linear-gradient(90deg, lighten($c_key, 30%) 0%, $c_key 100%);
         }
         &:focus + .slider {
             box-shadow: 0 0 1px $c_key;
@@ -176,7 +176,7 @@
     .slider {
         display: block;
         position: relative;
-        min-width: 50px;
+        min-width: 40px;
         box-sizing: border-box;
         height: 22px;
         cursor: pointer;

@@ -543,6 +543,7 @@
                                     var lineData = new google.visualization.DataTable();
                                     lineData.addColumn('string', 'Topping');
                                     lineData.addColumn('number', '교졍 수(건)');
+                                    //lineData.addRows(lineDataArray);
                                     var lineOption = {
                                         legend: 'none',
                                         curveType: 'function',
@@ -564,6 +565,8 @@
                                         colors: ['#f8742e']
                                     }
                                     var linechart = new google.visualization.LineChart(document.getElementById('linechart'));
+                                    
+                                    
                                     //linechart.draw(lineData, lineOption);
 
                                     var rowIndex = 0;

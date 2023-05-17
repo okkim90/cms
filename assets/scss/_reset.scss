@@ -188,8 +188,9 @@ input[type="radio"],
 input[type="checkbox"] {
     display: inline-block;
     vertical-align: middle;
-    width: 1em;
-    height: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    accent-color: $c_key;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
