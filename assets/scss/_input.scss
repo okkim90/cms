@@ -2,6 +2,7 @@
     max-width: 100%;
     border: 1px solid $c_line;
     box-sizing: border-box;
+    vertical-align: middle;
     &:read-only {
         background-color: rgba(0,0,0,.02);
         &:focus {
@@ -285,6 +286,7 @@
     max-width: 100%;
     border: 1px solid $c_line;
     box-sizing: border-box;
+    vertical-align: middle;
     &.w100 {
         width: 100%;
     }

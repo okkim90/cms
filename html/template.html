@@ -398,7 +398,81 @@
                             <span class="blind">새로고침</span>
                         </button>
                     </div>
-                   
+                    <section class="sec">
+                        <div class="sec_tit">
+                            <h2 class="tit2">참고</h2>
+                        </div>
+                        <div class="fz_mid">
+                            <div class="mb20">
+                                나열 필요할 경우 <br>
+                                d_flex._gap{간격} 내부에 요소들 적용<br>
+                                {간격} = 1 ~ 30(px) <br><br>
+                                * 나열된 form 요소들(buttons, input, select) 은 사이즈 맞춰서 적용 <br> 
+                                .ty_xsamll(22px), .ty_samll(28px) , .ty_mid(36px), .ty_big(50px) <br><br>
+                            </div>
+                        </div>
+                        <div class="mt20">
+                            <strong>예시</strong>
+                            <div class="d_flex _gap5 ">
+                                <input type="text" class="f_input ty_xsmall w_100">
+                                <select name="" id="" class="f_select ty_xsmall w_100">
+                                    <option value="">sample</option>
+                                </select>
+                                <button type="button" class="f_btn ty_xsmall _key_ol">
+                                    <i class="fa-solid fa-arrows-rotate"></i> 초기화
+                                </button>
+                                <button type="button" class="f_btn ty_xsmall _key">
+                                    버튼버튼
+                                </button>
+                                <button type="button" class="f_btn ty_xsmall _key">
+                                    <i class="fa-solid fa-magnifying-glass"></i> 보기
+                                </button>
+                            </div>
+                            <div class="d_flex _gap5 mt10">
+                                <input type="text" class="f_input ty_small w_100">
+                                <select name="" id="" class="f_select ty_small w_100">
+                                    <option value="">sample</option>
+                                </select>
+                                <button type="button" class="f_btn ty_small _key_ol">
+                                    <i class="fa-solid fa-arrows-rotate"></i> 초기화
+                                </button>
+                                <button type="button" class="f_btn ty_small _key">
+                                    버튼버튼
+                                </button>
+                                <button type="button" class="f_btn ty_small _key">
+                                    <i class="fa-solid fa-magnifying-glass"></i> 보기
+                                </button>
+                            </div>
+                            <div class="d_flex _gap10 mt20">
+                                <input type="text" class="f_input ty_mid w_150">
+                                <select name="" id="" class="f_select ty_mid w_200">
+                                    <option value="">sample</option>
+                                </select>
+                                <button type="button" class="f_btn ty_mid _key_ol">
+                                    <i class="fa-solid fa-arrows-rotate"></i> 초기화
+                                </button>
+                                <button type="button" class="f_btn ty_mid _key">
+                                    버튼버튼
+                                </button>
+                                <button type="button" class="f_btn ty_mid _key">
+                                    <i class="fa-solid fa-magnifying-glass"></i> 보기
+                                </button>
+                            </div>
+                        </div>
+                        <div class="fz_mid mt40">
+                            <p class="mb10"><b>margin, padding {사이즈} = 5*n;</b> </p>
+                            상하좌우 margin : .ma{사이즈} ex) .ma5, .ma10 <br>
+                            상단 margin  : .mt{사이즈} ex) .mt5, .mt10 <br>
+                            하단 margin : .mb{사이즈} ex) .mb5, .mb10 <br>
+                            좌 margin : .ml{사이즈} ex) .ml5, .ml10 <br>
+                            우 margin : .mr{사이즈} ex) .mr5, .mr10 <br> <br>
+                            상하좌우 padding : .pa{사이즈} ex) .pa5, .pa10 <br>
+                            상단 padding  : .pt{사이즈} ex) .pt5, .pt10 <br>
+                            하단 padding : .pb{사이즈} ex) .pb5, .pb10 <br>
+                            좌 padding : .pl{사이즈} ex) .pl5, .pl10 <br>
+                            우 padding : .pr{사이즈} ex) .pr5, .pr10 <br> <br>
+                        </div>
+                    </section>
                     <section class="sec">
                         <div class="sec_tit">
                             <h2 class="tit2">사인 이미지 업로드 박스</h2>
@@ -449,6 +523,7 @@
                             </span>
                         </label>
                     </section>
+                    
                     <section class="sec">
                         <div class="sec_tit">
                             <h2 class="tit2">checkbox &amp; radio</h2>
