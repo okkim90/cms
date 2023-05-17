@@ -334,6 +334,9 @@ $inner: 1280px;
     &.jc_r {
         justify-content: flex-end;
     }
+    .no_shrink {
+        flex-shrink: 0;
+    }
 }
 
 .ml_auto {

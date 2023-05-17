@@ -4196,6 +4196,9 @@
 .d_flex.jc_r {
   justify-content: flex-end;
 }
+.d_flex .no_shrink {
+  flex-shrink: 0;
+}
 
 .ml_auto {
   margin-left: auto;
