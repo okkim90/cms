@@ -1,4 +1,4 @@
-.layer_popup {
+.layer_popup, .layer_popup_new {
     position: fixed;
     left: 0;
     top: 0;
@@ -9,6 +9,8 @@
     padding: 30px;
     box-sizing: border-box;
     display: none;
+    
+
     &.on {
         display: block;
     }

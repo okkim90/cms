@@ -35,7 +35,7 @@
     <!-- 기존 cms css -->
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css"> -->
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
@@ -47,7 +47,6 @@
     
     <!-- 신규 css -->
     <script src="https://kit.fontawesome.com/a9123cc962.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/jquery-ui.css">
     <link rel="stylesheet" href="../assets/css/datepicker.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <!--// 신규 css -->
@@ -419,1281 +418,1118 @@
     <!--//header-->
     <!--container-->
     <main class="container">
-        <!--탭 네비게이션-->
-        <!-- [D] tab_nav_toggle 클릭시 tab_nav 토글 -->
-        <div id="tab_nav" class="tab_nav">
-            <ul class="tab_nav_list">
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">메인</a>
+        <div id="tabs" class="jqgtabs tab_nav ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="tab_nav_list ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="tab_nav_item ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="tabs-main" aria-labelledby="ui-id-1" aria-selected="false">
+                    <a href="#tabs-main" class="tabs-anchor ui-tabs-anchor" id="ui-id-1" role="presentation" tabindex="-1">메인</a>
                 </li>
-                <!--[D] 활성화 "on" class -->
-                <li class="tab_nav_item on">
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_294" role="tab" tabindex="-1" aria-labelledby="ui-id-2" aria-selected="false">
+                    <a href="#tabs_294" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>전체 조회</span></a>
                     <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">전체 조회</a>
                 </li>
-                <li class="tab_nav_item">
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_201" role="tab" tabindex="-1" aria-labelledby="ui-id-3" aria-selected="false">
+                    <a href="#tabs_201" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>입고</span></a>
                     <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정</a>
                 </li>
-                <li class="tab_nav_item">
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_214" role="tab" tabindex="-1" aria-labelledby="ui-id-4" aria-selected="false">
+                    <a href="#tabs_214" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>교정 코드 관리</span></a>
                     <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
                 </li>
-                <li class="tab_nav_item">
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_218" role="tab" tabindex="0" aria-labelledby="ui-id-5" aria-selected="true">
+                    <a href="#tabs_218" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>고객 코드 관리</span></a>
                     <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">기준정보</a>
                 </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">사외</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">기준정보</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">사외</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">기준정보</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">사외</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">교정접수 처리 수량</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">기준정보</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">업체별 금액&수량 비교</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">사외</a>
-                </li>
-                <li class="tab_nav_item">
-                    <button class="del_item"></button>
-                    <a href="" class="tab_nav_link">현장교정 일일 중복</a>
-                </li>
-                
             </ul>
+            <!-- tabs 토글버튼 -->
             <button type="button" class="tab_nav_toggle">
                 <i class="fa-solid fa-square-caret-up"></i>
             </button>
-        </div>
-        <script>
-            let tab_nav = document.querySelector('#tab_nav');
-            let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
-
-            tab_nav_toggle.addEventListener('click', function(){
-                if(tab_nav.classList.contains('off')){
-                    tab_nav.classList.remove('off');
-                }else{
-                    tab_nav.classList.add('off');
-                }
-            }); 
-        </script>
-        <!--//탭 네비게이션-->
-
-
-        <div id="contents" class="contents">
-            <div class="top_tit">
-                <h1 class="tit">전체 조회</h1>
-                <button type="button" class="btn_refresh">
-                    <i class="fa-solid fa-arrows-rotate"></i>
-                    <span class="blind">전체조회</span>
-                </button>
-            </div>
-            <section class="sec">
-                <!-- tab list + cont -->
-                <ul class="tab_list">
-                    <li class="tab_list_item on"><a href="" class="tab_list_btn">일반 조회</a></li>
-                    <li class="tab_list_item"><a href="" class="tab_list_btn">구분 조회</a></li>
-                    <li class="tab_list_item"><a href="" class="tab_list_btn">사외 조회</a></li>
-                    <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
-                </ul>
-                <div class="tab_cont">
-                    <div class="tab_cont_item">
-                        <div class="v_tbl_wrap">
-                            <table class="v_tbl">
-                                <tbody>
-                                    <colgroup>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                    </colgroup>
+            <script>
+                let tab_nav = document.querySelector('#tabs');
+                let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
+        
+                tab_nav_toggle.addEventListener('click', function(){
+                    if(tab_nav.classList.contains('off')){
+                        tab_nav.classList.remove('off');
+                    }else{
+                        tab_nav.classList.add('off');
+                    }
+                }); 
+            </script>
+            <!--// tabs 토글버튼 -->
+            <div id="tabs-main" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true">
+                <div id="contents" class="contents">
+                    <div class="top_tit">
+                        <h1 class="tit">전체 조회</h1>
+                        <button type="button" class="btn_refresh">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <span class="blind">전체조회</span>
+                        </button>
+                    </div>
+                    <section class="sec">
+                        <!-- tab list + cont -->
+                        <ul class="tab_list">
+                            <li class="tab_list_item on"><a href="" class="tab_list_btn">일반 조회</a></li>
+                            <li class="tab_list_item"><a href="" class="tab_list_btn">구분 조회</a></li>
+                            <li class="tab_list_item"><a href="" class="tab_list_btn">사외 조회</a></li>
+                            <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
+                        </ul>
+                        <div class="tab_cont">
+                            <div class="tab_cont_item">
+                                <div class="v_tbl_wrap">
+                                    <table class="v_tbl">
+                                        <tbody>
+                                            <colgroup>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                            </colgroup>
+                                            <tr>
+                                                <th>기간 조회</th>
+                                                <td colspan="5">
+                                                    <div class="date_set">
+                                                        <select name="" id="" class="f_select ty_small">
+                                                            <option value="">접수일</option>
+                                                            <option value="">기간 선택 2</option>
+                                                            <option value="">기간 선택 3</option>
+                                                            <option value="">기간 선택 4</option>
+                                                        </select>
+                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>업체명</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>신청자</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>접수자</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>접수번호</th>
+                                                <td>
+                                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                                </td>
+                                                <th>교정번호</th>
+                                                <td>
+                                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                                </td>
+                                                <th>기기번호</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                            </tr>
+                                            <tr class="hidden_tr">
+                                                <th>계측기명</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>모델명</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>관리번호</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                            </tr>
+                                            <tr class="hidden_tr">
+                                                <th>제조사</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>주소</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>비고</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
+                                    <script>
+                                        function v_tbl_toggle(_target){
+                                            let v_tbl_wrap = _target.closest('.v_tbl_wrap');
+                                            let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
+                                            if(_target.classList.contains('on')){
+                                                _target.classList.remove('on');      
+                                                hidden_tr.forEach((e)=>{
+                                                    e.classList.remove('on')
+                                                });
+                                            }else{
+                                                _target.classList.add('on');
+                                                hidden_tr.forEach((e)=>{
+                                                    e.classList.add('on')
+                                                });
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+        
+                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+        
+                            <div class="tab_cont_item">
+                                <div class="type_select">
+                                    <div class="type_select_sec dep1">
+                                        <ul class="list_dep1"> 
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>입고구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" checked><span>교정항목</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정결과</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>출고구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>현재상태</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정담당자</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>의뢰구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>업체구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정처리자</span></label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="type_select_sec dep2">
+                                        <ul class="list_dep2 ">
+                                            <li><label class="btn_type"><input type="checkbox" checked><span>본사</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox" checked><span>현장교정</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox" checked><span>반입교정</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox" checked><span>화물차량</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>본사</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>현장교정</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>반입교정</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>화물차량</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
+                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="type_select_sec output">
+                                        <ul class="output_list">
+                                            <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                            <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+        
+                            <div class="tab_cont_item">
+                                <div class="v_tbl_wrap">
+                                    <table class="v_tbl">
+                                        <tbody>
+                                            <colgroup>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                            </colgroup>
+                                            <tr>
+                                                <th>의뢰 기간</th>
+                                                <td colspan="5">
+                                                    <div class="date_set">
+                                                        <select name="" id="" class="f_select ty_small">
+                                                            <option value="">사외</option>
+                                                            <option value="">기간 선택 2</option>
+                                                            <option value="">기간 선택 3</option>
+                                                            <option value="">기간 선택 4</option>
+                                                        </select>
+                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>회수 기간</th>
+                                                <td colspan="5">
+                                                    <div class="date_set">
+                                                        <select name="" id="" class="f_select ty_small">
+                                                            <option value="">사외</option>
+                                                            <option value="">기간 선택 2</option>
+                                                            <option value="">기간 선택 3</option>
+                                                            <option value="">기간 선택 4</option>
+                                                        </select>
+                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
+                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
+                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
+                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>교정의뢰기관</th>
+                                                <td>
+                                                    <select name="" id="" class="f_select ty_small w_200">
+                                                        <option value="">선택</option>
+                                                        <option value="">선택2</option>
+                                                        <option value="">선택3</option>
+                                                        <option value="">선택4</option>
+                                                        <option value="">선택5</option>
+                                                    </select>
+                                                </td>
+                                                <th>수리의뢰기관</th>
+                                                <td>
+                                                    <select name="" id="" class="f_select ty_small w_200">
+                                                        <option value="">선택</option>
+                                                        <option value="">선택2</option>
+                                                        <option value="">선택3</option>
+                                                        <option value="">선택4</option>
+                                                        <option value="">선택5</option>
+                                                    </select>
+                                                </td>
+                                                <th>사외건만 조회</th>
+                                                <td>
+                                                    <label><input type="checkbox" class="f_chk ty_big"> 사외건만 조회</label>  
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+        
+                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
+        
+                            <div class="tab_cont_item">
+                                <div class="v_tbl_wrap">
+                                    <table class="v_tbl">
+                                        <tbody>
+                                            <colgroup>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                            </colgroup>
+                                            <tr class="">
+                                                <th>시험번호</th>
+                                                <td><input type="text" class="f_input ty_small w_100"> ~ <input type="text" class="f_input ty_small w_100"></td>
+                                                <th>요구사항</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>비고</th>
+                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="btn_set taC mt20">
+                                <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색">
+                                <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
+                            </div>
+                            
+                        </div>
+                        
+                        <!--// tab list + cont -->
+                    </section>
+                    <div class="btn_set bg_box mt15">
+                        <button type="button" class="f_btn ty_small _solidGrey w_80">내용인쇄</button>
+                        <button type="button" class="f_btn ty_small _solidGrey w_80">성적서</button>
+                        <button type="button" class="f_btn ty_small _solidGrey w_80">바코드 인쇄</button>
+                    </div>
+                    <section class="sec">
+                        <div class="sec_tit">
+                            <h2 class="tit">접수 내역</h2>
+                            <div class="search_count">- 검색결과 <b>1,200</b>건</div>
+                            <select name="" id="" class="sort_count f_select ty_small w_60">
+                                <option value="">10개</option>
+                                <option value="">30개</option>
+                                <option value="">50개</option>
+                            </select>
+                        </div>
+                        <!--[D] 테이블 영역, 스크롤 형태일 경우 y_scroll_area 클래스추가 & style="max-height: ***px;" -->
+                        <div class="h_tbl_wrap y_scroll_area" style="max-height: 280px;">
+                            <table class="h_tbl">
+                                <colgroup>
+                                    <col style="width: 100px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 160px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 100px;">
+                                    <col>
+                                    <col style="width: 60px">
+                                </colgroup>
+                                <thead>
                                     <tr>
-                                        <th>기간 조회</th>
-                                        <td colspan="5">
-                                            <div class="date_set">
-                                                <select name="" id="" class="f_select ty_small">
-                                                    <option value="">접수일</option>
-                                                    <option value="">기간 선택 2</option>
-                                                    <option value="">기간 선택 3</option>
-                                                    <option value="">기간 선택 4</option>
-                                                </select>
-                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                        <th class="th_fixed">접수번호 
+                                            
+                                            <div class="col_sort">
+                                                <!--[D] .btn_sort 활성화 on class -->
+                                                <button type="button" class="btn_sort ty_up on"><span class="blind">up</span></button>
+                                                <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                            </div>
+                                        </th>
+                                        <th class="th_fixed">
+                                            접수일자
+                                            <div class="col_sort">
+                                                <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
+                                                <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                            </div>
+                                        </th>
+                                        <th class="th_fixed">입고구분</th>
+                                        <th class="th_fixed">업체명</th>
+                                        <th class="th_fixed">접수자</th>
+                                        <th class="th_fixed">신청자</th>
+                                        <th class="th_fixed">성적서 업체명</th>
+                                        <th class="th_fixed">총수량</th>
+                                        <th class="th_fixed">교정완료</th>
+                                        <th class="th_fixed">명세서</th>
+                                        <th class="th_fixed">계산서</th>
+                                        <th class="th_fixed">수납</th>
+                                        <th class="th_fixed">출고</th>
+                                        <th class="th_fixed">저장위치</th>
+                                        <th class="th_fixed">요구사항</th>
+                                        <th class="th_fixed">상세보기</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <!--[D] 접수번호, 교정번호 -->
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div> 
+                                            <!--// [D] 접수번호, 교정번호 -->
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
                                             </div>
                                         </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th>업체명</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>신청자</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>접수자</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th>접수번호</th>
                                         <td>
-                                            <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
                                         </td>
-                                        <th>교정번호</th>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
                                         <td>
-                                            <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
-                                        <th>기기번호</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
                                     </tr>
-                                    <tr class="hidden_tr">
-                                        <th>계측기명</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>모델명</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>관리번호</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
                                     </tr>
-                                    <tr class="hidden_tr">
-                                        <th>제조사</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>주소</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>비고</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001</a> 
+                                            </div>
+                                        </td>
+                                        <td>2023-03-10</td>
+                                        <td>택배</td>
+                                        <td>미래공구주식회사 평택지점</td>
+                                        <td>유재현</td>
+                                        <td>이준성</td>
+                                        <td>(주)삼성물산</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>234</td>
+                                        <td>124</td>
+                                        <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
-                            <script>
-                                function v_tbl_toggle(_target){
-                                    let v_tbl_wrap = _target.closest('.v_tbl_wrap');
-                                    let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
-                                    if(_target.classList.contains('on')){
-                                        _target.classList.remove('on');      
-                                        hidden_tr.forEach((e)=>{
-                                            e.classList.remove('on')
-                                        });
-                                    }else{
-                                        _target.classList.add('on');
-                                        hidden_tr.forEach((e)=>{
-                                            e.classList.add('on')
-                                        });
-                                    }
-                                }
-                            </script>
                         </div>
-                    </div>
-
-                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-
-                    <div class="tab_cont_item">
-                        <div class="type_select">
-                            <div class="type_select_sec dep1">
-                                <ul class="list_dep1"> 
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>입고구분</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type" checked><span>교정항목</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정결과</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>출고구분</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>현재상태</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정담당자</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>의뢰구분</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>업체구분</span></label></li>
-                                    <li><label class="btn_type"><input type="radio" name="type"><span>교정처리자</span></label></li>
-                                </ul>
-                            </div>
-                            <div class="type_select_sec dep2">
-                                <ul class="list_dep2 ">
-                                    <li><label class="btn_type"><input type="checkbox" checked><span>본사</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox" checked><span>현장교정</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox" checked><span>반입교정</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox" checked><span>화물차량</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>본사</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>현장교정</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>반입교정</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>화물차량</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
-                                    <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                </ul>
-                            </div>
-                            <div class="type_select_sec output">
-                                <ul class="output_list">
-                                    <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                    <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                </ul>
-                            </div>
+                        <div class="paging_wrap">
+                            <a href="" class="paging_btn paging_nav ty_first"><span class="blind">처음</span></a>
+                            <a href="" class="paging_btn paging_nav ty_prev"><span class="blind">이전</span></a>
+                            <ul class="paging_list">
+                                <li><span class="paging_btn current">1</span></li>
+                                <li><a href="" class="paging_btn">2</a></li>
+                                <li><a href="" class="paging_btn">3</a></li>
+                                <li><a href="" class="paging_btn">4</a></li>
+                                <li><a href="" class="paging_btn">5</a></li>
+                            </ul>
+                            <a href="" class="paging_btn paging_nav ty_next"><span class="blind">다음</span></a>
+                            <a href="" class="paging_btn paging_nav ty_last"><span class="blind">마지막</span></a>
                         </div>
-                    </div>
-
-                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-
-                    <div class="tab_cont_item">
-                        <div class="v_tbl_wrap">
-                            <table class="v_tbl">
+                    </section>
+                    <section class="sec">
+                        <div class="sec_tit">
+                            <h2 class="tit">교정 내역</h2>
+                            <div class="search_count">- 검색결과 <b>1,200</b>건</div>
+                            <select name="" id="" class="sort_count f_select ty_small w_60">
+                                <option value="">10개</option>
+                                <option value="">30개</option>
+                                <option value="">50개</option>
+                            </select>
+                        </div>
+                        <div class="h_tbl_wrap y_scroll_area" style="max-height: 280px;">
+                            <table class="h_tbl">
+                                <colgroup>
+                                    <col style="width: 36px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 140px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col>
+                                    <col style="width: 60px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_fixed"><input type="checkbox" class="f_chk"></th>
+                                        <th class="th_fixed">교정번호 
+                                            <div class="col_sort">
+                                                <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
+                                                <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                            </div>
+                                        </th>
+                                        <th class="th_fixed">입고일시</th>
+                                        <th class="th_fixed">구분</th>
+                                        <th class="th_fixed">의뢰</th>
+                                        <th class="th_fixed">교정상태</th>
+                                        <th class="th_fixed">교정결과</th>
+                                        <th class="th_fixed">성적서</th>
+                                        <th class="th_fixed">명세서</th>
+                                        <th class="th_fixed">계산서</th>
+                                        <th class="th_fixed">수납</th>
+                                        <th class="th_fixed">출고</th>
+                                        <th class="th_fixed">할인</th>
+                                        <th class="th_fixed">비고</th>
+                                        <th class="th_fixed">상세보기</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    <colgroup>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                    </colgroup>
                                     <tr>
-                                        <th>의뢰 기간</th>
-                                        <td colspan="5">
-                                            <div class="date_set">
-                                                <select name="" id="" class="f_select ty_small">
-                                                    <option value="">사외</option>
-                                                    <option value="">기간 선택 2</option>
-                                                    <option value="">기간 선택 3</option>
-                                                    <option value="">기간 선택 4</option>
-                                                </select>
-                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
-                                            </div>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _green">국문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>회수 기간</th>
-                                        <td colspan="5">
-                                            <div class="date_set">
-                                                <select name="" id="" class="f_select ty_small">
-                                                    <option value="">사외</option>
-                                                    <option value="">기간 선택 2</option>
-                                                    <option value="">기간 선택 3</option>
-                                                    <option value="">기간 선택 4</option>
-                                                </select>
-                                                <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
-                                            </div>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _orange">영문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>교정의뢰기관</th>
+                                        <td><input type="checkbox" class="f_chk"></td>
                                         <td>
-                                            <select name="" id="" class="f_select ty_small w_200">
-                                                <option value="">선택</option>
-                                                <option value="">선택2</option>
-                                                <option value="">선택3</option>
-                                                <option value="">선택4</option>
-                                                <option value="">선택5</option>
-                                            </select>
+                                            <div class="c_num">  
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
                                         </td>
-                                        <th>수리의뢰기관</th>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
                                         <td>
-                                            <select name="" id="" class="f_select ty_small w_200">
-                                                <option value="">선택</option>
-                                                <option value="">선택2</option>
-                                                <option value="">선택3</option>
-                                                <option value="">선택4</option>
-                                                <option value="">선택5</option>
-                                            </select>
+                                            <a href="" class="f_btn ty_small _green">국문</a>
+                                            <a href="" class="f_btn ty_small _orange">영문</a>
                                         </td>
-                                        <th>사외건만 조회</th>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
                                         <td>
-                                            <label><input type="checkbox" class="f_chk ty_big"> 사외건만 조회</label>  
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <!--[D] 성적서 버튼 비활성화 일 경우-->
+                                            <a href="#none" class="f_btn ty_small _green disable">국문</a>
+                                            <a href="#none" class="f_btn ty_small _orange disable">영문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num"> 
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <!--[D] 성적서 버튼 비활성화 일 경우-->
+                                            <a href="#none" class="f_btn ty_small _green disable">국문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num"> 
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-
-                    <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-
-                    <div class="tab_cont_item">
-                        <div class="v_tbl_wrap">
-                            <table class="v_tbl">
-                                <tbody>
-                                    <colgroup>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                        <col style="width: 160px;">
-                                        <col>
-                                    </colgroup>
-                                    <tr class="">
-                                        <th>시험번호</th>
-                                        <td><input type="text" class="f_input ty_small w_100"> ~ <input type="text" class="f_input ty_small w_100"></td>
-                                        <th>요구사항</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                        <th>비고</th>
-                                        <td><input type="text" class="f_input ty_small w_200"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="paging_wrap">
+                            <a href="" class="paging_btn paging_nav ty_first"><span class="blind">처음</span></a>
+                            <a href="" class="paging_btn paging_nav ty_prev"><span class="blind">이전</span></a>
+                            <ul class="paging_list">
+                                <li><span class="paging_btn current">1</span></li>
+                                <li><a href="" class="paging_btn">2</a></li>
+                                <li><a href="" class="paging_btn">3</a></li>
+                                <li><a href="" class="paging_btn">4</a></li>
+                                <li><a href="" class="paging_btn">5</a></li>
+                            </ul>
+                            <a href="" class="paging_btn paging_nav ty_next"><span class="blind">다음</span></a>
+                            <a href="" class="paging_btn paging_nav ty_last"><span class="blind">마지막</span></a>
                         </div>
-                    </div>
-                    <div class="btn_set taC mt20">
-                        <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색">
-                        <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
-                    </div>
-                    
+                    </section>
                 </div>
-                
-                <!--// tab list + cont -->
-            </section>
-            <div class="btn_set bg_box mt15">
-                <button type="button" class="f_btn ty_small _solidGrey w_80">내용인쇄</button>
-                <button type="button" class="f_btn ty_small _solidGrey w_80">성적서</button>
-                <button type="button" class="f_btn ty_small _solidGrey w_80">바코드 인쇄</button>
-            </div>
-            <section class="sec">
-                <div class="sec_tit">
-                    <h2 class="tit">접수 내역</h2>
-                    <div class="search_count">- 검색결과 <b>1,200</b>건</div>
-                    <select name="" id="" class="sort_count f_select ty_small w_60">
-                        <option value="">10개</option>
-                        <option value="">30개</option>
-                        <option value="">50개</option>
-                    </select>
-                </div>
-                <!--[D] 테이블 영역, 스크롤 형태일 경우 y_scroll_area 클래스추가 & style="max-height: ***px;" -->
-                <div class="h_tbl_wrap y_scroll_area" style="max-height: 280px;">
-                    <table class="h_tbl">
-                        <colgroup>
-                            <col style="width: 100px;">
-                            <col style="width: 100px;">
-                            <col style="width: 80px;">
-                            <col style="width: 160px;">
-                            <col style="width: 80px;">
-                            <col style="width: 80px;">
-                            <col style="width: 120px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 100px;">
-                            <col>
-                            <col style="width: 60px">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th class="th_fixed">접수번호 
-                                    
-                                    <div class="col_sort">
-                                        <!--[D] .btn_sort 활성화 on class -->
-                                        <button type="button" class="btn_sort ty_up on"><span class="blind">up</span></button>
-                                        <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
-                                    </div>
-                                </th>
-                                <th class="th_fixed">
-                                    접수일자
-                                    <div class="col_sort">
-                                        <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
-                                        <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
-                                    </div>
-                                </th>
-                                <th class="th_fixed">입고구분</th>
-                                <th class="th_fixed">업체명</th>
-                                <th class="th_fixed">접수자</th>
-                                <th class="th_fixed">신청자</th>
-                                <th class="th_fixed">성적서 업체명</th>
-                                <th class="th_fixed">총수량</th>
-                                <th class="th_fixed">교정완료</th>
-                                <th class="th_fixed">명세서</th>
-                                <th class="th_fixed">계산서</th>
-                                <th class="th_fixed">수납</th>
-                                <th class="th_fixed">출고</th>
-                                <th class="th_fixed">저장위치</th>
-                                <th class="th_fixed">요구사항</th>
-                                <th class="th_fixed">상세보기</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <!--[D] 접수번호, 교정번호 -->
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div> 
-                                    <!--// [D] 접수번호, 교정번호 -->
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001</a> 
-                                    </div>
-                                </td>
-                                <td>2023-03-10</td>
-                                <td>택배</td>
-                                <td>미래공구주식회사 평택지점</td>
-                                <td>유재현</td>
-                                <td>이준성</td>
-                                <td>(주)삼성물산</td>
-                                <td>6</td>
-                                <td>6</td>
-                                <td>5</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td>234</td>
-                                <td>124</td>
-                                <td class="taL ">요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 요구사항 </td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="paging_wrap">
-                    <a href="" class="paging_btn paging_nav ty_first"><span class="blind">처음</span></a>
-                    <a href="" class="paging_btn paging_nav ty_prev"><span class="blind">이전</span></a>
-                    <ul class="paging_list">
-                        <li><span class="paging_btn current">1</span></li>
-                        <li><a href="" class="paging_btn">2</a></li>
-                        <li><a href="" class="paging_btn">3</a></li>
-                        <li><a href="" class="paging_btn">4</a></li>
-                        <li><a href="" class="paging_btn">5</a></li>
-                    </ul>
-                    <a href="" class="paging_btn paging_nav ty_next"><span class="blind">다음</span></a>
-                    <a href="" class="paging_btn paging_nav ty_last"><span class="blind">마지막</span></a>
-                </div>
-            </section>
-            <section class="sec">
-                <div class="sec_tit">
-                    <h2 class="tit">교정 내역</h2>
-                    <div class="search_count">- 검색결과 <b>1,200</b>건</div>
-                    <select name="" id="" class="sort_count f_select ty_small w_60">
-                        <option value="">10개</option>
-                        <option value="">30개</option>
-                        <option value="">50개</option>
-                    </select>
-                </div>
-                <div class="h_tbl_wrap y_scroll_area" style="max-height: 280px;">
-                    <table class="h_tbl">
-                        <colgroup>
-                            <col style="width: 36px;">
-                            <col style="width: 100px;">
-                            <col style="width: 140px;">
-                            <col style="width: 60px;">
-                            <col style="width: 60px;">
-                            <col style="width: 100px;">
-                            <col style="width: 80px;">
-                            <col style="width: 120px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col style="width: 50px;">
-                            <col>
-                            <col style="width: 60px">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th class="th_fixed"><input type="checkbox" class="f_chk"></th>
-                                <th class="th_fixed">교정번호 
-                                    <div class="col_sort">
-                                        <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
-                                        <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
-                                    </div>
-                                </th>
-                                <th class="th_fixed">입고일시</th>
-                                <th class="th_fixed">구분</th>
-                                <th class="th_fixed">의뢰</th>
-                                <th class="th_fixed">교정상태</th>
-                                <th class="th_fixed">교정결과</th>
-                                <th class="th_fixed">성적서</th>
-                                <th class="th_fixed">명세서</th>
-                                <th class="th_fixed">계산서</th>
-                                <th class="th_fixed">수납</th>
-                                <th class="th_fixed">출고</th>
-                                <th class="th_fixed">할인</th>
-                                <th class="th_fixed">비고</th>
-                                <th class="th_fixed">상세보기</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _green">국문</a>
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _orange">영문</a>
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">  
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _green">국문</a>
-                                    <a href="" class="f_btn ty_small _orange">영문</a>
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    <!--[D] 성적서 버튼 비활성화 일 경우-->
-                                    <a href="#none" class="f_btn ty_small _green disable">국문</a>
-                                    <a href="#none" class="f_btn ty_small _orange disable">영문</a>
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num"> 
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    <!--[D] 성적서 버튼 비활성화 일 경우-->
-                                    <a href="#none" class="f_btn ty_small _green disable">국문</a>
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    -
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num"> 
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    -
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    -
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    -
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="f_chk"></td>
-                                <td>
-                                    <div class="c_num">
-                                        <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
-                                        <a class="c_num_link" href="">2300001-1</a> 
-                                    </div> 
-                                </td>
-                                <td>2023-03-12 11:22:22</td>
-                                <td>교정</td>
-                                <td>사외</td>
-                                <td>출고청구대기</td>
-                                <td>불량</td>
-                                <td>
-                                    -
-                                </td>
-                                <td>O</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
-                                <td>
-                                    <a href="" class="f_btn ty_small _blue">상세</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="paging_wrap">
-                    <a href="" class="paging_btn paging_nav ty_first"><span class="blind">처음</span></a>
-                    <a href="" class="paging_btn paging_nav ty_prev"><span class="blind">이전</span></a>
-                    <ul class="paging_list">
-                        <li><span class="paging_btn current">1</span></li>
-                        <li><a href="" class="paging_btn">2</a></li>
-                        <li><a href="" class="paging_btn">3</a></li>
-                        <li><a href="" class="paging_btn">4</a></li>
-                        <li><a href="" class="paging_btn">5</a></li>
-                    </ul>
-                    <a href="" class="paging_btn paging_nav ty_next"><span class="blind">다음</span></a>
-                    <a href="" class="paging_btn paging_nav ty_last"><span class="blind">마지막</span></a>
-                </div>
-            </section>
+            </div> 
         </div>
     </main>
     <!--//container-->
     <!--footer-->
     <footer class="footer">
-        <div class="footer_top">
+        <!-- <div class="footer_top">
             <div class="inner">
                 <ul class="footer_top_nav ">
                     <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
                     <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
                 </ul>
             </div>
+        </div> -->
+        <div class="footer_logo">
+            <img src="../assets/images/common/logo_footer.svg" alt="KIC 코리아인스트루먼트(주)">
         </div>
-        <div class="footer_bot">
-            <div class="inner">
-                <div class="footer_logo">
-                    <a href=""><img src="../assets/images/common/logo_footer.svg" alt=""></a>
-                </div>
-                <div class="footer_cont">
-                    <div class="footer_branch">
-                        <div class="footer_branch_sec">
-                            <h2 class="footer_branch_tit">[서울본사]</h2>
-                            <ul class="footer_branch_list">
-                                <li>
-                                    <strong>주소</strong>
-                                    <span>서울 구로구 남부순환로 1303 KIC빌딩</span>
-                                </li>
-                                <li>
-                                    <strong>전화번호</strong>
-                                    <a href="tel:1600-4245">1600-4245</a>
-                                </li>
-                                <li>
-                                    <strong>팩스</strong>
-                                    <span>02-863-1905</span>
-                                </li>
-                                <li>
-                                    <strong>이메일</strong>
-                                    <a href="mailto:k8631901@kic21.co.kr">k8631901@kic21.co.kr</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer_branch_sec">
-                            <h2 class="footer_branch_tit">[부산지사]</h2>
-                            <ul class="footer_branch_list">
-                                <li>
-                                    <strong>주소</strong>
-                                    <span>부산 사상구 광장로 56번길 45</span>
-                                </li>
-                                <li>
-                                    <strong>전화번호</strong>
-                                    <a href="tel:051-322-0880">051-322-0880</a>
-                                </li>
-                                <li>
-                                    <strong>팩스</strong>
-                                    <span>051-322-4066</span>
-                                </li>
-                                <li>
-                                    <strong>이메일</strong>
-                                    <a href="mailto:calworld@kic21.co.kr">calworld@kic21.co.kr</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer_branch_sec">
-                            <h2 class="footer_branch_tit">[대전지사]</h2>
-                            <ul class="footer_branch_list">
-                                <li>
-                                    <strong>주소</strong>
-                                    <span>대전 유성구 테크노11로 32</span>
-                                </li>
-                                <li>
-                                    <strong>전화번호</strong>
-                                    <a href="tel:042-931-1901">042-931-1901</a>
-                                </li>
-                                <li>
-                                    <strong>팩스</strong>
-                                    <span>042-931-1902</span>
-                                </li>
-                                <li>
-                                    <strong>이메일</strong>
-                                    <a href="mailto:grand1901@kic21.co.kr">grand1901@kic21.co.kr</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer_branch_sec">
-                            <h2 class="footer_branch_tit">[지안지사]</h2>
-                            <ul class="footer_branch_list">
-                                <li>
-                                    <strong>주소</strong>
-                                    <span>경기 가평군 설악면 유명산길 37</span>
-                                </li>
-                                <li>
-                                    <strong>전화번호</strong>
-                                    <a href="tel:031-585-8511">031-585-8511</a>
-                                </li>
-                                <li>
-                                    <strong>이메일</strong>
-                                    <a href="mailto:grand1901@kic21.co.kr">gongrong@empal.com</a>
-                                </li>
-                                <li>
-                                    <strong>홈페이지</strong>
-                                    <a href="www.ji-an.co.kr" target="_blank">www.ji-an.co.kr</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer_info">
-                        <span>코리아인스트루먼트(주)</span>
-                        <span>사업자등록번호 : 101-81-45861</span>
-                        <span>대표이사 : 정재호</span>
-                    </div>
-                    <p class="copyright">
-                        Copyright@KIC, Korea Instrument All Rights Reserved.
-                    </p>
-                    <div class="footer_contact">
-                        <span class="tit"><i></i> CONTACT US</span>
-                        <span class="num">1600 - 4245</span>
-                    </div>
-                </div>
+        <div class="footer_info">
+            <ul class="footer_info_list">
+                <li>코리아인스트루먼트(주)</li>
+                <li><span class="bar"></span>사업자등록번호 : 101-81-45861</li>
+                <li><span class="bar"></span>대표이사 : 정재호</li>
+            </ul>
+            <p class="copy">Copyright@KIC, Korea Instrument All Rights Reserved.</p>
+            <div class="contact">
+                <b><i class="fa-solid fa-phone"></i> CONTACT US</b> 
+                <span class="bar"></span>
+                <span>1600 - 4245</span>
             </div>
-        </div>  
+        </div>
+        <div class="footer_right">
+            <div class="footer_right_btns">
+                <a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a>
+                <span class="bar"></span>
+                <a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a>
+            </div>
+            <div class="footer_right_branch">
+                <button class="btn_trigger">코리아인스트루먼트(주) 지점안내</button>
+                <ul class="branch_list">
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=0" target="_blank">코리아인스트루먼트(주) 서울본사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=1" target="_blank">코리아인스트루먼트(주) 부산지사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=2" target="_blank">코리아인스트루먼트(주) 대전지사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=3" target="_blank">코리아인스트루먼트(주) 가평지안</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
     <!--//footer-->
 </body>
