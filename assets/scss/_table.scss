@@ -86,8 +86,11 @@
     }
     tbody {
         tr:hover {
-            background-color: rgba(rgb(249, 246, 61), .1);
+            background-color: rgba(rgb(249, 246, 61), 0.08);
             cursor: pointer;
+        }
+        tr.on {
+            background-color: rgba(rgb(249, 246, 61), 0.16);
         }
         td {
             padding: 5px;

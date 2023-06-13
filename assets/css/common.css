@@ -8723,8 +8723,11 @@ input::-webkit-search-results-decoration {
   z-index: 99;
 }
 .h_tbl tbody tr:hover {
-  background-color: rgba(249, 246, 61, 0.1);
+  background-color: rgba(249, 246, 61, 0.08);
   cursor: pointer;
+}
+.h_tbl tbody tr.on {
+  background-color: rgba(249, 246, 61, 0.16);
 }
 .h_tbl tbody td {
   padding: 5px;
