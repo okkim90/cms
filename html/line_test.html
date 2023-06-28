@@ -400,96 +400,17 @@
             </script>
             <!--// tabs 토글버튼 -->
             <div id="tabs-main" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true">
-                <div class="contents ty_main">
-                    <div class="main_wrap">
-                        <section class="main_sec main_top">
-                            <div class="main_status">
-                                <div class="main_status_item col_item item1">
-                                    <strong class="tit"><i class="fa-solid fa-warehouse"></i> 입고현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">입고대기</strong>
-                                            <div class="count" data-value="235653">0</div>
-                                        </div>
-                                        <div class="bar"></div>
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">입고완료</strong>
-                                            <div class="count" data-value="321425">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main_status_item col_item item2">
-                                    <strong class="tit"><i class="fa-solid fa-scale-unbalanced-flip"></i> 교정현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">교정대기</strong>
-                                            <div class="count" data-value="1643">0</div>
-                                        </div>
-                                        <div class="bar"></div>
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">교정완료</strong>
-                                            <div class="count" data-value="5234">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main_status_item col_item item3">
-                                    <strong class="tit"><i class="fa-solid fa-file-signature"></i> 승인현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">승인대기</strong>
-                                            <div class="count" data-value="356534">0</div>
-                                        </div>
-                                        <div class="bar"></div>
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">승인완료</strong>
-                                            <div class="count" data-value="321425">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main_status_item col_item item4">
-                                    <strong class="tit"><i class="fa-solid fa-truck-fast"></i> 출고현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">출고대기</strong>
-                                            <div class="count" data-value="356534">0</div>
-                                        </div>
-                                        <div class="bar"></div>
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">출고완료</strong>
-                                            <div class="count" data-value="321425">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="txt_info">기준시간: 2023-04-10 12:00</p>
-                            </div>
-                        </section>
-                        <section class=" main_bot d_flex  _gap30">
-                            <section class="main_sec">
-                                <div class="main_sec_tit">
-                                    <h2 class="tit">월별 입고 추이</h2>
-                                    <div class="count_box">
-                                        <span class="count" data-value="23123123">0</span>
-                                        <span class="unit">건</span> 
-                                        <span class="info">(2023년 05월 기준)</span>
-                                    </div>
-                                </div>
-                                <div class="chart_box">
-                                    <div class="chart" id="columnchart"></div>
-                                </div>
-                            </section>
-                            <section class="main_sec">
-                                <div class="main_sec_tit">
-                                    <h2 class="tit">월별 교정 추이</h2>
-                                    <div class="count_box">
-                                        <span class="count" data-value="112341">0</span>
-                                        <span class="unit">건</span> 
-                                        <span class="info">(2023년 05월 기준)</span>
-                                    </div>
-                                </div>
-                                <div class="chart_box">
-                                    <div class="chart" id="linechart"></div>
-                                </div>
-                            </section>
+                <div class="contents ">
+                    
+                        <div class="main_sec_tit">
+                            <h2 class="tit">월별 입고 추이</h2>
+                            
+                        </div>
+                        <div class="chart_box">
+                            <div class="chart" id="columnchart"></div>
+                        </div>
+                    
+                           
                             <script>                   
                                 google.charts.load('current', {
                                     callback: function () {
@@ -503,169 +424,66 @@
                                     /* 월별 입고 */
                                     var columnData = new google.visualization.DataTable();
                                     columnData.addColumn('string', 'Topping');
-                                    columnData.addColumn('number', '입고 수(건)');   
+                                    columnData.addColumn('number', '온도');   
+                                    columnData.addColumn('number', '기준(MAX)');   
+                                    columnData.addColumn('number', '기준(MIN)');   
                                     columnData.addRows([
-                                        ['1월 입고', 8000],
-                                        ['2월 입고', 18000 ],
-                                        ['3월 입고', 32000 ],
-                                        ['4월 입고', 15000 ],
-                                        ['5월 입고', 43000 ],
+                                        ['00', 25 , 25.12, 23.12],
+                                        ['01', 24, 25.12, 23.12],
+                                        ['02', 23.15 , 25.12, 23.12],
+                                        ['03', 24.11, 25.12, 23.12 ],
+                                        ['04', 23.5, 25.12, 23.12 ],
+                                        ['05', 23.5, 25.12, 23.12 ],
+                                        ['06', 24 , 25.12, 23.12],
+                                        ['07', 23.5, 25.12, 23.12 ],
+                                        ['08', 24 , 25.12, 23.12],
+                                        ['09', 23.5 , 25.12, 23.12],
+                                        ['10', 23.5 , 25.12, 23.12],
+                                        ['11', 25 , 25.12, 23.12],
+                                        ['12', 24 , 25.12, 23.12],
+                                        ['13', 23.5 , 25.12, 23.12],
+                                        ['14', 25 , 25.12, 23.12],
+                                        ['15', 23.5 , 25.12, 23.12],
+                                        ['16', 23.5 , 25.12, 23.12],
+                                        ['17', 23.5 , 25.12, 23.12],
+                                        ['18', 23.5 , 25.12, 23.12],
+                                        ['19', 23.5 , 25.12, 23.12],
+                                        ['20', 23.5 , 25.12, 23.12],
+                                        ['21', 23.5 , 25.12, 23.12],
+                                        ['22', 23.5 , 25.12, 23.12],
+                                        ['23', 23.5 , 25.12, 23.12],
+                                        ['24', 23.5 , 25.12, 23.12],
                                     ]);
                                     var columnOptions = {
                                         legend: 'none',
+                                        curveType: 'function',
                                         responsive: true,
                                         vAxis: {
                                             viewWindow: {
-                                                min: 0,
-                                                max: 50000
+                                                max: 26,
+                                                min: 22
                                             }
                                         },
-                                        animation:{
-                                            duration: 1000,
-                                            easing: 'out',
-                                            startup: true
-                                        },
+                                       
                                         chartArea: {right:30,left:60,top:20,bottom:30},
-                                        colors: ['#63c1fc']
+                                        
+                                        series: {
+                                            0: { lineWidth: 2, pointSize: 4,},
+                                            1: { lineWidth: 2, lineDashStyle: [2, 3] },
+                                            2: { lineWidth: 2, lineDashStyle: [2, 3] },
+                                   
+                                          },
+                                        colors: ['#333', '#f00', '#00f']
                                     };
-                                    var columnchart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+                                    var columnchart = new google.visualization.LineChart(document.getElementById('columnchart'));
                                     columnchart.draw(columnData, columnOptions);
 
 
-                                    /* 월별 교정 */
-                                    var lineDataArray = [
-                                        ['1월 교정', 5000],
-                                        ['2월 교정', 6000 ],
-                                        ['3월 교정', 22000 ],
-                                        ['4월 교정', 10000 ],
-                                        ['5월 교정', 35000 ],
-                                    ];
-                                    var lineData = new google.visualization.DataTable();
-                                    lineData.addColumn('string', 'Topping');
-                                    lineData.addColumn('number', '교졍 수(건)');
-                                    //lineData.addRows(lineDataArray);
-                                    var lineOption = {
-                                        legend: 'none',
-                                        curveType: 'function',
-                                        responsive: true,
-                                        lineWidth: 6,
-                                       
-                                        vAxis: {
-                                            viewWindow: {
-                                                min: 0,
-                                                max: 50000
-                                            }
-                                            
-                                        },
-                                        chartArea: {right:30,left:60,top:20,bottom:30},
-                                        animation:{
-                                            duration: 400,
-                                            easing: 'out',
-                                            startup: true
-                                        },
-                                        colors: ['#f8742e']
-                                    }
-                                    var linechart = new google.visualization.LineChart(document.getElementById('linechart'));
-                                    
-                                    
-                                    //linechart.draw(lineData, lineOption);
-
-                                    var rowIndex = 0;
-                                    function lineAni(){
-                                        if (rowIndex < lineDataArray.length) {
-                                            lineData.addRow(lineDataArray[rowIndex++]);
-                                            linechart.draw(lineData, lineOption);
-                                        }
-                                    } 
-                                    lineAni();
-                                    setInterval(lineAni, 200);
+                            
                                 }
                             </script>
                         </section>
-                        <section class="main_right d_flex fd_col _gap30">
-                            <section class="main_sec">
-                                <div class="main_sec_tit">
-                                    <h2 class="tit">일정</h2>
-                                    <a href="" class="btn_view_more"></a>
-                                </div>
-                                <ul class="main_sked">
-                                    <!--
-                                        [D] 일정 컬러 태그 
-                                        회사일정 : <span class="sked_tag ty_company"></span>,
-                                        부서일정 : <span class="sked_tag ty_department"></span>,
-                                        공유일정 : <span class="sked_tag ty_share"></span>,
-                                        개인일정 : <span class="sked_tag ty_personal"></span>,
-                                        기타일정 : <span class="sked_tag ty_etc"></span>  
-                                    -->
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_company"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_department"></span>
-                                            <div class="txt">일정 내용 일정 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_share"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_personal"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                    <li class="main_sked_item">
-                                        <a href="" class="main_sked_link">
-                                            <span class="sked_tag ty_etc"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </section>
-                            <section class="main_sec">
-                                <div class="main_sec_tit">
-                                    <h2 class="tit">공지사항</h2>
-                                    <a href="" class="btn_view_more"></a>
-                                </div>
-                                <ul class="main_notice">
-                                    <!--
-                                        [D] 일정 컬러 태그 
-                                        회사일정 : <span class="sked_tag ty_company"></span>,
-                                        부서일정 : <span class="sked_tag ty_department"></span>,
-                                        공유일정 : <span class="sked_tag ty_share"></span>,
-                                        개인일정 : <span class="sked_tag ty_personal"></span>,
-                                        기타일정 : <span class="sked_tag ty_etc"></span>  
-                                    -->
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                    <li class="main_notice_item">
-                                        <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </section>
-                        </section>
+                        
                     </div>
                 </div>
             </div> 

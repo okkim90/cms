@@ -92,6 +92,24 @@ layer_popup_cont.forEach(e=>{
 });
 
 
+function open_popup(target){
+    let layer_popup = document.querySelector(`.layer_popup_new.${target}`);
+    //console.log(layer_popup);
+    layer_popup.classList.add('on');
+}
+function close_popup(target){
+    let layer_popup = target.closest('.layer_popup_new');
+    let layer_popup_cont = target.closest('.layer_popup_new');
+    layer_popup.classList.remove('on');
+}
+let layer_popup_new_cont = document.querySelectorAll('.layer_popup_new_cont');
+layer_popup_cont.forEach(e=>{
+    e.addEventListener('click',(e)=>{
+        e.stopPropagation()
+    })
+});
+
+
 
 function tab_btn(e){
     let index = $(e).parent().index();

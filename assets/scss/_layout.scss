@@ -885,3 +885,30 @@
         margin-top: 10px;
     }
 }
+
+.cal_setting {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid $c_line;
+    box-shadow: 2px 4px 4px rgba(#000, .1);
+    &_tit {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+}
+
+.box_shadow {
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(#000, .2);
+}
+.box_line {
+    border: 1px solid $c_line;
+    border-radius: 10px;
+}
