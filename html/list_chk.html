@@ -408,7 +408,12 @@
                             <span class="blind">새로고침</span>
                         </button>
                     </div>
-                    
+                    <h1 style="font-size: 40px;"  class=" mt20 mb20">
+                        [체크 박스 스페이스바] <br>
+                        시작점 : 클릭된 체크박스, <br>
+                        시작점이 해제된 경우 -> 스페이스바 누를시 쭉 해제됨, <br>
+                        시작점이 체크된 경우 -> 스페이스바 누를시 쭉 체크됨 
+                    </h1>
                     <div class="sec">
                         <div class="h_tbl_wrap">
                             <table class="h_tbl">
@@ -1078,25 +1083,24 @@
     <!--//footer-->
     <script>
         //let row_chk = $('.row_chk');
-
         let current_chk;
+        let chk_flag;
         function row_chk(e){
             let $this = $(e);
-            
-                current_chk = $this
-                console.log(current_chk);
-                return current_chk
-            
+            current_chk = $this
+            chk_flag = $this.is(':checked');
+            //console.log(current_chk);
+            //console.log(chk_flag);            
+            //return current_chk
         }
         $(window).keydown(function(e) {
             if (e.keyCode === 32 && current_chk) {
                 e.preventDefault();
                 current_chk = current_chk.parents('tr').next('tr').find('.row_chk');
-
-                if(current_chk.is(':checked')){
-                    current_chk.prop("checked", false);
-                }else{
+                if(chk_flag){
                     current_chk.prop("checked", true);
+                }else{
+                   current_chk.prop("checked", false);
                 }
             }
         });
