@@ -66,6 +66,7 @@
     &.ty_fixed {
         table-layout: fixed;
     }
+
     thead {
         th {
             background-color: $c_bg_grey;
@@ -131,6 +132,9 @@
         }
         tr.on {
             background-color: rgba(rgb(249, 246, 61), 0.16);
+        }
+        tr.chk_on {
+            background-color: rgba($c_key, .08);
         }
         th {
             background-color: $c_bg_grey;

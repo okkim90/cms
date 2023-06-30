@@ -409,11 +409,12 @@
                         </button>
                     </div>
                     <h1 style="font-size: 40px;"  class=" mt20 mb20">
-                        [체크 박스 스페이스바] <br>
-                        시작점 : 클릭된 체크박스, <br>
-                        시작점이 해제된 경우 -> 스페이스바 누를시 쭉 해제됨, <br>
-                        시작점이 체크된 경우 -> 스페이스바 누를시 쭉 체크됨 
+                        [버전2] <br>
+                        마우스 클릭 ~ 드래그로 영역 선택 후 <br>
+                        스페이스바로 체크<br>
+                        백스페이스로 체크해제
                     </h1>
+                    
                     <div class="sec">
                         <div class="h_tbl_wrap">
                             <table class="h_tbl">
@@ -459,8 +460,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -485,8 +486,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -511,8 +512,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">  
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -537,8 +538,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -564,8 +565,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num"> 
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -590,8 +591,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -615,8 +616,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num"> 
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -640,8 +641,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -666,8 +667,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -692,8 +693,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -720,6 +721,317 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            
+                        </div>
+                    </div>
+
+                    <div class="sec">
+                        <div class="h_tbl_wrap">
+                            <table class="h_tbl">
+                                <colgroup>
+                                    <col style="width: 36px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 140px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 100px;">
+                                    <col style="width: 80px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 50px;">
+                                    <col>
+                                    <col style="width: 60px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_fixed"><input type="checkbox" class="f_chk"></th>
+                                        <th class="th_fixed">교정번호 
+                                            <div class="col_sort">
+                                                <button type="button" class="btn_sort ty_up"><span class="blind">up</span></button>
+                                                <button type="button" class="btn_sort ty_down"><span class="blind">down</span></button>
+                                            </div>
+                                        </th>
+                                        <th class="th_fixed">입고일시</th>
+                                        <th class="th_fixed">구분</th>
+                                        <th class="th_fixed">의뢰</th>
+                                        <th class="th_fixed">교정상태</th>
+                                        <th class="th_fixed">교정결과</th>
+                                        <th class="th_fixed">성적서</th>
+                                        <th class="th_fixed">명세서</th>
+                                        <th class="th_fixed">계산서</th>
+                                        <th class="th_fixed">수납</th>
+                                        <th class="th_fixed">출고</th>
+                                        <th class="th_fixed">할인</th>
+                                        <th class="th_fixed">비고</th>
+                                        <th class="th_fixed">상세보기</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _green">국문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _orange">영문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
+                                        <td>
+                                            <div class="c_num">  
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _green">국문</a>
+                                            <a href="" class="f_btn ty_small _orange">영문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <!--[D] 성적서 버튼 비활성화 일 경우-->
+                                            <a href="#none" class="f_btn ty_small _green disable">국문</a>
+                                            <a href="#none" class="f_btn ty_small _orange disable">영문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
+                                        <td>
+                                            <div class="c_num"> 
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            <!--[D] 성적서 버튼 비활성화 일 경우-->
+                                            <a href="#none" class="f_btn ty_small _green disable">국문</a>
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num"> 
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
+                                        <td>
+                                            <div class="c_num">
+                                                <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
+                                                <a class="c_num_link" href="">2300001-1</a> 
+                                            </div> 
+                                        </td>
+                                        <td>2023-03-12 11:22:22</td>
+                                        <td>교정</td>
+                                        <td>사외</td>
+                                        <td>출고청구대기</td>
+                                        <td>불량</td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>O</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="taL">비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용 비고 내용</td>
+                                        <td>
+                                            <a href="" class="f_btn ty_small _blue">상세</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
                         </div>
                     </div>
                     <div class="sec">
@@ -767,8 +1079,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -793,8 +1105,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -819,8 +1131,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">  
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -845,8 +1157,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)" ></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -872,8 +1184,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num"> 
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -898,8 +1210,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -923,8 +1235,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num"> 
                                                 <a class="c_num_link" href="">2300001-1</a> 
@@ -948,8 +1260,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -974,8 +1286,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk" ></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -1000,8 +1312,8 @@
                                             <a href="" class="f_btn ty_small _blue">상세</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" class="f_chk row_chk" onchange="row_chk(this)"></td>
+                                    <tr class="has_chk">
+                                        <td><input type="checkbox" class="f_chk row_chk"></td>
                                         <td>
                                             <div class="c_num">
                                                 <i class="fa-solid fa-bolt c_num_ico fc_red"></i>
@@ -1082,45 +1394,51 @@
     </footer>
     <!--//footer-->
     <script>
-        //let row_chk = $('.row_chk');
-        let current_chk;
-        let chk_flag;
-        let current_tr;
-        function row_chk(e){
-            let $this = $(e);
-            current_chk = $this;
-            current_tr = $this.parents('tr');
-            chk_flag = $this.is(':checked');
-            //console.log(current_chk);
-            //console.log(chk_flag);            
-            //return current_chk
-            if(chk_flag){
-                current_tr.addClass('chk_on')
-            }else{
-                current_tr.removeClass('chk_on')
-            }
-        }
-
         
+
+
+        let isMouseDown;
+
+        $(".h_tbl tbody td").on('mousedown',function () {
+          isMouseDown = true;
+          $(this).parent('tr').toggleClass("chk_on");
+          return false; // prevent text selection
+        }).on('mouseover',function () {
+          if (isMouseDown) {
+            $(this).parent('tr').toggleClass("chk_on");
+          }
+        }).bind("selectstart", function () {
+          return false; // prevent text selection in IE
+        });
+
+        $(document).mouseup(function () {
+          isMouseDown = false;
+        });
+
+        $(".row_chk").on('mousedown',function(e){
+            e.stopPropagation()
+        });
+       
+
         $(window).keydown(function(e) {
-            if (e.keyCode === 32 && current_chk) {
+            if (e.keyCode === 32 && $('tr').hasClass('chk_on')) {
                 e.preventDefault();
-                current_chk = current_chk.parents('tr').next('tr').find('.row_chk');
-                current_tr = current_chk.parents('tr');
-                if(chk_flag){
-                    current_chk.prop("checked", true);
-                    current_tr.addClass('chk_on')
-                }else{
-                   current_chk.prop("checked", false);
-                   current_tr.removeClass('chk_on')
-                }
+                $('tr.chk_on .row_chk').each(function(){
+                   
+                    $(this).prop('checked',true)
+                    
+                    $(".h_tbl tr").removeClass('chk_on')
+                })
+            }
+            if(e.keyCode === 8 && $('tr').hasClass('chk_on')){
+                e.preventDefault();
+                $('tr.chk_on .row_chk').each(function(){
+                    $(this).prop('checked',false);
+                    $(".h_tbl tr").removeClass('chk_on')
+                })
             }
         });
 
-
-        $('body').click(function(e){  
-            current_chk = null
-        });
     </script>
 </body>
 </html>
