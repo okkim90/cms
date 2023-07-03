@@ -1399,7 +1399,7 @@
 
         let isMouseDown;
 
-        $(".h_tbl tbody td").on('mousedown',function () {
+        $("tr.has_chk td").on('mousedown',function () {
           isMouseDown = true;
           $(this).parent('tr').toggleClass("chk_on");
           return false; // prevent text selection
