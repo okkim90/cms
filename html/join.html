@@ -11,6 +11,27 @@
     <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
     <title>코리아인스트루먼트(주) 교정관리 시스템</title>
 
+
+    <!-- 기존 cms js -->
+    <script type="text/javascript" src="../common/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.print.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui-custom.min.js?123123132" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.form.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/common.js" charset="utf-8"></script>
+    <!--
+    <script type="text/javascript" src="../skin/basic/js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.treeview.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.cookie.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../skin/basic/js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/zebra_datepicker.js"></script>
+    <script type="text/javascript" src="../skin/basic/js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/fullcalendar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/colResizable-1-6.js" charset="utf-8"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    -->
+    <!--// 기존 cms js -->
+
     <!-- 기존 cms css -->
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -26,6 +47,10 @@
     <script src="https://kit.fontawesome.com/aa5544e91b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/common.css">
     <!--// 신규 css -->
+
+     <!-- 펴블적용js -->
+     <script type="text/javascript" src="../common/js/main.js" defer></script>
+     <!-- // 펴블적용js -->
 </head>
 <body>
     <div id="skip-nav">
@@ -160,6 +185,30 @@
             </form>
         </div>
     </main>
+
+    <div class="layer_popup_new pop_small on" onclick="close_popup(this)">
+        <div class="layer_popup_new_inner">
+            <div class="layer_popup_cont" style="width: 500px;">
+                <div class="img_box taC">
+                    <img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트(주)">
+                </div>
+                <div class="img_box taC mt30 mb30">
+                    <i class="fa-solid fa-pen-to-square fc_key" style="font-size: 100px;"></i>
+                </div>
+                <div class="txt_box fz_big taC">
+                    CMS 신청 접수가 완료되었습니다. <br>
+                    승인 후 개별 안내해 드리겠습니다. <br>
+                    감사합니다.
+                </div>
+                <div class="btn_set taC mt30">
+                    <button type="button" class="f_btn ty_big _key w_300" onclick="close_popup(this)">확인</button>
+                </div>
+                <div class="login_bot taC">
+					<p class="msg_tel">시스템 이용 문의 : 1600-4245</p>
+				</div>
+            </div>
+        </div>
+    </div>
     <!--footer-->
     <footer class="footer">
         <!-- <div class="footer_top">
