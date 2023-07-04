@@ -480,6 +480,7 @@
                         <div class="multiselect">
                             
                             <div class="multiselect_output_wrap">
+                                <span class="multiselect_count"></span>
                                 <input type="text" class="multiselect_output f_input ty_small w100" readonly placeholder="옵션을 선택해주세요.">
                                 <i class="fa-solid fa-list-check"></i>
                             </div>
@@ -521,6 +522,7 @@
                         <div class="multiselect">
                             
                             <div class="multiselect_output_wrap">
+                                <span class="multiselect_count"></span>
                                 <input type="text" class="multiselect_output f_input ty_small w100" readonly placeholder="옵션을 선택해주세요.">
                                 <i class="fa-solid fa-list-check"></i>
                             </div>
@@ -565,7 +567,9 @@
 
                         <!--멀티셀렉트 스크립트-->
                         <script>
+                            
                             const multiselect = Array.from(document.querySelectorAll(".multiselect"));
+                            const multiselect_count = Array.from(document.querySelectorAll(".multiselect_count"));
                             const multiselect_searchBoxes = Array.from(document.querySelectorAll(".multiselect_key"));
                             const multiselect_sets = Array.from(document.querySelectorAll(".multiselect_box"));
                             const multiselect_selectedSets = Array.from(document.querySelectorAll(".multiselect_selected p"));
@@ -579,7 +583,7 @@
                                 const selected = multiselect_selectedSets[setIndex];
                                 const multiselect_output = multiselect_outputs[setIndex];
                                 const multiselect_no_result_txt = multiselect_no_result[setIndex];
-                                
+                                const multiselect_count_box = multiselect_count[setIndex];
                                 document.addEventListener('mouseup', function(e) {
                                     container = document.getElementById('container');
                                     if (!this_multiselect.contains(e.target)) {
@@ -638,14 +642,15 @@
                                         });
                     
                                         multiselect_output.value = selectedOptions.join(", ");
-                                  
+                                        
                                         if (selectedOptions.length > 0) {
                                             //selected.innerText = selectedOptions.join(", ");
                                             //selected.parentElement.style.display = "block";
-                                            
+                                            multiselect_count_box.innerText =  selectedOptions.length + '개'
                                         } else {
                                             //selected.innerText = "No option selected";
                                             //selected.parentElement.style.display = "none";
+                                            multiselect_count_box.innerText =  ''
                                         }
                                     });
                                 });

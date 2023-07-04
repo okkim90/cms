@@ -516,15 +516,29 @@
     position: relative;
     max-width: 100%;
     width: 200px;
-    
+    &_count {
+        
+        font-size: 13px;
+        margin-top: 1px;
+        font-weight: bold;
+        padding-left: 5px;
+    }
     &_output {
         background-color: #fff !important;
         cursor: pointer;
         user-select: none;   
         outline: none;
         padding-right: 30px !important;
+        border: none;
+        
         &_wrap {
+            
             position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid $c_line;
+            border-radius: 4px;
+
             .fa-solid {
                 position: absolute;
                 right: 0;
