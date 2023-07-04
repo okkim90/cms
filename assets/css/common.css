@@ -8224,7 +8224,7 @@ input::-webkit-search-results-decoration {
 .multiselect {
   position: relative;
   max-width: 100%;
-  width: 200px;
+  width: 260px;
 }
 .multiselect_count {
   font-size: 13px;
