@@ -473,6 +473,174 @@
                             우 padding : .pr{사이즈} ex) .pr5, .pr10 <br> <br>
                         </div>
                     </section>
+                    <section class="sec pt30" id="multiselect">
+                        <div class="sec_tit">
+                            <h2 class="tit2">다중 셀렉트 박스</h2>
+                        </div>
+                        <div class="multiselect">
+                            
+                            <div class="multiselect_output_wrap">
+                                <input type="text" class="multiselect_output f_input ty_small w100" readonly placeholder="옵션을 선택해주세요.">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            
+                            <div class="multiselect_box set1">
+                                
+                                <input type="text" placeholder="키워드 검색" class="f_input ty_small multiselect_key">
+                                <div class="multiselect_options">
+                                    
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set1-option1">
+                                        <label for="set1-option1">Option 1 Option 1 Option 1 Option 1</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set1-option2">
+                                        <label for="set1-option2">Option 2</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set1-option3">
+                                        <label for="set1-option3">Option 3</label>
+                                    </div>
+                                    <p class="multiselect_no_result taC" style="display: none;">검색 결과가 없습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="multiselect">
+                            
+                            <div class="multiselect_output_wrap">
+                                <input type="text" class="multiselect_output f_input ty_small w100" readonly placeholder="옵션을 선택해주세요.">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <div class="multiselect_box set2">
+                               
+                                <input type="text" placeholder="키워드 검색" class="f_input ty_small multiselect_key">
+                                <div class="multiselect_options">
+                                    
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option1">
+                                        <label for="set2-option1">Option 1</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option2">
+                                        <label for="set2-option2">Option 2</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option3">
+                                        <label for="set2-option3">Option 3</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option4">
+                                        <label for="set2-option4">Option 4</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option5">
+                                        <label for="set2-option5">test 5</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option6">
+                                        <label for="set2-option6">tesst 6</label>
+                                    </div>
+                                    <div class="multiselect_option">
+                                        <input type="checkbox" id="set2-option7">
+                                        <label for="set2-option7">Option 7</label>
+                                    </div>
+                                    <p class="multiselect_no_result taC" style="display: none;">검색 결과가 없습니다.</p>
+                                </div>  
+                                
+                            </div>
+                        </div>
+
+                        <!--멀티셀렉트 스크립트-->
+                        <script>
+                            const multiselect = Array.from(document.querySelectorAll(".multiselect"));
+                            const multiselect_searchBoxes = Array.from(document.querySelectorAll(".multiselect_key"));
+                            const multiselect_sets = Array.from(document.querySelectorAll(".multiselect_box"));
+                            const multiselect_selectedSets = Array.from(document.querySelectorAll(".multiselect_selected p"));
+                            const multiselect_outputs = Array.from(document.querySelectorAll(".multiselect_output"));
+                            const multiselect_no_result = Array.from(document.querySelectorAll(".multiselect_no_result"));
+                            
+
+                            multiselect_searchBoxes.forEach((searchBox, setIndex) => {
+                                const this_multiselect = multiselect[setIndex];
+                                const options = Array.from(multiselect_sets[setIndex].querySelectorAll(".multiselect_option input[type=checkbox]"));
+                                const selected = multiselect_selectedSets[setIndex];
+                                const multiselect_output = multiselect_outputs[setIndex];
+                                const multiselect_no_result_txt = multiselect_no_result[setIndex];
+                                
+                                document.addEventListener('mouseup', function(e) {
+                                    container = document.getElementById('container');
+                                    if (!this_multiselect.contains(e.target)) {
+                                        this_multiselect.classList.remove('on');
+                                        searchBox_reset()
+                                        
+                                    }
+                               });
+                    
+                                multiselect_output.addEventListener('click',function(){
+                                    multiselect_output.parentElement.parentElement.classList.add('on')
+                                });
+                    
+                                // Add event listener to the search box
+                                
+                                searchBox.addEventListener("input", function () {
+                                    const searchTerm = searchBox.value.toLowerCase();
+                                    let off_count = options.length;
+                                    options.forEach(function (option) {
+                                        const label = option.nextElementSibling.innerText.toLowerCase();       
+                                        if (label.includes(searchTerm)) {
+                                            option.parentElement.classList.remove('off');
+                                        } else {
+                                            option.parentElement.classList.add('off');
+                                            off_count-=1
+                                        }
+                                        return off_count;
+                                    });
+                                    console.log(off_count);
+                                    if( off_count > 0){
+                                        multiselect_no_result_txt.style.display= "none"
+                                    }else{
+                                        multiselect_no_result_txt.style.display= "block"
+                                    }
+                                });
+                    
+                                function searchBox_reset(){
+                                    searchBox.value = null;
+                                    
+                                    options.forEach(function (option) {
+                                        option.parentElement.classList.remove('off');
+                                    });
+                                   
+                                    multiselect_no_result_txt.style.display= "none"
+                                    
+                                }
+                    
+                                options.forEach(function (option) {
+                                    option.addEventListener("change", function () {
+                                      const selectedOptions = options
+                                        .filter(function (option) {
+                                          return option.checked;
+                                        })
+                                        .map(function (option) {
+                                          return option.nextElementSibling.innerText;
+                                        });
+                    
+                                        multiselect_output.value = selectedOptions.join(", ");
+                                  
+                                        if (selectedOptions.length > 0) {
+                                            //selected.innerText = selectedOptions.join(", ");
+                                            //selected.parentElement.style.display = "block";
+                                            
+                                        } else {
+                                            //selected.innerText = "No option selected";
+                                            //selected.parentElement.style.display = "none";
+                                        }
+                                    });
+                                });
+                            });
+                          </script>
+                       
+                    </section>
                     <section class="sec">
                         <div class="sec_tit">
                             <h2 class="tit2">테이블</h2>
