@@ -390,7 +390,7 @@
      &_toggle {
          position: absolute;
          right: 30px;
-         top: 10px;
+         top: 9px;
          font-size: 24px;
          line-height: 0;
          color: #333;
@@ -412,7 +412,7 @@
          gap: 10px;
          flex-wrap: wrap;
          background-color: #f2f2f6;
-         padding: 10px 30px;
+         padding: 8px 30px;
          padding-right: 70px;
          border-bottom: 1px solid #ddd;
          li {
@@ -478,11 +478,11 @@
 
  .container {
     .contents {
-        padding: 30px;
+        padding: 15px 30px;
         padding-bottom: 50px;
     }
     .top_tit {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         padding-bottom: 10px;
         border-bottom: 1px solid #bbb;
         display: flex;
@@ -502,7 +502,7 @@
         }
     }
     .sec {
-        margin-top: 40px;
+        margin-top: 30px;
         &_tit {
             display: flex;
             align-items: flex-end;

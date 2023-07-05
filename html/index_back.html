@@ -409,7 +409,7 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">입고대기</strong>
-                                            <div class="count" data-value="235653">0</div><span class="unit">건</span> 
+                                            <div class="count" data-value="235653">0</div>
                                         </div>
                                         
                                     </div>
@@ -419,7 +419,7 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">교정대기</strong>
-                                            <div class="count" data-value="1643">0</div><span class="unit">건</span> 
+                                            <div class="count" data-value="1643">0</div>
                                         </div>
                                         
                                     </div>
@@ -429,7 +429,7 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">승인대기</strong>
-                                            <div class="count" data-value="356534">0</div><span class="unit">건</span>  
+                                            <div class="count" data-value="356534">0</div>
                                         </div>
                                         
                                     </div>
@@ -439,7 +439,7 @@
                                     <div class="count_wrap">
                                         <div class="count_box">
                                             <strong class="count_box_tit">출고대기</strong>
-                                            <div class="count" data-value="356534">0</div><span class="unit">건</span> 
+                                            <div class="count" data-value="356534">0</div>
                                         </div>
                                         
                                     </div>
@@ -471,7 +471,7 @@
                                     </div>
                                 </div>
                                 <div class="chart_box">
-                                    <div class="chart" id="piechart"></div>
+                                    <div class="chart" id="linechart"></div>
                                 </div>
                             </section>
                             <script>                   
@@ -484,16 +484,16 @@
                                 });
                                 google.charts.setOnLoadCallback(drawChart);    
                                 function drawChart() {
-                                    /* 월별 교정 */
+                                    /* 월별 입고 */
                                     var columnData = new google.visualization.DataTable();
                                     columnData.addColumn('string', 'Topping');
-                                    columnData.addColumn('number', '교정 수(건)');   
+                                    columnData.addColumn('number', '입고 수(건)');   
                                     columnData.addRows([
-                                        ['1월 교정', 8000],
-                                        ['2월 교정', 18000 ],
-                                        ['3월 교정', 32000 ],
-                                        ['4월 교정', 15000 ],
-                                        ['5월 교정', 43000 ],
+                                        ['1월 입고', 8000],
+                                        ['2월 입고', 18000 ],
+                                        ['3월 입고', 32000 ],
+                                        ['4월 입고', 15000 ],
+                                        ['5월 입고', 43000 ],
                                     ]);
                                     var columnOptions = {
                                         legend: 'none',
@@ -516,38 +516,53 @@
                                     columnchart.draw(columnData, columnOptions);
 
 
-
-                                    var pieData = new google.visualization.DataTable();
-                                    pieData.addColumn('string', 'Topping');
-                                    pieData.addColumn('number', '교정 수(건)');   
-                                    pieData.addRows([
-                                        ['물질량', 5],
-                                        ['길이 및 관련량', 5 ],
-                                        ['질량 및 관련량', 30 ],
-                                        ['시간 및 주파수', 1 ],
-                                        ['전기,자기,전자파', 5 ],
-                                        ['온도 및 습도', 28 ],
-                                        ['음향 및 진동', 4 ],
-                                        ['광량', 12 ],
-                                        ['전리방사선', 10 ]
-                                    ]);
-                                    var pieOptions = {
-                                        //legend: 'none',
+                                    /* 월별 교정 */
+                                    var lineDataArray = [
+                                        ['1월 교정', 5000],
+                                        ['2월 교정', 6000 ],
+                                        ['3월 교정', 22000 ],
+                                        ['4월 교정', 10000 ],
+                                        ['5월 교정', 35000 ],
+                                    ];
+                                    var lineData = new google.visualization.DataTable();
+                                    lineData.addColumn('string', 'Topping');
+                                    lineData.addColumn('number', '교졍 수(건)');
+                                    //lineData.addRows(lineDataArray);
+                                    var lineOption = {
+                                        legend: 'none',
+                                        curveType: 'function',
                                         responsive: true,
-                                        //is3D: true,
-                                        pieHole: 0.4,
-                                        legend: {alignment: 'center' },
+                                        lineWidth: 6,
+                                       
+                                        vAxis: {
+                                            viewWindow: {
+                                                min: 0,
+                                                max: 50000
+                                            }
+                                            
+                                        },
+                                        chartArea: {right:30,left:60,top:20,bottom:30},
                                         animation:{
-                                            duration: 1000,
-                                           // easing: 'out',
+                                            duration: 400,
+                                            easing: 'out',
                                             startup: true
                                         },
-                                        chartArea: {right:10,left:60,top:10,bottom:10},
-                                        //colors: ['#63c1fc']
-                                    };
-                                    var piechart = new google.visualization.PieChart(document.getElementById('piechart'));
-                                    piechart.draw(pieData, pieOptions);
+                                        colors: ['#f8742e']
+                                    }
+                                    var linechart = new google.visualization.LineChart(document.getElementById('linechart'));
                                     
+                                    
+                                    //linechart.draw(lineData, lineOption);
+
+                                    var rowIndex = 0;
+                                    function lineAni(){
+                                        if (rowIndex < lineDataArray.length) {
+                                            lineData.addRow(lineDataArray[rowIndex++]);
+                                            linechart.draw(lineData, lineOption);
+                                        }
+                                    } 
+                                    lineAni();
+                                    setInterval(lineAni, 200);
                                 }
                             </script>
                         </section>
