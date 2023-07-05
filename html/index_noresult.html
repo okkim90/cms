@@ -466,7 +466,7 @@
                         <section class=" main_bot d_flex  _gap30">
                             <section class="main_sec">
                                 <div class="main_sec_tit">
-                                    <h2 class="tit">월별 입고 추이</h2>
+                                    <h2 class="tit">월별 교정 추이</h2>
                                     <div class="count_box">
                                         <span class="count" data-value="0">0</span>
                                         <span class="unit">건</span> 
@@ -479,7 +479,7 @@
                             </section>
                             <section class="main_sec">
                                 <div class="main_sec_tit">
-                                    <h2 class="tit">월별 교정 추이</h2>
+                                    <h2 class="tit">당월 교정 분야별 비고</h2>
                                     <div class="count_box">
                                         <span class="count" data-value="0">0</span>
                                         <span class="unit">건</span> 
@@ -487,7 +487,7 @@
                                     </div>
                                 </div>
                                 <div class="chart_box">
-                                    <div class="chart" id="linechart"></div>
+                                    <div class="chart" id="piechart"></div>
                                 </div>
                             </section>
                             <script>                   
@@ -500,16 +500,16 @@
                                 });
                                 google.charts.setOnLoadCallback(drawChart);    
                                 function drawChart() {
-                                    /* 월별 입고 */
+                                    /* 월별 교정 */
                                     var columnData = new google.visualization.DataTable();
                                     columnData.addColumn('string', 'Topping');
-                                    columnData.addColumn('number', '입고 수(건)');   
+                                    columnData.addColumn('number', '교정 수(건)');   
                                     columnData.addRows([
-                                        ['1월 입고', 0],
-                                        ['2월 입고', 0 ],
-                                        ['3월 입고', 0 ],
-                                        ['4월 입고', 0 ],
-                                        ['5월 입고', 0 ],
+                                        ['1월 교정', 0],
+                                        ['2월 교정', 0 ],
+                                        ['3월 교정', 0 ],
+                                        ['4월 교정', 0 ],
+                                        ['5월 교정', 0 ],
                                     ]);
                                     var columnOptions = {
                                         legend: 'none',
@@ -532,49 +532,36 @@
                                     columnchart.draw(columnData, columnOptions);
 
 
-                                    /* 월별 교정 */
-                                    var lineDataArray = [
-                                        ['1월 교정', 0],
-                                        ['2월 교정', 0 ],
-                                        ['3월 교정', 0 ],
-                                        ['4월 교정', 0 ],
-                                        ['5월 교정', 0 ],
-                                    ];
-                                    var lineData = new google.visualization.DataTable();
-                                    lineData.addColumn('string', 'Topping');
-                                    lineData.addColumn('number', '교졍 수(건)');
-                                    var lineOption = {
-                                        legend: 'none',
-                                        curveType: 'function',
+                                    var pieData = new google.visualization.DataTable();
+                                    pieData.addColumn('string', 'Topping');
+                                    pieData.addColumn('number', '교정 수(건)');   
+                                    pieData.addRows([
+                                        ['물질량', 0],
+                                        ['길이 및 관련량', 0 ],
+                                        ['질량 및 관련량', 0 ],
+                                        ['시간 및 주파수', 0 ],
+                                        ['전기,자기,전자파', 0 ],
+                                        ['온도 및 습도', 0 ],
+                                        ['음향 및 진동', 0 ],
+                                        ['광량', 0 ],
+                                        ['전리방사선', 0 ]
+                                    ]);
+                                    var pieOptions = {
+                                        //legend: 'none',
                                         responsive: true,
-                                        lineWidth: 6,
-                                       
-                                        vAxis: {
-                                            viewWindow: {
-                                                min: 0,
-                                                max: 50000
-                                            }
-                                        },
-                                        chartArea: {right:30,left:60,top:20,bottom:30},
+                                        //is3D: true,
+                                        pieHole: 0.4,
+                                        legend: {alignment: 'center' },
                                         animation:{
-                                            duration: 400,
-                                            easing: 'out',
+                                            duration: 1000,
+                                           // easing: 'out',
                                             startup: true
                                         },
-                                        colors: ['#f8742e']
-                                    }
-                                    var linechart = new google.visualization.LineChart(document.getElementById('linechart'));
-                                    //linechart.draw(lineData, lineOption);
-
-                                    var rowIndex = 0;
-                                    function lineAni(){
-                                        if (rowIndex < lineDataArray.length) {
-                                            lineData.addRow(lineDataArray[rowIndex++]);
-                                            linechart.draw(lineData, lineOption);
-                                        }
-                                    } 
-                                    lineAni();
-                                    setInterval(lineAni, 200);
+                                        chartArea: {right:10,left:60,top:10,bottom:10},
+                                        //colors: ['#63c1fc']
+                                    };
+                                    var piechart = new google.visualization.PieChart(document.getElementById('piechart'));
+                                    piechart.draw(pieData, pieOptions);
                                 }
                             </script>
                         </section>
