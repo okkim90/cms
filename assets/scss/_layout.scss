@@ -25,6 +25,18 @@
             height: 100%;
         }
     }
+    .company_logo {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        margin-top: -16px;
+        height: 32px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
     .h_util {
         position: absolute;
         margin-top: -25px;
