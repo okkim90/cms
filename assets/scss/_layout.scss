@@ -321,7 +321,7 @@
         top: -400px;
         position: absolute;
         width: 100%;
-        padding: 0 30px; 
+        padding: 0 10px; 
         box-sizing: border-box;
         z-index: 99;
         background-color: #fff;
@@ -338,15 +338,15 @@
         }
         &_item {
             border-left: 1px solid $c_key;
-            padding: 30px 25px;
+            padding: 25px 20px;
             flex: 1;
             white-space: nowrap;
-            &:last-child {
-                border-right: 1px solid $c_key;
+            &:first-child {
+                border-left: none;
             }
             .link_dep1 {
                 display: block;
-                font-size: 16px;
+                font-size: 15px;
                 font-weight: bold;
                 color: $c_key;
             }
@@ -360,7 +360,7 @@
                 display: inline-block;
                 vertical-align: top;
                 position: relative;
-                font-size: 14px;
+                font-size: 13px;
                 line-height: 24px;
                
                 &::after {

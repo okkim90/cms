@@ -4847,7 +4847,7 @@ input::-webkit-search-results-decoration {
   top: -400px;
   position: absolute;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 10px;
   box-sizing: border-box;
   z-index: 99;
   background-color: #fff;
@@ -4863,16 +4863,16 @@ input::-webkit-search-results-decoration {
 }
 .header .all_menu_item {
   border-left: 1px solid #1f2085;
-  padding: 30px 25px;
+  padding: 25px 20px;
   flex: 1;
   white-space: nowrap;
 }
-.header .all_menu_item:last-child {
-  border-right: 1px solid #1f2085;
+.header .all_menu_item:first-child {
+  border-left: none;
 }
 .header .all_menu_item .link_dep1 {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   color: #1f2085;
 }
@@ -4886,7 +4886,7 @@ input::-webkit-search-results-decoration {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 24px;
 }
 .header .all_menu_dep2 .link_dep2::after {
