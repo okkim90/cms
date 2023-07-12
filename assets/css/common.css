@@ -8793,6 +8793,9 @@ input::-webkit-search-results-decoration {
   border-top: 1px solid #000;
   table-layout: fixed;
 }
+.v_tbl.ty_nofix {
+  table-layout: auto;
+}
 .v_tbl tr.hidden_tr {
   display: none;
 }

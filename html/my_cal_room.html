@@ -457,37 +457,56 @@
                                 </div>
                             </div>
                             <!-- [D] 조회 결과 노출 -->
-                            <div class="h_tbl_wrap mt10">
-                                <table class="h_tbl">
-                                    <colgroup>
-                                        <col style="width: 60px;">
-                                        <col>
-                                        <col>
-                                        <col>
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>최고값</th>
-                                            <th>최소값</th>
-                                            <th>평균값</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>온도(°C)</th>
-                                            <td>25.21</td>
-                                            <td>24.15</td>
-                                            <td>25.18</td>
-                                        </tr>
-                                        <tr>
-                                            <th>습도(%)</th>
-                                            <td>22.74</td>
-                                            <td>21.24</td>
-                                            <td>21.34</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="result_box mt10">
+                                <div class="h_tbl_wrap cal_env_tbl">
+                                    <table class="h_tbl">
+                                        <colgroup>
+                                            <col style="width: 60px;">
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>최고값</th>
+                                                <th>최소값</th>
+                                                <th>평균값</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>온도(°C)</th>
+                                                <td>25.21</td>
+                                                <td>24.15</td>
+                                                <td>25.18</td>
+                                            </tr>
+                                            <tr>
+                                                <th>습도(%)</th>
+                                                <td>22.74</td>
+                                                <td>21.24</td>
+                                                <td>21.34</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sep_line" style="display:none; height: 1px; background-color:#333"></div>
+                                <button type="button" class="v_tbl_toggle on" onclick="toggle_cal_env(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
+                                <script>
+                                    function toggle_cal_env(e){
+                                        let cal_env_tbl = document.querySelector('.cal_env_tbl');
+                                        let sep_line = document.querySelector('.sep_line');
+                                        if(e.classList.contains('on')){
+                                            cal_env_tbl.style.display = 'none';
+                                            sep_line.style.display = 'block';
+                                            e.classList.remove('on')
+                                        }else{
+                                            cal_env_tbl.style.display = 'block';
+                                            sep_line.style.display = 'none';
+                                            e.classList.add('on')
+                                        }  
+                                    }
+                                </script>
                             </div>
                             <!--//-->
                         </article>

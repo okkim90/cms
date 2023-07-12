@@ -2,6 +2,9 @@
     width: 100%;
     border-top: 1px solid #000;
     table-layout: fixed;
+    &.ty_nofix {
+        table-layout: auto;
+    }
     tr.hidden_tr {
         display: none;
         &.on {
