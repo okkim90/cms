@@ -924,3 +924,46 @@
     border: 1px solid $c_line;
     border-radius: 10px;
 }
+
+.f_tooltip {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    vertical-align: middle;
+    &_ico {
+        position: relative;
+        z-index: 10;
+        color: $c_blue;
+        cursor: default;
+        font-size: 17px;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &:hover {
+        .f_tooltip_cont {
+            opacity: 1;
+            visibility: visible;
+            
+        }
+    } 
+    &_cont {
+        transition: all .12s ease-in-out;
+        position: absolute;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        background-color: lighten($c_blue, 47%);
+        padding: 6px 10px;
+        padding-left: 26px;
+        border-radius: 6px;
+        left: -4px;
+        top: -6px;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: normal;
+        box-shadow: 0 2px 8px rgba(#000, .15);
+    }
+}

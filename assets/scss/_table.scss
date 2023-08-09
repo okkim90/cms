@@ -21,7 +21,7 @@
     th, td {
         padding: 6px 10px;
         font-size: 12px;
-        line-height: 1.6;
+        line-height: 18px;
         height: 39px;
     }
     th {
@@ -197,5 +197,10 @@
                 }
             }
         }
+    }
+
+    .f_btn.ty_small {
+        height: 22px;
+        line-height: 20px;
     }
 }
