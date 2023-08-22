@@ -5497,6 +5497,19 @@ input::-webkit-search-results-decoration {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.alarm_box {
+  background-color: #ebf4ff;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.alarm_box_tit {
+  display: block;
+  margin-bottom: 5px;
+}
+
 .layer_popup, .layer_popup_new {
   position: fixed;
   left: 0;

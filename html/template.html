@@ -398,6 +398,9 @@
                             <span class="blind">새로고침</span>
                         </button>
                     </div>
+
+                    
+
                     <section class="sec">
                         <div class="sec_tit">
                             <h2 class="tit2">참고</h2>
@@ -471,6 +474,89 @@
                             하단 padding : .pb{사이즈} ex) .pb5, .pb10 <br>
                             좌 padding : .pl{사이즈} ex) .pl5, .pl10 <br>
                             우 padding : .pr{사이즈} ex) .pr5, .pr10 <br> <br>
+                        </div>
+                    </section>
+                    <section class="sec" id="alarm">
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <tbody>
+                                </tbody><colgroup>
+                                    <col style="width: 160px;"><col>
+                                    <col style="width: 160px;"><col>
+                                    <col style="width: 160px;"><col>
+                                </colgroup>
+                                <tbody><tr>
+                                    <th>발행일자</th>
+                                    <td>
+                                        <input type="text" class="f_input ty_small inp_date date_start hasDatepicker" name="sso_date" id="sso_date_64e41867271d7" value="2023-08-22">
+                                        <label class="chk_item ml5">
+                                            <input type="checkbox" name="is_sso_sms" id="is_sso_sms_64e41867271d7" value="1" class="checkbox">문자발송
+                                        </label>
+                                    </td>
+                                    <th>업체명</th>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w_200" name="kec_customer_company" id="kec_customer_company_64e41867271d7" value="" readonly="" ondblclick="open_rela_org_64e41867271d7()">&nbsp;
+                                        <a href="javascript:void(0);" class="f_btn ty_small _blue w_80" id="search_member" onclick="open_rela_org_64e41867271d7()">찾아보기</a>
+                                    </td>
+                                    <th>대표자</th>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w_100" name="kec_customer_ceo" id="kec_customer_ceo_64e41867271d7" value="" readonly="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사업자번호</th>
+                                    <td>
+                                        <input type="text" name="kec_customer_number" id="kec_customer_number_64e41867271d7" value="" readonly="" class="f_input ty_small w_150">
+                                    </td>
+                                    <th>전화번호</th>
+                                    <td>
+                                        <input type="text" name="kec_customer_tel" id="kec_customer_tel_64e41867271d7" value="" readonly="" class="f_input ty_small w_150">
+                                    </td>
+                                    <th>담당자</th>
+                                    <td>
+                                        <input type="text" name="kec_customer_damdang" id="kec_customer_damdang64e41867271d7" value="" readonly="" class="f_input ty_small w_100">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>휴대폰</th>
+                                    <td>
+                                        <input type="text" name="kec_customer_mobile" id="kec_customer_mobile_64e41867271d7" value="" class="f_input ty_small w_150">
+                                    </td>
+                                    <th>이메일</th>
+                                    <td>
+                                        <input type="text" name="kec_customer_email" id="kec_customer_email_64e41867271d7" value="" class="f_input ty_small w_150">
+                                    </td>
+                                    <th>회원할인율</th>
+                                    <td>
+                                        <input type="text" name="customer_rate" id="customer_rate_64e41867271d7" value="" class="f_input ty_small w_50"> %
+                                    </td>
+                                </tr>
+                                <tr class="h_60">
+                                    <th>메모</th>
+                                    <td colspan="2">
+                                        <textarea style="height: 50px;" class="f_ta ty_small y_scroll_area" name="sso_text" id="sso_text_64e41867271d7" value=""></textarea>
+                                    </td>
+                                    <td colspan="3">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="alarm_box mt10">
+                            <strong class="alarm_box_tit">거래명세서 발행 알람</strong>
+                            <div class="alarm_box_cont">
+                                현장가산적용X
+                                22년 12월까지 3% 추가할인율적용(김형기이사님)--7.8 최보혜
+                                직접출장건만 할인율 60%적용 (비고란에 별도로 기재해주기로함)
+                                *단가지정 -> 7.1 부터 3.5% 인상_23년
+                                -  Function Generator : 128,500(124,200)원 
+                                - 내전압시험기 : 226,000(218,644)원 (용량상관X)
+                                - 삼상회로시험기 130,800(126,684)원
+                                - 교류(직류)전류계/교류(직류)전압계 39,400(38,192) 원
+                                - SPARK TESTER 66,900(64,791)원(전압만15KV적용)-김소영(김형기)2/22
+                                - SIGNAL GENERATOR 174,600(168,705)원-김소영(김형기)2/22
+                                - CALIBRATOR(전류,전압 출력만) 182,300(176,260)원-김소영(김형기)3/22
+                            </div> 
                         </div>
                     </section>
                     <section class="sec pt30" id="multiselect">

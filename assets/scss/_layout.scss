@@ -967,3 +967,16 @@
         box-shadow: 0 2px 8px rgba(#000, .15);
     }
 }
+
+.alarm_box {
+    background-color: lighten($c_blue, 46%);
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 22px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(#000, .15);
+    &_tit {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
