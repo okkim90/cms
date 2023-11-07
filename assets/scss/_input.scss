@@ -600,12 +600,21 @@
     }
     &_option {
         display: flex;
+        &:hover {
+            background-color: rgba($c_key, .1);
+        }
         &.off {
             display: none;
         }
         align-items: center;
         gap: 4px;
         user-select: none;
+        label {
+            flex: 1;
+        }
+        input[type="checkbox"] {
+            flex-shrink: 0;
+        }
         * {
             cursor: pointer;
         }

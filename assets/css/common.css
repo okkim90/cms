@@ -8715,8 +8715,17 @@ input::-webkit-search-results-decoration {
      -moz-user-select: none;
           user-select: none;
 }
+.multiselect_option:hover {
+  background-color: rgba(31, 32, 133, 0.1);
+}
 .multiselect_option.off {
   display: none;
+}
+.multiselect_option label {
+  flex: 1;
+}
+.multiselect_option input[type=checkbox] {
+  flex-shrink: 0;
 }
 .multiselect_option * {
   cursor: pointer;
