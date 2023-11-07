@@ -148,6 +148,18 @@ $fz: (
             @include tag_op($color ,$color);
         }
     }
+    .f_badge {
+        &.#{$key} {
+            @include tag($color, $color)
+        }
+        &.#{$key}_ol {
+            @include tag_ol($color ,$color);
+
+        }
+        &.#{$key}_op {
+            @include tag_op($color ,$color);
+        }
+    }
     
 }
 
@@ -332,6 +344,9 @@ $inner: 1280px;
     }
     &.jc_r {
         justify-content: flex-end;
+    }
+    &.jc_sb {
+        justify-content: space-between;
     }
     .no_shrink {
         flex-shrink: 0;

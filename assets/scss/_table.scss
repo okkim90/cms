@@ -21,7 +21,7 @@
     th, td {
         padding: 6px 10px;
         font-size: 12px;
-        line-height: 18px;
+        line-height: 1.6;
         height: 39px;
     }
     th {
@@ -74,7 +74,7 @@
         th {
             background-color: $c_bg_grey;
             text-align: center;
-            padding: 5px;
+            padding: 4px;
             height: 32px;
             cursor: pointer;
             border: 1px solid $c_line;
@@ -156,6 +156,7 @@
             &:last-child {
                 border-right: none;
             }
+            
         }
         tr:last-child {
             td, th {
@@ -202,5 +203,19 @@
     .f_btn.ty_small {
         height: 22px;
         line-height: 20px;
+    }
+    &.col3_left {
+        tbody {
+            td:nth-child(3) {
+                text-align: left;
+            }
+        }
+    }
+    &.col5_left {
+        tbody {
+            td:nth-child(5) {
+                text-align: left;
+            }
+        }
     }
 }

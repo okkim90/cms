@@ -492,6 +492,7 @@
     .contents {
         padding: 15px 30px;
         padding-bottom: 50px;
+        min-height: calc(100vh - 323px);
     }
     .top_tit {
         margin-bottom: 20px;
@@ -900,6 +901,7 @@
 
 .cal_setting {
     position: absolute;
+    width: 465px;
     right: 0;
     top: 0;
     padding: 10px;
