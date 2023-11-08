@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="KIC">
+    <meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+
+    <!-- 기존 cms js -->
+    <script type="text/javascript" src="../common/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.print.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui-custom.min.js?123123132" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.form.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/common.js" charset="utf-8"></script>
+    <!--
+    <script type="text/javascript" src="../skin/basic/js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.treeview.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.cookie.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../skin/basic/js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/zebra_datepicker.js"></script>
+    <script type="text/javascript" src="../skin/basic/js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/fullcalendar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/colResizable-1-6.js" charset="utf-8"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    -->
+    <!--// 기존 cms js -->
+    
+    <!-- 기존 cms css -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css"> -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+    <!--// 기존 cms css -->
+
+
+    
+    <!-- 신규 css -->
+    <script src="https://kit.fontawesome.com/aa5544e91b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <!--// 신규 css -->
+
+    <!-- 펴블적용js -->
+    <script type="text/javascript" src="../common/js/main.js" defer></script>
+    <!-- // 펴블적용js -->
+
+
+    <!-- <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>  cms에 적용되있는건데 안됨-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
+    <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
+</head>
+<body>
+    <div id="skip-nav">
+        <a href="#container"></a>
+    </div>
+    <!--header-->
+    <header class="header">
+        <div class="header_top">
+            <h1 class="logo">
+                <a href=""><img src="../assets/images/common/logo.svg" alt="코리아인스투르먼트 교정관리 시스템"></a>
+            </h1>
+            <div class="h_util">
+                <div class="h_util_sec h_user">
+                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님 
+                </div>
+                <div class="h_util_sec h_branch">
+                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
+                    <ul class="h_branch_list">
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a></li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a></li>
+                    </ul>
+                </div>
+                <div class="h_util_sec h_btns">
+                    <a href="" class="h_btn"><i class="fa-solid fa-comment-sms"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-print"></i></a>
+                    <a href="" class="h_btn"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                    <a href="" class="h_btn ty_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--gnb-->
+        <nav id="gnb" class="gnb">
+            <button type="button" id="btn_all_menu" class="btn_all_menu">
+                <span class="blind">전체메뉴 토글버튼</span>
+                <span class="bar_box">
+                    <span class="bar_item bar_top"></span>
+                    <span class="bar_item bar_mid"></span>
+                    <span class="bar_item bar_bot"></span>
+                </span>
+            </button>
+            <ul class="gnb_list">
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">전체 조회</a>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="gnb_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="gnb_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!--//gnb-->
+        <!--전체메뉴-->
+        <div id="all_menu" class="all_menu">
+            <ul class="all_menu_list">
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">입고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">입고 조회</a></li>
+                        <li><a href="" class="link_dep2">입고 등록</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">교정</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 교정방</a></li>
+                        <li><a href="" class="link_dep2">교정 조회</a></li>
+                        <li><a href="" class="link_dep2">교정 승인</a></li>
+                        <li><a href="" class="link_dep2">교정 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">교정 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">시험</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내 시험방</a></li>
+                        <li><a href="" class="link_dep2">시험 조회</a></li>
+                        <li><a href="" class="link_dep2">시험 승인</a></li>
+                        <li><a href="" class="link_dep2">시험 성적서 발행</a></li>
+                        <li><a href="" class="link_dep2">시험 승인 후 수정</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">사외</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">사외 교정</a></li>
+                        <li><a href="" class="link_dep2">사외 수리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">출고</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">출고 조회</a></li>
+                        <li><a href="" class="link_dep2">불가·불량 조회</a></li>
+                        <li><a href="" class="link_dep2">교정완료 조회</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">영업</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">견적 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 관리</a></li>
+                        <li><a href="" class="link_dep2">일정 관리</a></li>
+                        <li><a href="" class="link_dep2">출장 달력</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">매출</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">거래명세서</a></li>
+                        <li><a href="" class="link_dep2">세금계산서</a></li>
+                        <li><a href="" class="link_dep2">수납</a></li>
+                        <li><a href="" class="link_dep2">수금현황</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">고객</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">업체 관리</a></li>
+                        <li><a href="" class="link_dep2">문자 관리</a></li>
+                        <li><a href="" class="link_dep2">이메일 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">통계</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">실적 분석</a></li>
+                        <li><a href="" class="link_dep2">입출고 대비 소요일</a></li>
+                        <li><a href="" class="link_dep2">교정접수 처리 수량</a></li>
+                        <li><a href="" class="link_dep2">입고 및 대행수량</a></li>
+                        <li><a href="" class="link_dep2">업체별 금액&수량 비교</a></li>
+                        <li><a href="" class="link_dep2">업체별 입고&처리 분석</a></li>
+                        <li><a href="" class="link_dep2">묵표계획 설정</a></li>
+                        <li><a href="" class="link_dep2">목표계획 현황</a></li>
+                        <li><a href="" class="link_dep2">교정수행도 평가</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">기준정보</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">표준양식 관리</a></li>
+                        <li><a href="" class="link_dep2">표준기 관리</a></li>
+                        <li><a href="" class="link_dep2">계측기 관리</a></li>
+                        <li><a href="" class="link_dep2">교정 관리</a></li>
+                        <li><a href="" class="link_dep2">교정상태 관리</a></li>
+                        <li><a href="" class="link_dep2">입·출고 관리</a></li>
+                        <li><a href="" class="link_dep2">교객 관리</a></li>
+                        <li><a href="" class="link_dep2">정산 관리</a></li>
+                        <li><a href="" class="link_dep2">차량 관리</a></li>
+                        <li><a href="" class="link_dep2">사외신청서 관리</a></li>
+                        <li><a href="" class="link_dep2">현장교정 일일 중복</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">관리자</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">운영 관리</a></li>
+                        <li><a href="" class="link_dep2">직원 관리</a></li>
+                    </ul>
+                </li>
+                <li class="all_menu_item">
+                    <a href="" class="link_dep1">마이페이지</a>
+                    <ul class="all_menu_dep2">
+                        <li><a href="" class="link_dep2">내정보</a></li>
+                        <li><a href="" class="link_dep2">자료실</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//전체메뉴-->
+        <script>
+            let all_menu = document.querySelector('#all_menu');
+            let btn_all_menu = document.querySelector('#btn_all_menu');
+            let gnb = document.querySelector('#gnb');
+
+
+            
+
+            btn_all_menu.addEventListener('click', function(){
+                if(this.classList.contains('on')){
+                    btn_all_menu.classList.remove('on');
+                    all_menu.classList.remove('on');
+                    gnb.classList.remove('gnb_off');
+                }else{
+                    btn_all_menu.classList.add('on');
+                    all_menu.classList.add('on');
+                    gnb.classList.add('gnb_off');
+                }
+            }); 
+        </script>
+        
+    </header>
+    <!--//header-->
+    <!--container-->
+    <main class="container">
+        <div id="tabs" class="jqgtabs tab_nav ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="tab_nav_list ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="tab_nav_item ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="tabs-main" aria-labelledby="ui-id-1" aria-selected="false">
+                    <a href="#tabs-main" class="tabs-anchor ui-tabs-anchor" id="ui-id-1" role="presentation" tabindex="-1">메인</a>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_294" role="tab" tabindex="-1" aria-labelledby="ui-id-2" aria-selected="false">
+                    <a href="#tabs_294" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>전체 조회</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_201" role="tab" tabindex="-1" aria-labelledby="ui-id-3" aria-selected="false">
+                    <a href="#tabs_201" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>입고</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_214" role="tab" tabindex="-1" aria-labelledby="ui-id-4" aria-selected="false">
+                    <a href="#tabs_214" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>교정 코드 관리</span></a>
+                    <button class="del_item"></button>
+                </li>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_218" role="tab" tabindex="0" aria-labelledby="ui-id-5" aria-selected="true">
+                    <a href="#tabs_218" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>고객 코드 관리</span></a>
+                    <button class="del_item"></button>
+                </li>
+            </ul>
+            <div aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true">
+                <div class="contents ">
+                    <div class="top_tit">
+                        <h1 class="tit">공지사항</h1>
+                        <button type="button" class="btn_refresh">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <span class="blind">새로고침</span>
+                        </button>
+                    </div>
+                    <form action="">
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <colgroup>
+                                    <col style="width: 160px;">
+                                    <col>
+                                    <col style="width: 160px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분 <b class="fc_red">*</b></th>
+                                        <td colspan="3">
+                                            <div class="d_flex _gap5">
+                                                <label class="btn_chk"><input type="radio" name="type"><span>인사</span></label>
+                                                <label class="btn_chk"><input type="radio" name="type"><span>IT</span></label>
+                                                <label class="btn_chk"><input type="radio" name="type"><span>일반</span></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>제목 <b class="fc_red">*</b></th>
+                                        <td colspan="3">
+                                            <input type="text" class="f_input ty_small w_600">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용 <b class="fc_red">*</b></th>
+                                        <td colspan="3">
+                                            <div style="height: 300px;">에디터영역</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>고정 여부</th>
+                                        <td>
+                                            <label class="f_toggle w_70">
+                                                <input type="checkbox">
+                                                <span class="slider">
+                                                    <div class="slider_txt true">고정</div>
+                                                    <div class="slider_txt false">일반</div>
+                                                </span>
+                                            </label>
+                                        </td>
+                                        <th>노출 여부</th>
+                                        <td>
+                                            <label class="f_toggle w_70">
+                                                <input type="checkbox" checked="checked">
+                                                <span class="slider">
+                                                    <div class="slider_txt true">노출</div>
+                                                    <div class="slider_txt false">비노출</div>
+                                                </span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="3">첨부파일</th>
+                                        <td colspan="3"><input type="file" class="fz_small"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><input type="file" class="fz_small"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><input type="file" class="fz_small"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+
+                    <div class="comment_wrap mt50" id="comment_654ae03e0d6bc">
+                        <div class="comment_top">
+                            <span class="txt_title">코멘트 <em>1</em></span>
+                        </div>
+                     
+                        <ul class="comment_list">
+                            <li>
+                                <div class="top">
+                                    <p class="name">
+                                        김남석
+                                        
+                                    </p>
+                                    <div class="edit">
+                                        <span>2022-08-09</span>
+                                        <span class="ip">58.236.124.252</span>
+                    <a href="javascript:;" onclick="get_page('../board/board_password.php?board_name=notice&amp;view_id=142&amp;comment_id=143&amp;mode=comment_delete');"><img src="/skin/basic/board/basic/images/co_btn_delete.gif" border="0" align="absmiddle" alt="댓글삭제"></a>&nbsp;<a href="javascript:comment_box('143', 'reply');"><img src="/skin/basic/board/basic/images/co_btn_reply.gif" border="0" align="absmiddle" alt="댓글답변"></a>&nbsp;<a href="javascript:comment_box('143', 'update');"><img src="/skin/basic/board/basic/images/co_btn_modify.gif" border="0" align="absmiddle" alt="댓글수정"></a>&nbsp;				</div>
+                                </div>
+                                <p class="comment">이건 제목이 회사연락망이 아니라 인사명령인거 같은데요~~</p>
+                                <span id="cmt_143" class="cmt"></span>
+                                <input type="hidden" id="secret_comment_143" value="0">
+                                <textarea id="temp_comment_143" style="display:none;">이건 제목이 회사연락망이 아니라 인사명령인거 같은데요~~</textarea>
+                            </li>
+                        
+                        </ul>
+                        <div id="comment_write ">
+                            <form name="frm1_654ae03e0d6bc" id="frm1_654ae03e0d6bc" method="post">
+                                <input type="hidden" name="mode" value="write">
+                                <input type="hidden" name="board_name" value="notice">
+                                <input type="hidden" name="view_id" value="142">
+                                <input type="hidden" name="comment_id" value="">
+                                <input type="hidden" name="board_query" value="">
+                                <input type="hidden" name="page" value="2">
+                                <table class="comment_write_tbl" cellpadding="0" cellspacing="0" border="0" width="100%">	
+                                    <tbody><tr>
+                                        <td width="90%">
+                                            <textarea name="write_contents" style="height:53px;padding:5px;"></textarea>
+                                            <span><label><input type="checkbox" name="secret_checked" value="1"> 비밀글</label></span>
+                                        </td>
+                                        <td width="10%">
+                                            <input type="button" onclick=" board_comment_654ae03e0d6bc();" class="btn_board" style="background-color:#fff;border:1px solid #c0c0c0;" value="덧글입력">
+                                        </td>
+                                    </tr>				
+                                </tbody></table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </main>
+
+    <!--//container-->
+    <!--footer-->
+    <footer class="footer">
+        <!-- <div class="footer_top">
+            <div class="inner">
+                <ul class="footer_top_nav ">
+                    <li><a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a></li>
+                </ul>
+            </div>
+        </div> -->
+        <div class="footer_logo">
+            <img src="../assets/images/common/logo_footer.svg" alt="KIC 코리아인스트루먼트(주)">
+        </div>
+        <div class="footer_info">
+            <ul class="footer_info_list">
+                <li>코리아인스트루먼트(주)</li>
+                <li><span class="bar"></span>사업자등록번호 : 101-81-45861</li>
+                <li><span class="bar"></span>대표이사 : 정재호</li>
+            </ul>
+            <p class="copy">Copyright@KIC, Korea Instrument All Rights Reserved.</p>
+            <div class="contact">
+                <b><i class="fa-solid fa-phone"></i> CONTACT US</b> 
+                <span class="bar"></span>
+                <span>1600 - 4245</span>
+            </div>
+        </div>
+        <div class="footer_right">
+            <div class="footer_right_btns">
+                <a href="https://www.kic21.co.kr/about/service" target="_blank">이용약관</a>
+                <span class="bar"></span>
+                <a href="https://www.kic21.co.kr/about/person" target="_blank">개인정보 보호정책</a>
+            </div>
+            <div class="footer_right_branch">
+                <button class="btn_trigger">코리아인스트루먼트(주) 지점안내</button>
+                <ul class="branch_list">
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=0" target="_blank">코리아인스트루먼트(주) 서울본사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=1" target="_blank">코리아인스트루먼트(주) 부산지사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=2" target="_blank">코리아인스트루먼트(주) 대전지사</a></li>
+                    <li><a href="https://www.kic21.co.kr/about/map?idx=3" target="_blank">코리아인스트루먼트(주) 가평지안</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--//footer-->
+    
+</body>
+</html>

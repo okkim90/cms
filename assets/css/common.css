@@ -9411,6 +9411,143 @@ input::-webkit-search-results-decoration {
   text-align: left;
 }
 
+/*코멘트*/
+.comment_wrap {
+  margin-top: 10px;
+}
+
+.comment_top {
+  background: #fcfcfc;
+  border-bottom: 1px solid #e9e9e9;
+  border-top: 1px solid #BDBDBD;
+  padding: 10px 20px;
+}
+
+.comment_top span.txt_title {
+  background: url(./images/man.png) no-repeat left 50%;
+  color: #777777;
+  letter-spacing: -1px;
+  padding: 0 20px;
+}
+
+.comment_top span.txt_title em {
+  color: #e60000;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.comment_wrap .comment_list {
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e0e1db;
+}
+
+.comment_wrap ul.comment_list li {
+  padding: 5px;
+  border-bottom: 1px dashed #e0e1db;
+}
+
+.comment_wrap ul.comment_list li:last-child {
+  border-bottom: 0 none;
+}
+
+.comment_wrap ul.comment_list li .top {
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.comment_wrap ul.comment_list li .top p.name {
+  float: left;
+  padding-left: 15px;
+  background: url(./images/icon_comment.gif) no-repeat left 50%;
+  color: #666666;
+}
+
+.comment_wrap ul.comment_list li .top div.edit {
+  float: right;
+}
+
+.comment_wrap ul.comment_list li .top div.edit span {
+  font-size: 11px;
+  font-family: tahoma, sans-serif;
+  color: #888888;
+}
+
+.comment_wrap ul.comment_list li .top div.edit span.ip {
+  color: #b2b2b2;
+}
+
+.comment_wrap ul.comment_list li p.comment {
+  padding-top: 5px;
+  line-height: 1.4em;
+  word-break: break-all;
+  overflow: hidden;
+  clear: both;
+  color: #666666;
+}
+
+table.comment_write_tbl {
+  border: 1px solid #e0e1db;
+}
+
+table.comment_write_tbl {
+  text-align: left;
+  font-size: 12px;
+}
+
+table.comment_write_tbl th {
+  padding: 10px;
+  background: #fcfcfc;
+  text-align: left;
+  font-weight: normal;
+  color: #000000;
+}
+
+table.comment_write_tbl th input {
+  border: 1px solid #e0e1db;
+  height: 22px;
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+table.comment_write_tbl th span {
+  font-size: 11px;
+  color: #666;
+}
+
+table.comment_write_tbl th span.tip {
+  color: #007FC8;
+}
+
+table.comment_write_tbl td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+table.comment_write_tbl td textarea {
+  border: 1px solid #e0e1db;
+  width: 100%;
+}
+
+table.comment_write_tbl td .btn_board {
+  padding: 0;
+  width: 100%;
+  height: 53px;
+}
+
+table.comment_write_tbl td span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #666;
+}
+
+table.comment_write_tbl td span input {
+  vertical-align: middle;
+}
+
+/*-------------------------- 비밀번호확인 --------------------------*/
 /* pages */
 .login_wrap {
   min-height: 100vh;
