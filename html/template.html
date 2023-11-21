@@ -400,6 +400,59 @@
                     </div>
 
                     
+                    <!-- 연월만 적용하기 -->
+                    <section class="sec">
+                        <div class="sec_tit">
+                            <h2 class="tit2">datepicker (연, 월만)</h2>
+                        </div>
+                        <div class="d_flex _gap10 ai_c">
+                            <div class="month_year fz_big">2023-11</div>
+                            <input type="hidden" id="month_year" class="f_input ty_small inp_month_year taC"  readonly>
+                            <button type="button" class="f_btn ty_small _key w_90" onclick="trigger_datepicker()">연&월 선택</button>
+                        </div>
+                        
+                    </section>
+
+                    <script>
+                        var datepicker_ym = {
+                            //showOn: 'both',
+                            //buttonText: "달력",
+                            currentText: "이번달",
+                            showButtonPanel: true,
+                            yearRange: 'c-5:c+5',
+                            showOtherMonths: true,
+                            selectOtherMonths: true
+                        }
+                        datepicker_ym.closeText = "선택";
+                        datepicker_ym.dateFormat = "yy-mm";
+                        datepicker_ym.onClose = function (dateText, inst) {
+                            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                            $(this).datepicker( "option", "defaultDate", new Date(year, month, 1) );
+                            $(this).datepicker('setDate', new Date(year, month, 1));
+                            $('.month_year').html($(this).val());
+                            setTimeout(() => {
+                                $(this).datepicker('widget').removeClass('hide-calendar');
+                            }, 400);
+                            
+                        }
+                        
+                        datepicker_ym.beforeShow = function () {
+                            var selectDate = $(".inp_month_year").val().split("-");
+                            var year = Number(selectDate[0]);
+                            var month = Number(selectDate[1]) - 1;
+                            $(this).datepicker( "option", "defaultDate", new Date(year, month, 1) );
+                            $(this).datepicker("widget").addClass('hide-calendar');
+                        }
+                        
+                        $(".inp_month_year").datepicker(datepicker_ym);
+                        function trigger_datepicker(){
+                            $(".inp_month_year").datepicker("show");
+                        }
+                    </script>
+
+                    <!-- 연월만 적용하기 -->
+
 
                     <section class="sec">
                         <div class="sec_tit">

@@ -1,4 +1,6 @@
 .ui-datepicker { display: none; width: 248px; background-color: #fff; margin-top: 5px; padding: 15px 10px 10px; border: 1px solid #d9d9d9; box-sizing: border-box;box-shadow: 0 5px 10px rgba(0,0,0, .2); z-index: 9999 !important;}
+.ui-datepicker.hide-calendar .ui-datepicker-calendar {display: none;}
+
 .ui-datepicker .ui-datepicker-header { display: flex; padding: 0; border: none; background: none; margin-bottom: 10px; }
 .ui-datepicker .ui-datepicker-title { margin-left: auto; display: flex; align-items: center; box-sizing: border-box; font-family: 'Pretendard'; font-size: 14px; text-align: left; }
 .ui-datepicker select.ui-datepicker-month,
@@ -38,3 +40,28 @@
 .ui-datepicker a.ui-button:active,
 .ui-datepicker .ui-button:active,
 .ui-datepicker .ui-button.ui-state-active:hover { border-radius: 50%; box-sizing: border-box; background: rgba(27, 91, 174, 0.1); font-weight: 700; color: #1b5bea; }
+
+
+.ui-datepicker .ui-datepicker-buttonpane {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding: 0 7px;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+    padding: 0 10px;
+    margin: 0;
+    width: auto;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #eee;
+}
+.ui-datepicker .ui-datepicker-buttonpane .ui-datepicker-current {
+    order: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane .ui-datepicker-current_order {
+    order: 1;
+}
+.ui-datepicker .ui-datepicker-buttonpane .ui-datepicker-close {
+    order: 2;
+}
