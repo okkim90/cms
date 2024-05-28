@@ -5347,7 +5347,7 @@ input::-webkit-search-results-decoration {
 .container .contents {
   padding: 15px 30px;
   padding-bottom: 50px;
-  min-height: calc(100vh - 323px);
+  min-height: calc(100vh - 243px);
 }
 .container .top_tit {
   margin-bottom: 20px;
