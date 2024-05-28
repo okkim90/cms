@@ -5083,8 +5083,21 @@ input::-webkit-search-results-decoration {
   transition: all 0.2s ease-in-out;
   opacity: 0;
 }
+.header .gnb_list .gnb_item .board_count {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 10px;
+  background-color: #f00;
+  color: #fff;
+  padding: 0 8px;
+  margin-left: 4px;
+}
 .header .gnb_list .link_dep1 {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 50px;
   padding: 0 22px;
   font-size: 15px;
@@ -5110,7 +5123,9 @@ input::-webkit-search-results-decoration {
   transition: all 0.1s ease-in-out;
 }
 .header .gnb_list .gnb_dep2 .link_dep2 {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   line-height: 30px;
   padding: 0 15px;
@@ -5167,22 +5182,37 @@ input::-webkit-search-results-decoration {
   top: -400px;
   position: absolute;
   width: 100%;
-  padding: 0 10px;
   box-sizing: border-box;
   z-index: 99;
   background-color: #fff;
-  border-bottom: 1px solid #1f2085;
+  border-bottom: 1px solid #ccc;
   transition: all 0.3s ease-in-out;
 }
 .header .all_menu.on {
   visibility: visible;
   top: 120px;
 }
+.header .all_menu_srch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #dfdff7;
+  gap: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.header .all_menu_srch_tit {
+  font-size: 16px;
+  color: #333;
+}
+.header .all_menu_srch .f_input {
+  width: 200px;
+}
 .header .all_menu_list {
   display: flex;
 }
 .header .all_menu_item {
-  border-left: 1px solid #1f2085;
+  border-left: 1px solid #ccc;
   padding: 25px 20px;
   flex: 1;
   white-space: nowrap;
@@ -5201,6 +5231,19 @@ input::-webkit-search-results-decoration {
 }
 .header .all_menu_dep2 li + li {
   margin-top: 6px;
+}
+.header .all_menu_dep2 .board_count {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 9px;
+  background-color: #f00;
+  color: #fff;
+  padding: 0 6px;
+  margin-left: 2px;
+  vertical-align: top;
+  margin-top: 2px;
 }
 .header .all_menu_dep2 .link_dep2 {
   display: inline-block;
