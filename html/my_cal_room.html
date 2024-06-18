@@ -672,10 +672,14 @@
                     <form action="">
                         <table class="v_tbl ty_s_th">
                             <tr>
-                                <th>측정일시</th>
-                                <td colspan="3">
+                                <th rowspan="2">측정일시</th>
+                                <td colspan="2">
                                     <div class="date_set">
-                                        <input type="text" class="f_input ty_small inp_date date_start " readonly="" id="">
+                                        <label class="chk_item fwB">
+                                            <input type="radio" name="radio" class="" checked> 
+                                            <b>시간</b> 
+                                        </label>
+                                        <input type="text" class="f_input ty_small inp_date " readonly="" id="">
                                         <select name="" id="" class="f_select ty_small">
                                             <option value="">선택</option>
                                             <option value="">00시</option>
@@ -684,7 +688,6 @@
                                             <option value="">03시</option>
                                         </select>
                                         ~
-                                        <input type="text" class="f_input ty_small inp_date date_end " readonly="" id="">
                                         <select name="" id="" class="f_select ty_small">
                                             <option value="">선택</option>
                                             <option value="">00시</option>
@@ -694,22 +697,42 @@
                                         </select>
                                     </div>
                                 </td>
-                                <th>층</th>
+                                <th rowspan="2">장 비</th>
                                 <td>
-                                    <select name="" id="" class="f_select ty_small w_80">
-                                        <option value="">3층</option>
-                                        <option value="">4층</option>
-                                        <option value="">5층</option>
-                                        <option value="">6층</option>
-                                    </select>
+                                    <div class="d_flex _gap10 ai_c">
+                                        <b class="w_30">층</b>  
+                                        <select name="" id="" class="f_select ty_small w_80">
+                                            <option value="">3층</option>
+                                            <option value="">4층</option>
+                                            <option value="">5층</option>
+                                            <option value="">6층</option>
+                                        </select>
+                                    </div>
                                 </td>
-                                <th>기기</th>
+                               
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="date_set">
+                                        <label class="chk_item fwB">
+                                            <input type="radio" name="radio" class=""> 
+                                            <b>기간</b> 
+                                        </label>
+                                        <input type="text" class="f_input ty_small inp_date date_start " readonly="" id="">
+                                        ~
+                                        <input type="text" class="f_input ty_small inp_date date_end " readonly="" id="">
+                                        ※ 기간 조회 시 일평균값 노출됩니다.
+                                    </div>
+                                </td>
                                 <td>
-                                    <select name="" id="" class="f_select ty_small w_80">
-                                        <option value="">1번</option>
-                                        <option value="">2번</option>
-                                        <option value="">3번</option>
-                                    </select>
+                                    <div class="d_flex _gap10 ai_c">
+                                        <b class="w_30">기기</b>  
+                                        <select name="" id="" class="f_select ty_small w_80">
+                                            <option value="">1번</option>
+                                            <option value="">2번</option>
+                                            <option value="">3번</option>
+                                        </select>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
