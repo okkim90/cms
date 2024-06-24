@@ -150,3 +150,89 @@
     transform: translate(-50%, -50%);
     z-index: 99;
 }
+
+.pop_qr {
+    .qr_top {
+        display: flex; 
+        align-items: flex-start;
+    }
+    .qr_box {
+        position: relative;
+        width: 300px;
+        &_cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $c_line;
+            flex-direction: column;
+            padding: 15px 10px 20px;
+            cursor: pointer;
+            border-radius: 16px;
+            .qr_trigger {
+                color: #e1e1e1;
+                font-size: 40px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                line-height: 1;
+                &::after {
+                    content: 'OFF';
+                    margin-left: 15px;
+                    //font-size: 30px;
+                }
+            }
+          
+           
+        }
+        .input_hidden {
+            position: absolute;
+            opacity: 0;
+            z-index: -999;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+
+            &:focus ~ .qr_box_cont {
+                background-color: $c_blue;
+                border-color: $c_blue;
+                .qr_trigger {
+                    color: #fff;
+                    &::after {
+                        content: 'ON';
+
+                    }
+                }
+            }
+        }
+    }
+    .qr_info {
+        margin-left: 20px;
+        border: 1px solid $c_line;
+        flex: 1;
+        display: flex;
+        border-radius: 16px;
+        &_tit {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        &_sec {
+            flex: 1;
+            padding: 15px 20px;
+            font-size: 13px;
+            border-left: 1px solid $c_line;
+            &:first-of-type {
+                border-left: none;
+            }
+        }
+        ul li {
+            & + li {
+                margin-top: 4px;
+            }
+        }
+    }
+    .type_select {
+        height: 100px;
+    }
+}

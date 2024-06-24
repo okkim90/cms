@@ -351,6 +351,9 @@ $inner: 1280px;
     .no_shrink {
         flex-shrink: 0;
     }
+    .mw0 {
+        min-width: 0;
+    }
 }
 
 .ml_auto {
@@ -364,4 +367,10 @@ $inner: 1280px;
 }
 .taC {
     text-align: center;
+}
+.fwM {
+    font-weight: 500;
+}
+.fwB {
+    font-weight: bold;
 }

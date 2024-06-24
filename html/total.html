@@ -51,6 +51,10 @@
     <link rel="stylesheet" href="../assets/css/common.css">
     <!--// 신규 css -->
 
+
+    <!-- 펴블적용js -->
+    <script type="text/javascript" src="../common/js/main.js" defer></script>
+    <!-- // 펴블적용js -->
     <!-- 신규 js -->
     <script>
         $(function(){
@@ -469,17 +473,25 @@
                     <section class="sec">
                         <!-- tab list + cont -->
                         <ul class="tab_list">
-                            <li class="tab_list_item on"><a href="" class="tab_list_btn">일반 조회</a></li>
-                            <li class="tab_list_item"><a href="" class="tab_list_btn">구분 조회</a></li>
-                            <li class="tab_list_item"><a href="" class="tab_list_btn">사외 조회</a></li>
-                            <li class="tab_list_item"><a href="" class="tab_list_btn">기타 조회</a></li>
+                            <li class="tab_list_item on">
+                                <a href="javascript:change_tab(0);" class="tab_list_btn">일반 조회</a>
+                            </li>
+                            <li class="tab_list_item">
+                                <a href="javascript:change_tab(1);" class="tab_list_btn">구분 조회</a>
+                            </li>
+                            <li class="tab_list_item">
+                                <a href="javascript:change_tab(2);" class="tab_list_btn">기타 조회</a>
+                            </li>
+                            <li class="tab_list_item">
+                                <a href="javascript:change_tab(3);" class="tab_list_btn">사외 조회</a>
+                            </li>
                         </ul>
                         <div class="tab_cont">
                             <div class="tab_cont_item">
                                 <div class="v_tbl_wrap">
                                     <table class="v_tbl">
                                         <tbody>
-                                            <colgroup>
+                                            </tbody><colgroup>
                                                 <col style="width: 160px;">
                                                 <col>
                                                 <col style="width: 160px;">
@@ -487,154 +499,176 @@
                                                 <col style="width: 160px;">
                                                 <col>
                                             </colgroup>
-                                            <tr>
+                                            <tbody><tr>
                                                 <th>기간 조회</th>
-                                                <td colspan="5">
+                                                <td colspan="3">
                                                     <div class="date_set">
-                                                        <select name="" id="" class="f_select ty_small">
-                                                            <option value="">접수일</option>
-                                                            <option value="">기간 선택 2</option>
-                                                            <option value="">기간 선택 3</option>
-                                                            <option value="">기간 선택 4</option>
+                                                        <select name="search_date" id="" class="f_select ty_small">
+                                                            <option value="receipt_date" selected="">접수일</option>
+                                                            <option value="warehouse_date">입고일</option>
+                                                            <option value="calibration_date">교정일</option>
+                                                            <option value="koc_calibration_next_date">차기교정일</option>
+                                                            <option value="koc_out_date">출고일</option>
+                                                            <option value="koc_approval_date">승인일</option>
                                                         </select>
-                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                        <input type="text" class="f_input ty_small inp_date date_start inp_date_search6678c1939e11b hasDatepicker" name="date_s" value="2024-05-24" readonly="" id="dp1719189187727"> ~
+                                                        <input type="text" class="f_input ty_small inp_date date_end inp_date_search6678c1939e11b hasDatepicker" name="date_e" value="2024-06-24" readonly="" id="dp1719189187728">
+                                                        <!-- <button type="button" onclick="set_today6678c1939e11b(this);" class="f_btn ty_small _blue">오늘</button> -->
+                                                        <button type="button" onclick="set_7d6678c1939e11b(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m6678c1939e11b(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m6678c1939e11b(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <!-- <button type="button" onclick="set_1y6678c1939e11b(this)" class="f_btn ty_small _purple">1년</button> -->
                                                     </div>
+                                                </td>
+                                                <th>
+                                                    연간조회
+                                                    <div class="f_tooltip">
+                                                        <i class="f_tooltip_ico fa-solid fa-circle-info" aria-hidden="true"></i>
+                                                        <div class="f_tooltip_cont">
+                                                            선택한 연도 1월1일부터 오늘까지 조회됩니다. <br> 
+                                                            연간 조회 시 검색 조건은 1개 이상 입력하셔야합니다.
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <label class="chk_item"><input type="checkbox" name="year_search" value="1" onclick="check_year_6678c1939e11b(this)">연간조회</label>
+                                                    <select name="year" id="total_search_year_6678c1939e11b" class="f_input ty_small">
+                                                        <option value="2024" selected="">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option>
+                                                    </select>
+                                                </td>
+                 
+                                                <th>지사구분</th>
+                                                <td>
+                                                    <label class="chk_item">
+                                                        <input type="radio" value="1" name="member_group_idx" checked=""> 본사
+                                                    </label>
+                                                    <label class="chk_item">
+                                                        <input type="radio" value="11" name="member_group_idx"> 대전지사
+                                                    </label>
+                                                    <label class="chk_item">
+                                                        <input type="radio" value="12" name="member_group_idx"> 부산지사
+                                                    </label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>업체명</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <th>신청 업체명</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kor_customer" value="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                                <th>성적서 업체명</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kor_sjs_customer" value="" onkeypress="m_enter_6678c1939e11b()"></td>
                                                 <th>신청자</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kor_estimate_name" value="" onkeypress="m_enter_6678c1939e11b()"></td>
                                                 <th>접수자</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kor_reg_m_name" value="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>계측기명</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="km_name" value="" placeholder="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                                <th>제조사</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="km_make" value="" placeholder="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                                <th>형식</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="km_type" value="" placeholder="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                                <th>기기번호</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kcs_machine" value="" onkeypress="m_enter_6678c1939e11b()"></td>
                                             </tr>
                                             <tr>
                                                 <th>접수번호</th>
                                                 <td>
-                                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
+                                                    <input type="number" class="f_input ty_small w_80" name="kor_order_no_s" value="" maxlength="9" onkeypress="m_enter_6678c1939e11b()"> - 
+                                                    <input type="number" class="f_input ty_small w_80" name="kor_order_no_e" value="" maxlength="9" onkeypress="m_enter_6678c1939e11b()">
                                                 </td>
-                                                <th>교정번호</th>
-                                                <td>
-                                                    <input type="text" class="f_input ty_small w_100"> - <input type="text" class="f_input ty_small w_100">
-                                                </td>
-                                                <th>기기번호</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                            </tr>
-                                            <tr class="hidden_tr">
-                                                <th>계측기명</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                                <th>모델명</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
                                                 <th>관리번호</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                            </tr>
-                                            <tr class="hidden_tr">
-                                                <th>제조사</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <td><input type="text" class="f_input ty_small w_200" name="koc_manage_no" value="" placeholder="" onkeypress="m_enter_6678c1939e11b()"></td>
                                                 <th>주소</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                                <th>비고</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
+                                                <td><input type="text" class="f_input ty_small w_200" name="customer_addr" value="" placeholder="" onkeypress="m_enter_6678c1939e11b()"></td>
+                                                <th>기타</th>
+                                                <td>
+                                                    <label class="chk_item"><input type="checkbox" name="is_emergency" value="1">긴급</label>
+                                                    <label class="chk_item"><input type="checkbox" name="is_exam" value="1">시험</label>
+                                                    <label class="chk_item"><input type="checkbox" name="is_koc_com_out" value="1">사외</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>CMI ID</th>
+                                                <td colspan="7">
+                                                    <button type="button" class="f_btn ty_small _orange w_100" onclick="open_popup('pop_qr')">QR 스캔</button>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button>
-                                    <script>
-                                        function v_tbl_toggle(_target){
-                                            let v_tbl_wrap = _target.closest('.v_tbl_wrap');
-                                            let hidden_tr = v_tbl_wrap.querySelectorAll('.hidden_tr');
-                                            if(_target.classList.contains('on')){
-                                                _target.classList.remove('on');      
-                                                hidden_tr.forEach((e)=>{
-                                                    e.classList.remove('on')
-                                                });
-                                            }else{
-                                                _target.classList.add('on');
-                                                hidden_tr.forEach((e)=>{
-                                                    e.classList.add('on')
-                                                });
-                                            }
-                                        }
-                                    </script>
+                                    <!-- <button type="button" class="v_tbl_toggle" onclick="v_tbl_toggle_new(this)"><i class="fa-solid fa-caret-down"></i><div class="blind">테이블 토글</div></button> -->
+                                    
                                 </div>
                             </div>
-        
-                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-        
-                            <div class="tab_cont_item">
+                
+                            <div class="tab_cont_item" style="display:none">
                                 <div class="type_select">
                                     <div class="type_select_sec dep1">
                                         <ul class="list_dep1"> 
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>입고구분</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type" checked><span>교정항목</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정결과</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>출고구분</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>현재상태</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정담당자</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>의뢰구분</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>업체구분</span></label></li>
-                                            <li><label class="btn_type"><input type="radio" name="type"><span>교정처리자</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('search_ipgo_select');"><span>입고구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" '="" onchange="search_item('search_kca_code_select');"><span>교정항목</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('search_correct_result_select');"><span>교정결과</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('search_kct_code_select');"><span>출고구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('search_status_code_select');"><span>현재상태</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('p_dam_checkbox');"><span>교정담당자</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('search_krt_code_select');"><span>의뢰구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" checked="" onchange="search_item('search_kcustomer_code_select');"><span>업체구분</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('p_tech_checkbox');"><span>교정처리자</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('calibration_none','other_search','교정미완료');"><span>교정미완료</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('deal_none','other_search','명세서 미발행');"><span>명세서 미발행</span></label></li>
+                                            <li><label class="btn_type"><input type="radio" name="type" onchange="search_item('tax_none','other_search','계산서 미발행');"><span>계산서 미발행</span></label></li>
                                         </ul>
                                     </div>
                                     <div class="type_select_sec dep2">
-                                        <ul class="list_dep2 ">
-                                            <li><label class="btn_type"><input type="checkbox" checked><span>본사</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox" checked><span>현장교정</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox" checked><span>반입교정</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox" checked><span>화물차량</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>본사</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>현장교정</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>반입교정</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>퀵</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>종로</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>택배</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>부산지점</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>화물차량</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>기타</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>종료구입</span></label></li>
-                                            <li><label class="btn_type"><input type="checkbox"><span>PICK-UP</span></label></li>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_ipgo_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT01" onclick="select_item('방문접수',this)" data-value="IT01"><span>방문접수</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT02" onclick="select_item('종로',this)" data-value="IT02"><span>종로</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT03" onclick="select_item('기타',this)" data-value="IT03"><span>기타</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT04" onclick="select_item('현장교정',this)" data-value="IT04"><span>현장교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT05" onclick="select_item('택배',this)" data-value="IT05"><span>택배</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT06" onclick="select_item('PICK-UP',this)" data-value="IT06"><span>PICK-UP</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT07" onclick="select_item('반입교정',this)" data-value="IT07"><span>반입교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT08" onclick="select_item('부산지사',this)" data-value="IT08"><span>부산지사</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT09" onclick="select_item('종로구입',this)" data-value="IT09"><span>종로구입</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT10" onclick="select_item('퀵',this)" data-value="IT10"><span>퀵</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT11" onclick="select_item('화물차량',this)" data-value="IT11"><span>화물차량</span></label></li><li><label class="btn_type"><input type="checkbox" name="ki_code[]" value="IT12" onclick="select_item('대전지사',this)" data-value="IT12"><span>대전지사</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_kca_code_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="000" onclick="select_item('미확인',this)" data-value="000"><span>미확인</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="101" onclick="select_item('복사선의 주파수',this)" data-value="101"><span>복사선의 주파수</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="102" onclick="select_item('선형치수',this)" data-value="102"><span>선형치수</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="103" onclick="select_item('각도',this)" data-value="103"><span>각도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="104" onclick="select_item('형상',this)" data-value="104"><span>형상</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="105" onclick="select_item('복합형상',this)" data-value="105"><span>복합형상</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="106" onclick="select_item('기타 길이 관련량',this)" data-value="106"><span>기타 길이 관련량</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="201" onclick="select_item('질량',this)" data-value="201"><span>질량</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="202" onclick="select_item('힘',this)" data-value="202"><span>힘</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="203" onclick="select_item('토크',this)" data-value="203"><span>토크</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="204" onclick="select_item('압력',this)" data-value="204"><span>압력</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="205" onclick="select_item('진공',this)" data-value="205"><span>진공</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="206" onclick="select_item('부피',this)" data-value="206"><span>부피</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="207" onclick="select_item('밀도',this)" data-value="207"><span>밀도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="208" onclick="select_item('점도',this)" data-value="208"><span>점도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="209" onclick="select_item('유체유동',this)" data-value="209"><span>유체유동</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="210" onclick="select_item('경도',this)" data-value="210"><span>경도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="211" onclick="select_item('충격',this)" data-value="211"><span>충격</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="301" onclick="select_item('시간 및 주파수',this)" data-value="301"><span>시간 및 주파수</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="302" onclick="select_item('속도 및 회전수',this)" data-value="302"><span>속도 및 회전수</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="401" onclick="select_item('직류',this)" data-value="401"><span>직류</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="402" onclick="select_item('임피던스',this)" data-value="402"><span>임피던스</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="403" onclick="select_item('교류 및 교류전력',this)" data-value="403"><span>교류 및 교류전력</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="404" onclick="select_item('기타 직류 및 저주파측정',this)" data-value="404"><span>기타 직류 및 저주파측정</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="405" onclick="select_item('저주파 전자기장',this)" data-value="405"><span>저주파 전자기장</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="406" onclick="select_item('RF측정',this)" data-value="406"><span>RF측정</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="407" onclick="select_item('전자기장의 세기 및 안테나',this)" data-value="407"><span>전자기장의 세기 및 안테나</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="501" onclick="select_item('접촉식 온도',this)" data-value="501"><span>접촉식 온도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="502" onclick="select_item('비접촉식 온도',this)" data-value="502"><span>비접촉식 온도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="503" onclick="select_item('습도',this)" data-value="503"><span>습도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="504" onclick="select_item('수분',this)" data-value="504"><span>수분</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="601" onclick="select_item('음향',this)" data-value="601"><span>음향</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="602" onclick="select_item('수중음향',this)" data-value="602"><span>수중음향</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="603" onclick="select_item('진동',this)" data-value="603"><span>진동</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="701" onclick="select_item('광도',this)" data-value="701"><span>광도</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="702" onclick="select_item('광원 및 검출기',this)" data-value="702"><span>광원 및 검출기</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="703" onclick="select_item('매질특성',this)" data-value="703"><span>매질특성</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="704" onclick="select_item('광통신',this)" data-value="704"><span>광통신</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="801" onclick="select_item('방사선',this)" data-value="801"><span>방사선</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="802" onclick="select_item('방사능',this)" data-value="802"><span>방사능</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="803" onclick="select_item('중성자',this)" data-value="803"><span>중성자</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="901" onclick="select_item('화학분석',this)" data-value="901"><span>화학분석</span></label></li><li><label class="btn_type"><input type="checkbox" name="kca_code[]" value="902" onclick="select_item('메디컬 기준 측정 실험실',this)" data-value="902"><span>메디컬 기준 측정 실험실</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_correct_result_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC01" onclick="select_item('정상',this)" data-value="RC01"><span>정상</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC02" onclick="select_item('불량',this)" data-value="RC02"><span>불량</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC03" onclick="select_item('제한교정',this)" data-value="RC03"><span>제한교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC04" onclick="select_item('교정불가',this)" data-value="RC04"><span>교정불가</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC05" onclick="select_item('교정취소',this)" data-value="RC05"><span>교정취소</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcr_code[]" value="RC06" onclick="select_item('점검',this)" data-value="RC06"><span>점검</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_kct_code_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT01" onclick="select_item('고객방문',this)" data-value="OT01"><span>고객방문</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT02" onclick="select_item('일반택배',this)" data-value="OT02"><span>일반택배</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT03" onclick="select_item('PICK-UP',this)" data-value="OT03"><span>PICK-UP</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT04" onclick="select_item('기타',this)" data-value="OT04"><span>기타</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT05" onclick="select_item('화물차량',this)" data-value="OT05"><span>화물차량</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT06" onclick="select_item('종로',this)" data-value="OT06"><span>종로</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT07" onclick="select_item('현장교정',this)" data-value="OT07"><span>현장교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT08" onclick="select_item('퀵',this)" data-value="OT08"><span>퀵</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT09" onclick="select_item('경동화물',this)" data-value="OT09"><span>경동화물</span></label></li><li><label class="btn_type"><input type="checkbox" name="kct_code[]" value="OT10" onclick="select_item('경동택배',this)" data-value="OT10"><span>경동택배</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_status_code_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST00" onclick="select_item('입고대기',this)" data-value="ST00"><span>입고대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST09" onclick="select_item('시험대기',this)" data-value="ST09"><span>시험대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST10" onclick="select_item('교정대기',this)" data-value="ST10"><span>교정대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST11" onclick="select_item('교정진행',this)" data-value="ST11"><span>교정진행</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST12" onclick="select_item('시험진행',this)" data-value="ST12"><span>시험진행</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST20" onclick="select_item('수리대기',this)" data-value="ST20"><span>수리대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST30" onclick="select_item('구입대기',this)" data-value="ST30"><span>구입대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST40" onclick="select_item('교정대행',this)" data-value="ST40"><span>교정대행</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST50" onclick="select_item('수리대행',this)" data-value="ST50"><span>수리대행</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST60" onclick="select_item('사외대기',this)" data-value="ST60"><span>사외대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST70" onclick="select_item('결재상신 대기',this)" data-value="ST70"><span>결재상신 대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST71" onclick="select_item('재상신 대기',this)" data-value="ST71"><span>재상신 대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST72" onclick="select_item('승인 대기',this)" data-value="ST72"><span>승인 대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST80" onclick="select_item('출고청구대기',this)" data-value="ST80"><span>출고청구대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST81" onclick="select_item('청구대기',this)" data-value="ST81"><span>청구대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST82" onclick="select_item('출고계산대기',this)" data-value="ST82"><span>출고계산대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST83" onclick="select_item('계산대기',this)" data-value="ST83"><span>계산대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST90" onclick="select_item('출고수납대기',this)" data-value="ST90"><span>출고수납대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST91" onclick="select_item('출고대기',this)" data-value="ST91"><span>출고대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST92" onclick="select_item('수납대기',this)" data-value="ST92"><span>수납대기</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST99" onclick="select_item('처리종료',this)" data-value="ST99"><span>처리종료</span></label></li><li><label class="btn_type"><input type="checkbox" name="ks_code[]" value="ST100" onclick="select_item('교정취소',this)" data-value="ST100"><span>교정취소</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b p_dam_checkbox" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="admin" onclick="select_item('@관리자',this)" data-value="admin"><span>@관리자</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="sykim" onclick="select_item('김세영',this)" data-value="sykim"><span>김세영</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="mdpkang" onclick="select_item('강대현',this)" data-value="mdpkang"><span>강대현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kkorw" onclick="select_item('고용운',this)" data-value="kkorw"><span>고용운</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="KNSOK" onclick="select_item('김남석',this)" data-value="KNSOK"><span>김남석</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="gocho" onclick="select_item('김남형',this)" data-value="gocho"><span>김남형</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="smmy0923" onclick="select_item('김만령',this)" data-value="smmy0923"><span>김만령</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kimsukjoo" onclick="select_item('김석주',this)" data-value="kimsukjoo"><span>김석주</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="rabbitbabo" onclick="select_item('김선규',this)" data-value="rabbitbabo"><span>김선규</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="khk" onclick="select_item('김형기',this)" data-value="khk"><span>김형기</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="ppppgs" onclick="select_item('박근식',this)" data-value="ppppgs"><span>박근식</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="LSY8791" onclick="select_item('이상용',this)" data-value="LSY8791"><span>이상용</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="seyeon820" onclick="select_item('어세연',this)" data-value="seyeon820"><span>어세연</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="yeonjie93" onclick="select_item('김연지',this)" data-value="yeonjie93"><span>김연지</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jisang7" onclick="select_item('신창재',this)" data-value="jisang7"><span>신창재</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kic204" onclick="select_item('안선우',this)" data-value="kic204"><span>안선우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="lhh79yyy" onclick="select_item('이훈희',this)" data-value="lhh79yyy"><span>이훈희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="aimh" onclick="select_item('조준희',this)" data-value="aimh"><span>조준희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="episode867" onclick="select_item('정수',this)" data-value="episode867"><span>정수</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="hjcho" onclick="select_item('조형진',this)" data-value="hjcho"><span>조형진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="silvertek" onclick="select_item('주은택',this)" data-value="silvertek"><span>주은택</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="mamj930" onclick="select_item('최민국',this)" data-value="mamj930"><span>최민국</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="lgetit" onclick="select_item('박수진',this)" data-value="lgetit"><span>박수진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="magicthief" onclick="select_item('이민우',this)" data-value="magicthief"><span>이민우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="engel0123" onclick="select_item('김찬일',this)" data-value="engel0123"><span>김찬일</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="back5824" onclick="select_item('백승규',this)" data-value="back5824"><span>백승규</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="dtdt" onclick="select_item('김두태',this)" data-value="dtdt"><span>김두태</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="spongi" onclick="select_item('조용준',this)" data-value="spongi"><span>조용준</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="answjd282" onclick="select_item('김문정',this)" data-value="answjd282"><span>김문정</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="mireerang" onclick="select_item('신미리',this)" data-value="mireerang"><span>신미리</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="PSI7782" onclick="select_item('박상익',this)" data-value="PSI7782"><span>박상익</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jh0302" onclick="select_item('안중현',this)" data-value="jh0302"><span>안중현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="pigolet" onclick="select_item('구본홍',this)" data-value="pigolet"><span>구본홍</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="sec721" onclick="select_item('신은철',this)" data-value="sec721"><span>신은철</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kalts" onclick="select_item('조남현',this)" data-value="kalts"><span>조남현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="zephyros" onclick="select_item('최경진',this)" data-value="zephyros"><span>최경진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="ztarshow" onclick="select_item('최혁철',this)" data-value="ztarshow"><span>최혁철</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="joonku" onclick="select_item('박준구',this)" data-value="joonku"><span>박준구</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jungdn89" onclick="select_item('김정우',this)" data-value="jungdn89"><span>김정우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kim13570" onclick="select_item('김동현',this)" data-value="kim13570"><span>김동현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jhs2626" onclick="select_item('전희선',this)" data-value="jhs2626"><span>전희선</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kynkes" onclick="select_item('김은섭',this)" data-value="kynkes"><span>김은섭</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="Jiho" onclick="select_item('김지호',this)" data-value="Jiho"><span>김지호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="useung07" onclick="select_item('정유승',this)" data-value="useung07"><span>정유승</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="najkms" onclick="select_item('노애정',this)" data-value="najkms"><span>노애정</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jjah10" onclick="select_item('강진웅',this)" data-value="jjah10"><span>강진웅</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="asi8477" onclick="select_item('안성일',this)" data-value="asi8477"><span>안성일</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="wjy83" onclick="select_item('위재영',this)" data-value="wjy83"><span>위재영</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="csyoo1496" onclick="select_item('유창식',this)" data-value="csyoo1496"><span>유창식</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="rmz555" onclick="select_item('김우성',this)" data-value="rmz555"><span>김우성</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="daejin95" onclick="select_item('최대진',this)" data-value="daejin95"><span>최대진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="strongpark95" onclick="select_item('박세웅',this)" data-value="strongpark95"><span>박세웅</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="sl2080" onclick="select_item('차재홍',this)" data-value="sl2080"><span>차재홍</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="taeho6202" onclick="select_item('전태호',this)" data-value="taeho6202"><span>전태호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="unclecho96" onclick="select_item('조성현',this)" data-value="unclecho96"><span>조성현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="wn8500" onclick="select_item('박주성',this)" data-value="wn8500"><span>박주성</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="bluesman" onclick="select_item('강준호',this)" data-value="bluesman"><span>강준호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="zlxl804" onclick="select_item('안태민',this)" data-value="zlxl804"><span>안태민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="syd00210" onclick="select_item('백지혜',this)" data-value="syd00210"><span>백지혜</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="shg879" onclick="select_item('김인영',this)" data-value="shg879"><span>김인영</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="ryj2374" onclick="select_item('유영주',this)" data-value="ryj2374"><span>유영주</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="shunn" onclick="select_item('장선미',this)" data-value="shunn"><span>장선미</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="wkdgur" onclick="select_item('장혁',this)" data-value="wkdgur"><span>장혁</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="ther24" onclick="select_item('이창민',this)" data-value="ther24"><span>이창민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="wowjdcx" onclick="select_item('이재정',this)" data-value="wowjdcx"><span>이재정</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="bjh8790" onclick="select_item('백정훈',this)" data-value="bjh8790"><span>백정훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="csh1997" onclick="select_item('조신형',this)" data-value="csh1997"><span>조신형</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="osw0326" onclick="select_item('오상원',this)" data-value="osw0326"><span>오상원</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="c58946" onclick="select_item('김세훈',this)" data-value="c58946"><span>김세훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jyj0325" onclick="select_item('전용준',this)" data-value="jyj0325"><span>전용준</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="wnstn3882" onclick="select_item('임준수',this)" data-value="wnstn3882"><span>임준수</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="leejg8492" onclick="select_item('이정길',this)" data-value="leejg8492"><span>이정길</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="sj1990" onclick="select_item('윤상준',this)" data-value="sj1990"><span>윤상준</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="sb1227" onclick="select_item('허상범',this)" data-value="sb1227"><span>허상범</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="h4994" onclick="select_item('홍유찬',this)" data-value="h4994"><span>홍유찬</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jh910824" onclick="select_item('정재훈',this)" data-value="jh910824"><span>정재훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="lee389" onclick="select_item('이병수',this)" data-value="lee389"><span>이병수</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="syh05088" onclick="select_item('석영진',this)" data-value="syh05088"><span>석영진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="goddns6850" onclick="select_item('김지원',this)" data-value="goddns6850"><span>김지원</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kic_dev1" onclick="select_item('@관리자1',this)" data-value="kic_dev1"><span>@관리자1</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jitae0518" onclick="select_item('김지태',this)" data-value="jitae0518"><span>김지태</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="kic_dev20" onclick="select_item('한정욱',this)" data-value="kic_dev20"><span>한정욱</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="gusdn980309" onclick="select_item('박현우',this)" data-value="gusdn980309"><span>박현우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="jyjyj7778" onclick="select_item('정상현',this)" data-value="jyjyj7778"><span>정상현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="hong1204994" onclick="select_item('홍성민',this)" data-value="hong1204994"><span>홍성민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="asharoxy10" onclick="select_item('김태현',this)" data-value="asharoxy10"><span>김태현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="hskim" onclick="select_item('김현선',this)" data-value="hskim"><span>김현선</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="dlfpd191" onclick="select_item('이건희',this)" data-value="dlfpd191"><span>이건희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_dam_id[]" value="su1011" onclick="select_item('김수진',this)" data-value="su1011"><span>김수진</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_krt_code_select" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT01" onclick="select_item('교정',this)" data-value="UT01"><span>교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT02" onclick="select_item('구입교정',this)" data-value="UT02"><span>구입교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT03" onclick="select_item('수리교정',this)" data-value="UT03"><span>수리교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT04" onclick="select_item('구입만',this)" data-value="UT04"><span>구입만</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT05" onclick="select_item('수리만',this)" data-value="UT05"><span>수리만</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT06" onclick="select_item('보류',this)" data-value="UT06"><span>보류</span></label></li><li><label class="btn_type"><input type="checkbox" name="krt_code[]" value="UT07" onclick="select_item('시험',this)" data-value="UT07"><span>시험</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b search_kcustomer_code_select" style=" ">
+                                            <li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT02" onclick="select_item('신청업체',this)" data-value="BT02"><span>신청업체</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT01" onclick="select_item('성적서업체',this)" data-value="BT01"><span>성적서업체</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT03" onclick="select_item('대행교정',this)" data-value="BT03"><span>대행교정</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT04" onclick="select_item('대행수리',this)" data-value="BT04"><span>대행수리</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT05" onclick="select_item('측정기공급',this)" data-value="BT05"><span>측정기공급</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT06" onclick="select_item('측정기제조',this)" data-value="BT06"><span>측정기제조</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT07" onclick="select_item('부품공급',this)" data-value="BT07"><span>부품공급</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT08" onclick="select_item('부품제조',this)" data-value="BT08" checked=""><span>부품제조</span></label></li><li><label class="btn_type"><input type="checkbox" name="kcus_code[]" value="BT09" onclick="select_item('대행업체',this)" data-value="BT09"><span>대행업체</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b p_tech_checkbox" style=" display: none;  ">
+                                            <li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="mdpkang" onclick="select_item('강대현',this)" data-value="mdpkang"><span>강대현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="kkorw" onclick="select_item('고용운',this)" data-value="kkorw"><span>고용운</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="pigolet" onclick="select_item('구본홍',this)" data-value="pigolet"><span>구본홍</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="KNSOK" onclick="select_item('김남석',this)" data-value="KNSOK"><span>김남석</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="gocho" onclick="select_item('김남형',this)" data-value="gocho"><span>김남형</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="kim13570" onclick="select_item('김동현',this)" data-value="kim13570"><span>김동현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="dtdt" onclick="select_item('김두태',this)" data-value="dtdt"><span>김두태</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="answjd282" onclick="select_item('김문정',this)" data-value="answjd282"><span>김문정</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="rabbitbabo" onclick="select_item('김선규',this)" data-value="rabbitbabo"><span>김선규</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="c58946" onclick="select_item('김세훈',this)" data-value="c58946"><span>김세훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="yeonjie93" onclick="select_item('김연지',this)" data-value="yeonjie93"><span>김연지</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="rladytjq9" onclick="select_item('김요섭',this)" data-value="rladytjq9"><span>김요섭</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="shg879" onclick="select_item('김인영',this)" data-value="shg879"><span>김인영</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jungdn89" onclick="select_item('김정우',this)" data-value="jungdn89"><span>김정우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jitae0518" onclick="select_item('김지태',this)" data-value="jitae0518"><span>김지태</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="Jiho" onclick="select_item('김지호',this)" data-value="Jiho"><span>김지호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="asharoxy10" onclick="select_item('김태현',this)" data-value="asharoxy10"><span>김태현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="hskim" onclick="select_item('김현선',this)" data-value="hskim"><span>김현선</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="gyals12" onclick="select_item('김효민',this)" data-value="gyals12"><span>김효민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="cksgns2351" onclick="select_item('남찬훈',this)" data-value="cksgns2351"><span>남찬훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="ppppgs" onclick="select_item('박근식',this)" data-value="ppppgs"><span>박근식</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="lgetit" onclick="select_item('박수진',this)" data-value="lgetit"><span>박수진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="wn8500" onclick="select_item('박주성',this)" data-value="wn8500"><span>박주성</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="gusdn980309" onclick="select_item('박현우',this)" data-value="gusdn980309"><span>박현우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="bjh8790" onclick="select_item('백정훈',this)" data-value="bjh8790"><span>백정훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="syd00210" onclick="select_item('백지혜',this)" data-value="syd00210"><span>백지혜</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="syh05088" onclick="select_item('석영진',this)" data-value="syh05088"><span>석영진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="mireerang" onclick="select_item('신미리',this)" data-value="mireerang"><span>신미리</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="kic204" onclick="select_item('안선우',this)" data-value="kic204"><span>안선우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="asi8477" onclick="select_item('안성일',this)" data-value="asi8477"><span>안성일</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jh0302" onclick="select_item('안중현',this)" data-value="jh0302"><span>안중현</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="zlxl804" onclick="select_item('안태민',this)" data-value="zlxl804"><span>안태민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="seyeon820" onclick="select_item('어세연',this)" data-value="seyeon820"><span>어세연</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="osw0326" onclick="select_item('오상원',this)" data-value="osw0326"><span>오상원</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="wjy83" onclick="select_item('위재영',this)" data-value="wjy83"><span>위재영</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="ryj2374" onclick="select_item('유영주',this)" data-value="ryj2374"><span>유영주</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="csyoo1496" onclick="select_item('유창식',this)" data-value="csyoo1496"><span>유창식</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="yby2014" onclick="select_item('윤병연',this)" data-value="yby2014"><span>윤병연</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="sj1990" onclick="select_item('윤상준S',this)" data-value="sj1990"><span>윤상준S</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="dlfpd191" onclick="select_item('이건희',this)" data-value="dlfpd191"><span>이건희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="nkl1007" onclick="select_item('이남경',this)" data-value="nkl1007"><span>이남경</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="lee389" onclick="select_item('이병수',this)" data-value="lee389"><span>이병수</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="u2love1" onclick="select_item('이상준',this)" data-value="u2love1"><span>이상준</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="wowjdcx" onclick="select_item('이재정',this)" data-value="wowjdcx"><span>이재정</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="leejg8492" onclick="select_item('이정길',this)" data-value="leejg8492"><span>이정길</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="ther24" onclick="select_item('이창민',this)" data-value="ther24"><span>이창민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="lhh79yyy" onclick="select_item('이훈희',this)" data-value="lhh79yyy"><span>이훈희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="sodam0258" onclick="select_item('인소담',this)" data-value="sodam0258"><span>인소담</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="wnstn3882" onclick="select_item('임준수',this)" data-value="wnstn3882"><span>임준수</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="shunn" onclick="select_item('장선미',this)" data-value="shunn"><span>장선미</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jyj0325" onclick="select_item('전용준',this)" data-value="jyj0325"><span>전용준</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="taeho6202" onclick="select_item('전태호',this)" data-value="taeho6202"><span>전태호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jhjeong" onclick="select_item('정재호',this)" data-value="jhjeong"><span>정재호</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="jh910824" onclick="select_item('정재훈',this)" data-value="jh910824"><span>정재훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="smile008" onclick="select_item('정태훈',this)" data-value="smile008"><span>정태훈</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="csh1997" onclick="select_item('조신형',this)" data-value="csh1997"><span>조신형</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="aimh" onclick="select_item('조준희',this)" data-value="aimh"><span>조준희</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="hjcho" onclick="select_item('조형진',this)" data-value="hjcho"><span>조형진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="sl2080" onclick="select_item('차재홍',this)" data-value="sl2080"><span>차재홍</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="daejin95" onclick="select_item('최대진',this)" data-value="daejin95"><span>최대진</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="ztarshow" onclick="select_item('최혁철',this)" data-value="ztarshow"><span>최혁철</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="hmwoo1202" onclick="select_item('허민우',this)" data-value="hmwoo1202"><span>허민우</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="sb1227" onclick="select_item('허상범',this)" data-value="sb1227"><span>허상범</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="hong1204994" onclick="select_item('홍성민',this)" data-value="hong1204994"><span>홍성민</span></label></li><li><label class="btn_type"><input type="checkbox" name="koc_handle_id[]" value="h4994" onclick="select_item('홍유찬',this)" data-value="h4994"><span>홍유찬</span></label></li>
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b calibration_none" style=" display: none;  ">
+                                            교정미완료 (입고대기, 시험대기, 교정대기, 시험진행, 교정진행, 수리대기, 구입대기, 교정대행, 수리대행, 사외대기)
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b deal_none" style=" display: none;  ">
+                                            명세서 미발행 (청구대기, 출고청구대기)
+                                        </ul>
+                                        <ul class="list_dep2 list_dep_item_6678c1939e11b tax_none" style=" display: none;  ">
+                                            계산서 미발행 (출고계산대기, 계산대기)
                                         </ul>
                                     </div>
                                     <div class="type_select_sec output">
                                         <ul class="output_list">
-                                            <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">반입교정 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">부산지점 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">화물차량 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                            <li class="output_item">PICK-UP <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li>
-                                        </ul>
+                                            <!-- <li class="output_item">본사 <button type="button" class="btn_delete"><div class="blind">삭제</div></button></li> -->
+                
+                                        <li class="output_item kcus_code" data-value="BT08">부품제조 <button type="button" class="btn_delete" onclick="delete_seach_item('kcus_code','BT08')"><div class="blind">삭제</div></button></li></ul>
                                     </div>
                                 </div>
                             </div>
-        
-                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-        
-                            <div class="tab_cont_item">
+                            <div class="tab_cont_item" style="display:none">
                                 <div class="v_tbl_wrap">
                                     <table class="v_tbl">
                                         <tbody>
-                                            <colgroup>
+                                            </tbody><colgroup>
                                                 <col style="width: 160px;">
                                                 <col>
                                                 <col style="width: 160px;">
@@ -642,23 +676,48 @@
                                                 <col style="width: 160px;">
                                                 <col>
                                             </colgroup>
-                                            <tr>
+                                            <tbody><tr class="">
+                                                <th>시험건만 조회</th>
+                                                <td><label><input type="checkbox" name="is_click_exam" id="is_click_exam" onclick="click_exam_no_6678c1939e11b();" value="1" class="f_chk ty_big"> 시험건만 조회</label></td>
+                                                <th>시험번호</th>
+                                                <td><input type="text" class="f_input ty_small w_100" name="kor_exam_no" id="koc_exam_no_6678c1939e11b_h" disabled="" value=""></td>
+                                                <th>요구사항</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="kor_estimate_memo" id="kor_estimate_memo_6678c1939e11b_h" value=""></td>
+                                                <th>비고</th>
+                                                <td><input type="text" class="f_input ty_small w_200" name="koc_bigo" id="koc_bigo_6678c1939e11b_h" value=""></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab_cont_item" style="display:none">
+                                <div class="v_tbl_wrap">
+                                    <table class="v_tbl">
+                                        <tbody>
+                                            </tbody><colgroup>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                                <col style="width: 160px;">
+                                                <col>
+                                            </colgroup>
+                                            <tbody><tr>
                                                 <th>의뢰 기간</th>
                                                 <td colspan="5">
-                                                    <div class="date_set">
-                                                        <select name="" id="" class="f_select ty_small">
-                                                            <option value="">사외</option>
-                                                            <option value="">기간 선택 2</option>
-                                                            <option value="">기간 선택 3</option>
-                                                            <option value="">기간 선택 4</option>
+                                                    <div class="date_set data_set_search_6678c1939e11b">
+                                                        <select name="kpc_type1" id="kpc_type1_6678c1939e11b" class="f_select ty_small">
+                                                            <option value="0" selected="">사외</option>
+                                                            <option value="1">수리</option>
                                                         </select>
-                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                        <input type="text" class="f_input ty_small inp_date inp_date_search26678c1939e11b date_start hasDatepicker" name="kpc_send_date_s" value="" readonly="readonly" id="dp1719189187731"> ~
+                                                        <input type="text" class="f_input ty_small inp_date inp_date_search26678c1939e11b date_end hasDatepicker" name="kpc_send_date_e" value="" readonly="readonly" id="dp1719189187732">
+                                                        <button type="button" onclick="set_today_search_6678c1939e11b(this);" class="f_btn ty_small _blue">오늘</button>
+                                                        <button type="button" onclick="set_7d_search_6678c1939e11b(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m_search_6678c1939e11b(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m_search_6678c1939e11b(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <button type="button" onclick="set_1y_search_6678c1939e11b(this)" class="f_btn ty_small _purple">1년</button>
+                                                        <!-- <button type="button" onclick="clear(this)" class="f_btn ty_small _orange">초기화</button> -->
                                                     </div>
                                                 </td>
                                             </tr>
@@ -666,86 +725,52 @@
                                                 <th>회수 기간</th>
                                                 <td colspan="5">
                                                     <div class="date_set">
-                                                        <select name="" id="" class="f_select ty_small">
-                                                            <option value="">사외</option>
-                                                            <option value="">기간 선택 2</option>
-                                                            <option value="">기간 선택 3</option>
-                                                            <option value="">기간 선택 4</option>
+                                                        <select name="kpc_type2" id="kpc_type2_6678c1939e11b" class="f_select ty_small">
+                                                            <option value="0" selected="">사외</option>
+                                                            <option value="1">수리</option>
                                                         </select>
-                                                        <input type="text" class="f_input ty_small inp_date date_start" readonly> ~
-                                                        <input type="text" class="f_input ty_small inp_date date_end" readonly>
-                                                        <button type="button" onclick="set_today(this);" class="f_btn ty_small _blue">오늘</button>
-                                                        <button type="button" onclick="set_7d(this)" class="f_btn ty_small _red">7일</button>
-                                                        <button type="button" onclick="set_1m(this)" class="f_btn ty_small _green">1개월</button>
-                                                        <button type="button" onclick="set_3m(this)" class="f_btn ty_small _yellow">3개월</button>
-                                                        <button type="button" onclick="set_1y(this)" class="f_btn ty_small _purple">1년</button>
+                                                        <input type="text" class="f_input ty_small inp_date inp_date_search6678c1939e11b date_start hasDatepicker" name="kpc_return_date_s" value="" readonly="readonly" id="dp1719189187729"> ~
+                                                        <input type="text" class="f_input ty_small inp_date inp_date_search6678c1939e11b date_end hasDatepicker" name="kpc_return_date_e" value="" readonly="readonly" id="dp1719189187730">
+                                                        <button type="button" onclick="set_today_search_6678c1939e11b(this);" class="f_btn ty_small _blue">오늘</button>
+                                                        <button type="button" onclick="set_7d_search_6678c1939e11b(this)" class="f_btn ty_small _red">7일</button>
+                                                        <button type="button" onclick="set_1m_search_6678c1939e11b(this)" class="f_btn ty_small _green">1개월</button>
+                                                        <button type="button" onclick="set_3m_search_6678c1939e11b(this)" class="f_btn ty_small _yellow">3개월</button>
+                                                        <button type="button" onclick="set_1y_search_6678c1939e11b(this)" class="f_btn ty_small _purple">1년</button>
+                                                        <!-- <button type="button" onclick="clear(this)" class="f_btn ty_small _orange">초기화</button> -->
+                
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>교정의뢰기관</th>
                                                 <td>
-                                                    <select name="" id="" class="f_select ty_small w_200">
-                                                        <option value="">선택</option>
-                                                        <option value="">선택2</option>
-                                                        <option value="">선택3</option>
-                                                        <option value="">선택4</option>
-                                                        <option value="">선택5</option>
-                                                    </select>
+                                                    <select name="kpc_customer_code1" id="kpc_customer_code1" class="f_select ty_small w_200"><option value="">-- 선택 --</option><option value="76463">(사)한국온실가스감축 에너지진단협회</option><option value="49015">(유)대영티엠아이</option><option value="501035">(재)한국기계전기전자시험연구원</option><option value="25">(재)한국표준과학연구원</option><option value="510743">(주)EMF Safety</option><option value="496186">(주)경도하이텍</option><option value="460526">(주)굿모닝계측기</option><option value="533125">(주)금륜하이텍</option><option value="494914">(주)나노하이테크</option><option value="514733">(주)대덕기술</option><option value="497425">(주)대덕하이테크</option><option value="64843">(주)대도</option><option value="524709">(주)대성월드</option><option value="11012">(주)대영씨앤티</option><option value="525850">(주)대전계기</option><option value="508234">(주)모바일텍교정연구소</option><option value="507247">(주)바이오시스텍</option><option value="33170">(주)삼덕과학</option><option value="44010">(주)삼화미터텍</option><option value="96661">(주)서호</option><option value="14755">(주)성신인스트루먼트</option><option value="506556">(주)성신인스트루먼트 구로</option><option value="76300">(주)성신인스트루먼트 수원지점</option><option value="511764">(주)성원사이언스</option><option value="532310">(주)세코스</option><option value="28717">(주)센텍코리아</option><option value="506166">(주)신한계기</option><option value="28840">(주)씨엔티산업기술원</option><option value="3150">(주)씨엠엔텍</option><option value="469202">(주)아이에스피</option><option value="74488">(주)아텍코리아</option><option value="498416">(주)안세</option><option value="492621">(주)에스에스테크널러지</option><option value="492052">(주)에이치시티</option><option value="503623">(주)에이치시티 대구지사</option><option value="44060">(주)에이치시티(사용중지)</option><option value="3294">(주)에프씨씨</option><option value="475097">(주)엔바이로코리아</option><option value="509515">(주)엔바이로코리아 대덕지점</option><option value="420472">(주)엠티교역</option><option value="518393">(주)오르비텍</option><option value="528811">(주)와이엔케이 솔루션</option><option value="485718">(주)우정바이오</option><option value="465507">(주)유니트리</option><option value="528112">(주)이안</option><option value="69456">(주)이엠텍</option><option value="30221">(주)이오테크닉스</option><option value="28308">(주)일진라드</option><option value="527493">(주)자트</option><option value="29963">(주)제일테스팅</option><option value="67245">(주)지브이</option><option value="539987">(주)지에스티</option><option value="95882">(주)진산물산</option><option value="507199">(주)천리</option><option value="504691">(주)캘리브레이션</option><option value="400187">(주)케이시에스</option><option value="11373">(주)큐엔큐</option><option value="508281">(주)테솔</option><option value="448555">(주)티이씨교정기술원</option><option value="41068">(주)페스텍</option><option value="542030">(주)포레스트힐스랩코리아</option><option value="14795">(주)표준교정기술원</option><option value="509605">(주)표준교정인스트루먼트</option><option value="79118">(주)표준엔지니어링</option><option value="13545">(주)표준전자통신</option><option value="443555">(주)플로트론 세종사업장</option><option value="33643">(주)피디케이</option><option value="87229">(주)한국계측기기연구센터</option><option value="12466">(주)한국공업기술원</option><option value="102454">(주)한국교정기술센터</option><option value="499025">(주)한국교정기술원</option><option value="313239">(주)한국시험교정기술원</option><option value="78597">(주)한국엔비에스</option><option value="506232">(주)한국일측</option><option value="501202">(주)한국투엠</option><option value="495407">(주)한영넉스</option><option value="48825">(주)홍림</option><option value="491054">(주)화인시스텍</option><option value="8301">(주)흥진정밀</option><option value="430663">ATS KOREA</option><option value="465119">DKD</option><option value="541613">JGR(해외교정)</option><option value="180633">Korea Instruments Co., Ltd</option><option value="55900">XX플로우엔텍</option><option value="531457">㈜지오시스템</option><option value="510442">가나시험기</option><option value="528758">가온시스템</option><option value="83623">경기지방중소기업청</option><option value="502406">경성시험기(주)</option><option value="501299">광전자정밀(주)</option><option value="8757">교정기술원 주식회사</option><option value="494772">교통안전공단 서울지사</option><option value="500140">기아(주) 광명</option><option value="32907">기아자동차(주)</option><option value="212027">다인계기산업</option><option value="498372">대경테크(주)</option><option value="12514">대명측기사</option><option value="26172">대윤계기산업(주)</option><option value="499945">대한계측시스템(주)</option><option value="460069">도로교통공단</option><option value="530748">두광교정기술원(주)</option><option value="544366">디앤에스ENG</option><option value="537407">디와이교정계측기</option><option value="502712">레보딕스(주)</option><option value="20684">메틀러토레도코리아(주)</option><option value="507248">바이오스트림테크놀러지스(주)</option><option value="507254">베스트이엔지</option><option value="513943">부산지점_캘리테크</option><option value="502993">비상</option><option value="495165">선두전자</option><option value="2677">성균관대학교 측량기술센터</option><option value="542112">세계측기사</option><option value="512080">세안에너텍(주)_교정</option><option value="502696">스케일테크주식회사</option><option value="5668">식품의약품안정청</option><option value="418850">신영측기(주) 레이저레벨</option><option value="518519">썬라이징 주식회사</option><option value="31232">씨엠에스센터(주)</option><option value="504078">안리쓰 코퍼레이션</option><option value="19756">에이치피엠(주)</option><option value="505722">에프에스랩</option><option value="519128">엘에스일렉트릭(주)</option><option value="508265">엠비테크</option><option value="507272">영인에스티(주)</option><option value="539849">영인에이티 주식회사</option><option value="545656">와이엔테크</option><option value="545732">월드원</option><option value="518641">유상준</option><option value="28247">이리떼</option><option value="12913">인천형기</option><option value="531126">일진방사선엔지니어링(주)</option><option value="500632">자인 주식회사_유량계</option><option value="492309">종로계기산업(주)</option><option value="523215">주식회사 가온</option><option value="495986">주식회사 넴코코리아</option><option value="494698">주식회사 대도</option><option value="520837">주식회사 덕양</option><option value="544874">주식회사 라온랩</option><option value="519410">주식회사 랩가이드</option><option value="484263">주식회사 마이크로진</option><option value="546755">주식회사 바이오파마텍</option><option value="543405">주식회사 삼덕에프지</option><option value="518632">주식회사 삼이시스템</option><option value="504965">주식회사 시스피아</option><option value="56215">주식회사 엘피씨</option><option value="515432">주식회사 엠엔씨엔지니어링</option><option value="546721">주식회사 영진사이언스</option><option value="550110">주식회사 와이엠인더스트리</option><option value="42876">주식회사 웨이투웨이</option><option value="586728">주식회사 이레테크</option><option value="486576">주식회사 이수지엠피솔루션</option><option value="511806">주식회사 코메츠</option><option value="537710">주식회사 플로우엔텍</option><option value="503902">주식회사 플로트론 세종사업장</option><option value="313341">주식회사 한국이엠에스</option><option value="530265">주식회사 한국표준교정센터</option><option value="534999">주식회사 한국표준원</option><option value="13506">주식회사 히스코에스앤씨</option><option value="47675">청계측기</option><option value="511319">측정지원센터(주)</option><option value="530585">친구와함께</option><option value="501705">카스템</option><option value="19118">케이티아이시시(주)</option><option value="99604">케이티아이시시(주) 용산지점</option><option value="64763">켐익코퍼레이션</option><option value="92450">코리아인스트루먼트(주)</option><option value="529328">코리아인스트루먼트(주) 대전지사</option><option value="35400">코리아인스트루먼트(주) 부산지사</option><option value="92441">코리아인스트루먼트(주)주소가틀립니다</option><option value="260519">코리아인스트루먼트(주)지점</option><option value="509396">큐린스</option><option value="474002">키사이트</option><option value="43143">태신씨앤에스 주식회사</option><option value="38490">표준환경시험연구원(주)</option><option value="522924">플루크</option><option value="532199">필스트로닉_A/S센터</option><option value="532098">필스트로닉_판매처</option><option value="497779">하나계측기(주)</option><option value="516259">하이리움산업(주)</option><option value="492924">한국건설생활환경시험연구원</option><option value="15544">한국계측기기연구조합</option><option value="447409">한국광기술원</option><option value="102427">한국기기유화시험연구원</option><option value="518694">한국도로전산(주)</option><option value="542061">한국드레가 주식회사</option><option value="491262">한국렌탈 주식회사 테크노센터</option><option value="441782">한국산업_교정팀</option><option value="77960">한국산업기술시험원</option><option value="21302">한국산업기술시험원(경기분원)</option><option value="523338">한국산업기술시험원(본점)</option><option value="36633">한국산업기술시험원(환경,수질)</option><option value="431929">한국산업기술시험원(환경:수질)</option><option value="502072">한국엔드레스하우저 주식회사</option><option value="437428">한국원자력연구원</option><option value="43587">한국유량계공업(주)</option><option value="92818">한국지역난방공사 강남</option><option value="502405">한국캘랩(주)</option><option value="545764">한라아이티씨</option><option value="429081">한빛EDS(주)</option><option value="104615">한성계기(주)</option><option value="23597">현대정밀산업(주)</option></select>
                                                 </td>
                                                 <th>수리의뢰기관</th>
                                                 <td>
-                                                    <select name="" id="" class="f_select ty_small w_200">
-                                                        <option value="">선택</option>
-                                                        <option value="">선택2</option>
-                                                        <option value="">선택3</option>
-                                                        <option value="">선택4</option>
-                                                        <option value="">선택5</option>
-                                                    </select>
+                                                    <select name="kpc_customer_code2" id="kpc_customer_code2" class="f_select ty_small w_200"><option value="">-- 선택 --</option><option value="420802">(주)가스트론</option><option value="497789">(주)경화상사</option><option value="460526">(주)굿모닝계측기</option><option value="503352">(주)노이즈텍</option><option value="492779">(주)동림통상</option><option value="524146">(주)명성계기</option><option value="24625">(주)명성인스트루먼트</option><option value="44010">(주)삼화미터텍</option><option value="506556">(주)성신인스트루먼트 구로</option><option value="76300">(주)성신인스트루먼트 수원지점</option><option value="505843">(주)성연아이티에스</option><option value="28717">(주)센텍코리아</option><option value="480220">(주)씨아이티</option><option value="505970">(주)에스씨에스</option><option value="492621">(주)에스에스테크널러지</option><option value="475097">(주)엔바이로코리아</option><option value="509515">(주)엔바이로코리아 대덕지점</option><option value="45019">(주)이원합금</option><option value="448014">(주)자연플러스한우</option><option value="490834">(주)제이엠</option><option value="29963">(주)제일테스팅</option><option value="490843">(주)종로계측기</option><option value="496676">(주)종일기공사</option><option value="434778">(주)카스</option><option value="505482">(주)카스_서울 성내영업소</option><option value="514830">(주)코리아인스트루먼트</option><option value="549803">(주)테스트론</option><option value="542030">(주)포레스트힐스랩코리아</option><option value="51093">(주)프로컴시스템</option><option value="517607">(주)피엠이</option><option value="438206">(주)한국플루크</option><option value="90522">AD파워(주)</option><option value="430663">ATS KOREA</option><option value="49596">B&amp;K 코리아</option><option value="180633">Korea Instruments Co., Ltd</option><option value="4040">TAJIMA</option><option value="48345">xxxxx에프지산업 (Fine Gage)</option><option value="100658">게코전자</option><option value="514522">다인계기산업</option><option value="498372">대경테크(주)</option><option value="12514">대명측기사</option><option value="511277">대신전자</option><option value="499945">대한계측시스템(주)</option><option value="503824">도요테크(주)</option><option value="49817">동연테크</option><option value="22012">동현계측기</option><option value="537407">디와이교정계측기</option><option value="531640">로이사이언스</option><option value="449098">리켄케이키코리아(주)</option><option value="551701">마하코리아</option><option value="100826">보라기연</option><option value="501734">부흥테크</option><option value="9895">비엠테크</option><option value="535209">사우스인더스트리</option><option value="524099">삼원계측기(주)_본사</option><option value="495165">선두전자</option><option value="83680">선문전자</option><option value="5033">성덕기기</option><option value="503341">성일저울</option><option value="9412">세종기술(주)</option><option value="518519">썬라이징 주식회사</option><option value="94747">애드테크</option><option value="429995">에이엔티</option><option value="19756">에이치피엠(주)</option><option value="505722">에프에스랩</option><option value="268562">에프지산업 (Fine Gage)</option><option value="418859">엔디코리아(주)</option><option value="425193">요꼬가와 서비스센터 (내선번호305)</option><option value="500578">우신SM계기</option><option value="31539">월드원</option><option value="521495">유니모테크놀로지(주)</option><option value="490173">유유계기교역상사</option><option value="28247">이리떼</option><option value="1928">인스탑</option><option value="492309">종로계기산업(주)</option><option value="497694">주식회사 경복기기</option><option value="518632">주식회사 삼이시스템</option><option value="508810">주식회사 센코</option><option value="548804">주식회사 신일테크</option><option value="42876">주식회사 웨이투웨이</option><option value="77287">주식회사 윈텍</option><option value="72006">주식회사 코리아인스트루먼트</option><option value="495393">주식회사 키모코리아</option><option value="106834">주식회사 테크원씨엔에스</option><option value="18110">지에스테크</option><option value="99604">케이티아이시시(주) 용산지점</option><option value="35400">코리아인스트루먼트(주) 부산지사</option><option value="505730">코리아인스트루먼트--종로</option><option value="547207">코스테크(주)</option><option value="54495">콜러스테크</option><option value="511604">크로아(XXXX)</option><option value="34600">키키프레시젼</option><option value="31707">태광전자정밀산업사</option><option value="437515">태신상사(주)</option><option value="502595">태신상사(주)성남</option><option value="46109">텔레다인르크로이코리아(유)</option><option value="405451">토크월드</option><option value="532199">필스트로닉_A/S센터</option><option value="497779">하나계측기(주)</option><option value="516259">하이리움산업(주)</option><option value="519358">한국교정계측기</option><option value="524421">한국기술서비스</option><option value="498572">한국분석기기</option><option value="404380">한국애질런트테크놀로지스(주)</option><option value="548130">한국에이엔디(주)</option><option value="504542">한국요꼬가와전기(주) 성남지사</option><option value="17365">한국텍트로닉스</option><option value="498812">한성계기(주)</option></select>
                                                 </td>
-                                                <th>사외건만 조회</th>
+                                                <th>위탁원청기관</th>
                                                 <td>
-                                                    <label><input type="checkbox" class="f_chk ty_big"> 사외건만 조회</label>  
+                                                    <select name="common_jisa_group" id="common_jisa_group" class="f_select ty_small w_200"><option value="">-- 선택 --</option><option value="92450">본사</option><option value="529328">대전지사</option><option value="35400">부산지사</option></select>
                                                 </td>
+                                                <!-- <th>사외건만 조회</th> -->
+                                                <!-- <td>
+                                                    <label><input type="checkbox" name="is_koc_com_out" id="is_koc_com_out" value="1" class="f_chk ty_big" > 사외건만 조회</label>  
+                                                </td> -->
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-        
-                            <br><br><!--[D] 간격용 <br> 개발시 삭제-->
-        
-                            <div class="tab_cont_item">
-                                <div class="v_tbl_wrap">
-                                    <table class="v_tbl">
-                                        <tbody>
-                                            <colgroup>
-                                                <col style="width: 160px;">
-                                                <col>
-                                                <col style="width: 160px;">
-                                                <col>
-                                                <col style="width: 160px;">
-                                                <col>
-                                            </colgroup>
-                                            <tr class="">
-                                                <th>시험번호</th>
-                                                <td><input type="text" class="f_input ty_small w_100"> ~ <input type="text" class="f_input ty_small w_100"></td>
-                                                <th>요구사항</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                                <th>비고</th>
-                                                <td><input type="text" class="f_input ty_small w_200"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        
                             <div class="btn_set taC mt20">
-                                <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색">
-                                <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
+                                <input type="button" class="f_btn ty_s_mid _blue w_100" value="검색" onclick="m_search_6678c1939e11b();">
+                                <button type="button" class="f_btn ty_s_mid _lightGrey w_100" onclick="get_tab_6678c1939e11b('/correction/correction_search.php?Fid=')">초기화</button>
                             </div>
                             
                         </div>
-                        
+                    
                         <!--// tab list + cont -->
                     </section>
                     <div class="btn_set bg_box mt15">
@@ -1170,6 +1195,7 @@
                                     <col style="width: 100px;">
                                     <col style="width: 140px;">
                                     <col style="width: 60px;">
+                                    <col style="width: 80px;">
                                     <col style="width: 60px;">
                                     <col style="width: 100px;">
                                     <col style="width: 80px;">
@@ -1193,6 +1219,7 @@
                                         </th>
                                         <th class="th_fixed">입고일시</th>
                                         <th class="th_fixed">구분</th>
+                                        <th class="th_fixed">CMI ID</th>
                                         <th class="th_fixed">의뢰</th>
                                         <th class="th_fixed">교정상태</th>
                                         <th class="th_fixed">교정결과</th>
@@ -1217,6 +1244,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1243,6 +1271,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1268,6 +1297,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1294,6 +1324,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1321,6 +1352,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1347,6 +1379,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1372,6 +1405,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1398,6 +1432,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1424,6 +1459,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1450,6 +1486,7 @@
                                         </td>
                                         <td>2023-03-12 11:22:22</td>
                                         <td>교정</td>
+                                        <td><a class="c_num_link" href="">2300001</a> </td>
                                         <td>사외</td>
                                         <td>출고청구대기</td>
                                         <td>불량</td>
@@ -1516,6 +1553,419 @@
         </div>
     </main>
     <!--//container-->
+    <div class="layer_popup_new pop_qr ">
+        <div class="layer_popup_new_inner">
+            <div class="layer_popup_new_cont">
+                <button type="button" class="close_popup" onclick="close_popup(this)">
+                    <span class="blind">팝업 닫기</span>
+                </button>
+                <div class="sub_tit">
+                    <h1 class="tit1">QR 스캔</h1>
+                </div>
+                <form action="">
+                    <div class="sec mt0">
+                        <div class="qr_top">
+                            <label class="qr_box">
+                                <input type="text" class="input_hidden">
+                                <div class="qr_box_cont">
+                                    <div class="qr_trigger">QR</div>
+                                    
+                                </div>
+                                <p class="mt8">※스캔이 안될 경우 위 <b>QR 박스를 클릭하여 활성화</b> 시켜주세요.</p>
+                            </label>
+                            
+                            <div class="qr_info">
+                                <div class="qr_info_sec">
+                                    <strong class="qr_info_tit">* QR 스캔</strong>
+                                    <ul>
+                                        <li>1. QR 리더기를 PC와 연결해주세요.</li>
+                                        <li>2. 교정 필증에 있는 QR 코드를 스캔해주세요.</li>
+                                    </ul>
+                                </div>
+                                <div class="qr_info_sec">
+                                    <strong class="qr_info_tit">* CMI ID 검색</strong>
+                                    <ul>
+                                        <li>1. 단건 조회 시 CMI ID 입력 후 검색 버튼을 클랙해주세요.</li>
+                                        <li>2. 다건 조회 시 ,(콤마) 입력으로 구분합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec">
+                        <div class="type_select">   
+                            <div class="type_select_sec output">
+                                <ul class="output_list">
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                    <li class="output_item">
+                                        123541234 
+                                        <button type="button" class="btn_delete"><div class="blind">삭제</div></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_set taC mt20">
+                        <input type="submit" class="f_btn ty_s_mid _blue w_100" value="검색" >
+                        <button type="button" class="f_btn ty_s_mid _lightGrey w_100">초기화</button>
+                    </div>
+                </form>
+                <form action="">
+                    <div class="sec">
+                        <div class="d_flex ai_b mb10">
+                            <div class="search_count">- 검색결과 <b>1,200</b>건</div>
+                        </div>
+                        <div class="v_tbl_wrap">
+                            <table class="v_tbl">
+                                <colgroup>
+                                    <col style="width: 160px;">
+                                    <col>
+                                    <col style="width: 160px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>차기교정일</th>
+                                        <td>
+                                            <div class="d_flex _gap8">
+                                                <select name="" id="" class="f_select ty_small mw0">
+                                                    <option value="" selected disabled>표기</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                </select>
+                                                <select name="" id="" class="f_select ty_small mw0">
+                                                    <option value="" selected disabled>설정근거 선택</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                    <option value="">Lorem, ipsum.</option>
+                                                </select>
+                                            </div>                                       
+                                        </td>
+                                        <th>언어 설정</th>
+                                        <td>
+                                            <label class="chk_item"><input type="checkbox" name="" value="">국문</label>
+                                            <label class="chk_item"><input type="checkbox" name="" value="">영문</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>기기번호 설정</th>
+                                        <td>
+                                            <select name="" id="" class="f_select ty_small">
+                                                <option value="" selected>전부 출력</option>
+                                                <option value="">Lorem, ipsum.</option>
+                                                <option value="">Lorem, ipsum.</option>
+                                                <option value="">Lorem, ipsum.</option>
+                                            </select>
+                                        </td>
+                                        <th>언어 설정</th>
+                                        <td>
+                                            <label class="chk_item"><input type="checkbox" name="" value="">긴급</label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>
+                    </div>
+                    <div class="sec">
+                        <div class="h_tbl_wrap y_scroll_area" style="max-height: 243px;">
+                            <table class="h_tbl ty_fixed">
+                                <colgroup>
+                                    <col style="width: 50px;">
+                                    <col style="width: 60px;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col style="width: 50px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_fixed"><input type="checkbox" class="f_chk"></th>
+                                        <th class="th_fixed">NO </th>
+                                        <th class="th_fixed">CMI ID</th>
+                                        <th class="th_fixed">계측기명</th>
+                                        <th class="th_fixed">제조사</th>
+                                        <th class="th_fixed">형식</th>
+                                        <th class="th_fixed">기기번호</th>
+                                        <th class="th_fixed">관리번호</th>
+                                        <th class="th_fixed">삭제</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="sortable_tbl">
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="f_chk"></td>
+                                        <td>1</td>
+                                        <td>656499</td>
+                                        <td>Barometer</td>
+                                        <td>Greisinger</td>
+                                        <td>EASYLog80CL</td>
+                                        <td>123123</td>
+                                        <td>A1234</td>
+                                        <td><button type="button" class="w_30"><i class="fa-solid fa-trash-can"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="btn_set taC mt20">
+                        <input type="submit" class="f_btn ty_s_mid _blue w_100" value="등록" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!--footer-->
     <footer class="footer">
         <!-- <div class="footer_top">

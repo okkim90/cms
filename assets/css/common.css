@@ -4506,6 +4506,9 @@
 .d_flex .no_shrink {
   flex-shrink: 0;
 }
+.d_flex .mw0 {
+  min-width: 0;
+}
 
 .ml_auto {
   margin-left: auto;
@@ -4521,6 +4524,14 @@
 
 .taC {
   text-align: center;
+}
+
+.fwM {
+  font-weight: 500;
+}
+
+.fwB {
+  font-weight: bold;
 }
 
 /*반응형 화면 크기*/
@@ -6002,6 +6013,83 @@ input::-webkit-search-results-decoration {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
+}
+
+.pop_qr .qr_top {
+  display: flex;
+  align-items: flex-start;
+}
+.pop_qr .qr_box {
+  position: relative;
+  width: 300px;
+}
+.pop_qr .qr_box_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  flex-direction: column;
+  padding: 15px 10px 20px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.pop_qr .qr_box_cont .qr_trigger {
+  color: #e1e1e1;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.pop_qr .qr_box_cont .qr_trigger::after {
+  content: "OFF";
+  margin-left: 15px;
+}
+.pop_qr .qr_box .input_hidden {
+  position: absolute;
+  opacity: 0;
+  z-index: -999;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont .qr_trigger {
+  color: #fff;
+}
+.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont .qr_trigger::after {
+  content: "ON";
+}
+.pop_qr .qr_info {
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  flex: 1;
+  display: flex;
+  border-radius: 16px;
+}
+.pop_qr .qr_info_tit {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.pop_qr .qr_info_sec {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 13px;
+  border-left: 1px solid #ccc;
+}
+.pop_qr .qr_info_sec:first-of-type {
+  border-left: none;
+}
+.pop_qr .qr_info ul li + li {
+  margin-top: 4px;
+}
+.pop_qr .type_select {
+  height: 100px;
 }
 
 .insa_container {
