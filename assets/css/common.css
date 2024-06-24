@@ -6017,11 +6017,17 @@ input::-webkit-search-results-decoration {
 
 .pop_qr .qr_top {
   display: flex;
-  align-items: flex-start;
 }
 .pop_qr .qr_box {
   position: relative;
-  width: 300px;
+  width: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 8px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: rgba(31, 32, 133, 0.08);
+  align-items: center;
 }
 .pop_qr .qr_box_cont {
   display: flex;
@@ -6029,13 +6035,16 @@ input::-webkit-search-results-decoration {
   justify-content: center;
   border: 1px solid #ccc;
   flex-direction: column;
-  padding: 15px 10px 20px;
+  height: 50px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 12px;
+  order: 0;
+  width: 110px;
+  background-color: #fff;
 }
 .pop_qr .qr_box_cont .qr_trigger {
   color: #e1e1e1;
-  font-size: 40px;
+  font-size: 23px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -6043,25 +6052,28 @@ input::-webkit-search-results-decoration {
 }
 .pop_qr .qr_box_cont .qr_trigger::after {
   content: "OFF";
-  margin-left: 15px;
+  margin-left: 8px;
 }
-.pop_qr .qr_box .input_hidden {
-  position: absolute;
-  opacity: 0;
-  z-index: -999;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.pop_qr .qr_box .qr_box_input {
+  flex: 1;
+  height: 50px;
+  order: 1;
+  border-radius: 12px;
 }
-.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont {
+.pop_qr .qr_box .qr_box_input:focus ~ .qr_box_cont {
   background-color: #007bff;
   border-color: #007bff;
 }
-.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont .qr_trigger {
+.pop_qr .qr_box .qr_box_input:focus ~ .qr_box_cont .qr_trigger {
   color: #fff;
 }
-.pop_qr .qr_box .input_hidden:focus ~ .qr_box_cont .qr_trigger::after {
+.pop_qr .qr_box .qr_box_input:focus ~ .qr_box_cont .qr_trigger::after {
   content: "ON";
+}
+.pop_qr .qr_box .qr_box_txt {
+  order: 2;
+  width: 100%;
+  text-align: center;
 }
 .pop_qr .qr_info {
   margin-left: 20px;
@@ -6078,7 +6090,7 @@ input::-webkit-search-results-decoration {
 }
 .pop_qr .qr_info_sec {
   flex: 1;
-  padding: 15px 20px;
+  padding: 12px 15px;
   font-size: 13px;
   border-left: 1px solid #ccc;
 }

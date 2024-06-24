@@ -154,44 +154,72 @@
 .pop_qr {
     .qr_top {
         display: flex; 
-        align-items: flex-start;
+        //align-items: flex-start;
+        
     }
     .qr_box {
         position: relative;
-        width: 300px;
+        width: 410px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 8px;
+        padding: 10px;
+        border-radius: 16px;
+        background-color: rgba($c_key, .08);
+        align-items: center;
         &_cont {
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid $c_line;
             flex-direction: column;
-            padding: 15px 10px 20px;
+            height: 50px;
             cursor: pointer;
-            border-radius: 16px;
+            border-radius: 12px;
+            order: 0;
+            width: 110px;
+            background-color: #fff;
             .qr_trigger {
                 color: #e1e1e1;
-                font-size: 40px;
+                font-size: 23px;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
                 line-height: 1;
                 &::after {
                     content: 'OFF';
-                    margin-left: 15px;
+                    margin-left: 8px;
                     //font-size: 30px;
                 }
             }
           
            
         }
-        .input_hidden {
-            position: absolute;
-            opacity: 0;
-            z-index: -999;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
+        // .input_hidden {
+        //     position: absolute;
+        //     opacity: 0;
+        //     z-index: -999;
+        //     width: 1px;
+        //     height: 1px;
+        //     overflow: hidden;
 
+        //     &:focus ~ .qr_box_cont {
+        //         background-color: $c_blue;
+        //         border-color: $c_blue;
+        //         .qr_trigger {
+        //             color: #fff;
+        //             &::after {
+        //                 content: 'ON';
+
+        //             }
+        //         }
+        //     }
+        // }
+        .qr_box_input {
+            flex: 1;
+            height: 50px;
+            order: 1;
+            border-radius: 12px;
             &:focus ~ .qr_box_cont {
                 background-color: $c_blue;
                 border-color: $c_blue;
@@ -203,6 +231,11 @@
                     }
                 }
             }
+        }
+        .qr_box_txt {
+            order: 2;
+            width: 100%;
+            text-align: center;
         }
     }
     .qr_info {
@@ -219,7 +252,7 @@
         }
         &_sec {
             flex: 1;
-            padding: 15px 20px;
+            padding: 12px 15px;
             font-size: 13px;
             border-left: 1px solid $c_line;
             &:first-of-type {
