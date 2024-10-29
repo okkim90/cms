@@ -652,6 +652,146 @@
                 </div>
             </div> 
         </div>
+
+
+        <!--레이어팝업-->
+        <div class="layer_popup_new on" onclick="close_popup(this)">
+            <div class="layer_popup_new_inner">
+                <div class="layer_popup_cont " style="width: 700px;">
+                    <button type="button" class="close_popup" onclick="close_popup(this)">
+                        <span class="blind">팝업 닫기</span>
+                    </button>
+                    <div class="sub_tit">
+                        <h1 class="tit1">Pointman card Printer (N20)</h1>
+                    </div>
+                    <div class="d_flex jc_r _gap10 fw_w mb20">
+                        <div class="d_flex _gap6">
+                            <button type="button" class="f_btn ty_mid w_80 _key">추가</button>
+                            <button type="button" class="f_btn ty_mid w_80 _key">엑셀 양식</button>
+                            <button type="button" class="f_btn ty_mid w_80 _green">엑셀 등록</button>
+                        </div>
+
+                        <!--[D] 파일 등록 전-->
+                        <div class="d_flex _gap6 ml10">
+                            <div class="posR">
+                                <input type="text" class="f_input ty_mid w_200 has_del" placeholder="등록된 파일이 없습니다.">
+                            </div>
+                            <button class="f_btn ty_mid _solidGrey disable">적용</button>
+                        </div>
+
+                        <!--[D] 파일 등록 후-->
+                        <div class="d_flex _gap6 ml10">
+                            <div class="posR">
+                                <input type="text" class="f_input ty_mid w_200 has_del" placeholder="등록된 파일이 없습니다." value="엑셀파일명.xls">
+                                <button type="button" class="f_input_del" aria-label="delete"><i class="fa-solid fa-circle-xmark"></i></button>
+                            </div>
+                            <button class="f_btn ty_mid _solidGrey">적용</button>
+                        </div>
+                    </div>
+                    <div class="taR fz_normal mb4">등록결과: 1 건</div>
+                    <div class="h_tbl_wrap y_scroll_area " style="height: 450px;">
+                        <table class="h_tbl ty_fixed">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col style="width: 80px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="th_fixed">위치</th>
+                                    <th class="th_fixed">관리번호</th>
+                                    <th class="th_fixed">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                                    </td>
+                                </tr>                    
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn_set taC mt20">
+                        <button type="button" class="f_btn ty_mid w_100 _lightGrey">초기화</button>
+                        <button type="button" class="f_btn ty_mid w_100 _key">출력</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// 레이어팝업-->
     </main>
     <!--//container-->
     <!--footer-->

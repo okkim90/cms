@@ -3,6 +3,7 @@
     border: 1px solid $c_line;
     box-sizing: border-box;
     vertical-align: middle;
+    text-overflow: ellipsis;
     &:read-only {
         background-color: rgba(0,0,0,.02);
         &:focus {
@@ -60,6 +61,22 @@
         & ~ .f_btn {
             @include btn($c_lightGrey, $c_lightGrey)
         }
+    }
+    &.has_del {
+        padding-right: 30px;
+    }
+    &_del {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        margin-top: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
     }
 }
 
