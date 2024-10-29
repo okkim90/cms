@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Generator" content="KIC">
+    <meta name="Author" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Keywords" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <meta name="Description" content="코리아인스트루먼트(주) 교정관리 시스템">
+    <title>코리아인스트루먼트(주) 교정관리 시스템</title>
+
+
+    <!-- 기존 cms js -->
+    <script type="text/javascript" src="../common/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.print.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui-custom.min.js?123123132" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/jquery.form.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../common/js/common.js" charset="utf-8"></script>
+    <!--
+    <script type="text/javascript" src="../skin/basic/js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.treeview.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/jquery.cookie.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../skin/basic/js/jquery.mCustomScrollbar.concat.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/zebra_datepicker.js"></script>
+    <script type="text/javascript" src="../skin/basic/js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/fullcalendar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../skin/basic/js/colResizable-1-6.js" charset="utf-8"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    -->
+    <!--// 기존 cms js -->
+    
+    <!-- 기존 cms css -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css"> -->
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../skin/basic/css/fullcalendar.css">
+    <!--// 기존 cms css -->
+
+
+    
+    <!-- 신규 css -->
+    <script src="https://kit.fontawesome.com/aa5544e91b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <!--// 신규 css -->
+
+    <!-- 펴블적용js -->
+    <script type="text/javascript" src="../common/js/main.js" defer></script>
+    <!-- // 펴블적용js -->
+
+
+    <!-- <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>  cms에 적용되있는건데 안됨-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
+    <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
+</head>
+<body style="min-width: 600px;">
+    <div class="pa20">
+        <div class="sub_tit">
+            <h1 class="tit1">Pointman card Printer (N20)</h1>
+        </div>
+        <div class="d_flex jc_r _gap10 fw_w mb20">
+            <div class="d_flex _gap6">
+                <button type="button" class="f_btn ty_mid w_80 _key">추가</button>
+                <button type="button" class="f_btn ty_mid w_80 _key">엑셀 양식</button>
+                <button type="button" class="f_btn ty_mid w_80 _green">엑셀 등록</button>
+            </div>
+
+            <!--[D] 파일 등록 전-->
+            <div class="d_flex _gap6 ml10">
+                <div class="posR">
+                    <input type="text" class="f_input ty_mid w_200 has_del" placeholder="등록된 파일이 없습니다.">
+                </div>
+                <button class="f_btn ty_mid _solidGrey disable">적용</button>
+            </div>
+
+            <!--[D] 파일 등록 후-->
+            <div class="d_flex _gap6 ml10">
+                <div class="posR">
+                    <input type="text" class="f_input ty_mid w_200 has_del" placeholder="등록된 파일이 없습니다." value="엑셀파일명.xls">
+                    <button type="button" class="f_input_del" aria-label="delete"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
+                <button class="f_btn ty_mid _solidGrey">적용</button>
+            </div>
+        </div>
+        <div class="taR fz_normal mb4">등록결과: 1 건</div>
+        <div class="h_tbl_wrap y_scroll_area " style="height: 450px;">
+            <table class="h_tbl ty_fixed">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col style="width: 80px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="th_fixed">위치</th>
+                        <th class="th_fixed">관리번호</th>
+                        <th class="th_fixed">삭제</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <input type="text" class="f_input ty_small w100" placeholder="최대 30byte까지 입력 가능합니다.">
+                        </td>
+                        <td>
+                            <button type="button" class="f_btn ty_small _red w_60">삭제</button>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
+        <div class="btn_set taC mt20">
+            <button type="button" class="f_btn ty_mid w_100 _lightGrey">초기화</button>
+            <button type="button" class="f_btn ty_mid w_100 _key">출력</button>
+        </div>
+    </div>
+</body>
+</html>
