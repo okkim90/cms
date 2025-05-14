@@ -112,6 +112,14 @@
         border-radius: 0 0 4px 4px;
         overflow: hidden;
         background-color: #fff;
+        &.ty2 {
+            width: 100%;
+            
+        }
+        &.ty_right {
+            left: auto;
+            right: 0;
+        }
     }
     &_list {
         max-height: 200px;
@@ -133,24 +141,81 @@
             background-color: $c_bg_grey;
             //border-left: 1px solid transparent;
         }
-        
+        &_bot {
+            border-top: 1px solid $c_line;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            
+            .btn_close {
+                margin-left: auto;
+                font-size: 12px;
+                height: 20px;
+                color: #666;
+                font-weight: 500;
+                &:hover {
+                    color: #000;
+                }
+            }
+            
+        }
+        .no_item {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+        li + li {
+            border-top: 1px dotted $c_line;
+        }
     }
+
     &_item {
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 5px 6px;
         white-space: nowrap;
         color: #666;
         font-size: 12px;
-        & + & {
-            border-top: 1px dotted $c_line;
+        @at-root .f_search_list_wrap.ty2 & {
+            display: flex;
+        
+            min-width: 0;
         }
+        
+        .del_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-left: auto;
+            margin-right: -4px;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            border-radius: 3px;
+            &:hover {
+                background-color: rgba(#000, .05);
+            }
+        }
+        
         b {
             color: $c_key;
             font-weight: 500;
         }
+        .txt {
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            min-width: 0;
+        }
         
         &:hover {
-            background-color: rgba(rgb(249, 246, 61), .1);
+            background-color: rgba(rgb(132, 175, 239), .1);
+            color: #222;
+        }
+        &.on {
+            background-color: rgba($c_blue, .1);
             color: #222;
         }
     }
@@ -639,143 +704,3 @@
 }
 
 
-.f_search {
-    position: relative;
-    &.on {
-        .f_input {
-            border-color: $c_key;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
-        }
-        .f_search_list_wrap {
-            display: block;
-        }
-    }
-    .f_input {
-        padding-right: 30px;
-        background-image: url(../images/common/ico_f_search.svg);
-        background-repeat: no-repeat;
-        background-position: calc(100% - 4px) center;
-        background-size: 20px; 
-    }
-   
-    &_list_wrap {
-        position: absolute;
-        z-index: 100;
-        min-width: 100%;
-        top: calc(100% - 1px);
-        left: 0;
-        display: none;
-        border: 1px solid $c_key;
-        border-radius: 0 0 4px 4px;
-        overflow: hidden;
-        background-color: #fff;
-        &.ty2 {
-            width: 100%;
-            
-        }
-        &.ty_right {
-            left: auto;
-            right: 0;
-        }
-    }
-    &_list {
-        max-height: 200px;
-        overflow-y: auto;
-
-        &::-webkit-scrollbar {
-            width: 10px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: $c_key;
-            border-radius: 5px;
-            background-clip: padding-box;
-            width: 100%;
-            box-sizing: border-box;
-            border: 2px solid transparent;
-            
-        }
-        &::-webkit-scrollbar-track {
-            background-color: $c_bg_grey;
-            //border-left: 1px solid transparent;
-        }
-        &_bot {
-            border-top: 1px solid $c_line;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            padding: 0 8px;
-            
-            .btn_close {
-                margin-left: auto;
-                font-size: 12px;
-                height: 20px;
-                color: #666;
-                font-weight: 500;
-                &:hover {
-                    color: #000;
-                }
-            }
-            
-        }
-        .no_item {
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-        }
-        li + li {
-            border-top: 1px dotted $c_line;
-        }
-    }
-
-    &_item {
-        cursor: pointer;
-        padding: 5px 6px;
-        white-space: nowrap;
-        color: #666;
-        font-size: 12px;
-        @at-root .f_search_list_wrap.ty2 & {
-            display: flex;
-        
-            min-width: 0;
-        }
-        
-        .del_item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            margin-left: auto;
-            margin-right: -4px;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            border-radius: 3px;
-            &:hover {
-                background-color: rgba(#000, .05);
-            }
-        }
-        
-        b {
-            color: $c_key;
-            font-weight: 500;
-        }
-        .txt {
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            min-width: 0;
-        }
-        
-        &:hover {
-            background-color: rgba(rgb(132, 175, 239), .1);
-            color: #222;
-        }
-        &.on {
-            background-color: rgba($c_blue, .1);
-            color: #222;
-        }
-    }
-}

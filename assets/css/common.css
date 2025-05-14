@@ -8408,6 +8408,13 @@ input::-webkit-search-results-decoration {
   overflow: hidden;
   background-color: #fff;
 }
+.f_search_list_wrap.ty2 {
+  width: 100%;
+}
+.f_search_list_wrap.ty_right {
+  left: auto;
+  right: 0;
+}
 .f_search_list {
   max-height: 200px;
   overflow-y: auto;
@@ -8426,22 +8433,75 @@ input::-webkit-search-results-decoration {
 .f_search_list::-webkit-scrollbar-track {
   background-color: #efefef;
 }
+.f_search_list_bot {
+  border-top: 1px solid #ccc;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+.f_search_list_bot .btn_close {
+  margin-left: auto;
+  font-size: 12px;
+  height: 20px;
+  color: #666;
+  font-weight: 500;
+}
+.f_search_list_bot .btn_close:hover {
+  color: #000;
+}
+.f_search_list .no_item {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+.f_search_list li + li {
+  border-top: 1px dotted #ccc;
+}
 .f_search_item {
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 5px 6px;
   white-space: nowrap;
   color: #666;
   font-size: 12px;
 }
-.f_search_item + .f_search_item {
-  border-top: 1px dotted #ccc;
+.f_search_list_wrap.ty2 .f_search_item {
+  display: flex;
+  min-width: 0;
+}
+
+.f_search_item .del_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: -4px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.f_search_item .del_item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .f_search_item b {
   color: #1f2085;
   font-weight: 500;
 }
+.f_search_item .txt {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 0;
+}
 .f_search_item:hover {
-  background-color: rgba(249, 246, 61, 0.1);
+  background-color: rgba(132, 175, 239, 0.1);
+  color: #222;
+}
+.f_search_item.on {
+  background-color: rgba(0, 123, 255, 0.1);
   color: #222;
 }
 
@@ -8896,134 +8956,6 @@ input::-webkit-search-results-decoration {
 }
 .multiselect_option * {
   cursor: pointer;
-}
-
-.f_search {
-  position: relative;
-}
-.f_search.on .f_input {
-  border-color: #1f2085;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-color: transparent;
-}
-.f_search.on .f_search_list_wrap {
-  display: block;
-}
-.f_search .f_input {
-  padding-right: 30px;
-  background-image: url(../images/common/ico_f_search.svg);
-  background-repeat: no-repeat;
-  background-position: calc(100% - 4px) center;
-  background-size: 20px;
-}
-.f_search_list_wrap {
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  top: calc(100% - 1px);
-  left: 0;
-  display: none;
-  border: 1px solid #1f2085;
-  border-radius: 0 0 4px 4px;
-  overflow: hidden;
-  background-color: #fff;
-}
-.f_search_list_wrap.ty2 {
-  width: 100%;
-}
-.f_search_list_wrap.ty_right {
-  left: auto;
-  right: 0;
-}
-.f_search_list {
-  max-height: 200px;
-  overflow-y: auto;
-}
-.f_search_list::-webkit-scrollbar {
-  width: 10px;
-}
-.f_search_list::-webkit-scrollbar-thumb {
-  background-color: #1f2085;
-  border-radius: 5px;
-  background-clip: padding-box;
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-}
-.f_search_list::-webkit-scrollbar-track {
-  background-color: #efefef;
-}
-.f_search_list_bot {
-  border-top: 1px solid #ccc;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-}
-.f_search_list_bot .btn_close {
-  margin-left: auto;
-  font-size: 12px;
-  height: 20px;
-  color: #666;
-  font-weight: 500;
-}
-.f_search_list_bot .btn_close:hover {
-  color: #000;
-}
-.f_search_list .no_item {
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-}
-.f_search_list li + li {
-  border-top: 1px dotted #ccc;
-}
-.f_search_item {
-  cursor: pointer;
-  padding: 5px 6px;
-  white-space: nowrap;
-  color: #666;
-  font-size: 12px;
-}
-.f_search_list_wrap.ty2 .f_search_item {
-  display: flex;
-  min-width: 0;
-}
-
-.f_search_item .del_item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  margin-left: auto;
-  margin-right: -4px;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  border-radius: 3px;
-}
-.f_search_item .del_item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.f_search_item b {
-  color: #1f2085;
-  font-weight: 500;
-}
-.f_search_item .txt {
-  width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  min-width: 0;
-}
-.f_search_item:hover {
-  background-color: rgba(132, 175, 239, 0.1);
-  color: #222;
-}
-.f_search_item.on {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: #222;
 }
 
 .btn_add {
