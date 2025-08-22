@@ -362,3 +362,41 @@
 
     }
 }
+
+.btn_toggle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0085FF;
+    &:hover {
+        text-decoration: underline;
+    }
+    &::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: bold;
+        margin-left: 4px;
+    }
+    &.on::after {
+        content: "\f077";
+    }
+}
+
+.clear-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    &:hover {
+        color: #333;
+    }
+}

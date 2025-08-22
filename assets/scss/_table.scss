@@ -92,7 +92,9 @@
                 position: sticky;
                 top: 0px;
                 z-index: 99;
-                
+                &.underBtnSet {
+                    top: 56px;
+                }
             }
             &.h_auto {
                 height: auto;
