@@ -195,19 +195,64 @@
             }
         }
     }
+    // &_chart {
+    //     width: 180px;
+    //     height: 120px;
+    //     position: relative;
+    //     border-radius: 10px;
+    //     overflow: hidden;
+    //     .chart {
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         left: 0;
+    //         top: 0;
+    //     }
+    // }
     &_chart {
-        width: 180px;
-        height: 120px;
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
-        .chart {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
+        padding: 0 10px;
+        .chart_box {
+            width: 180px;
+            height: 10px;
+            display: flex;
+            color: #fff;
+            margin-bottom: 4px;
+            border-radius: 5px;
+            overflow: hidden;
+            .chart_slice {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .slice_indoor {
+                background-color: #4477ff;
+            }
+            .slice_outdoor {
+                background-color: #ff6678;
+            }
         }
+        .txt_wrap {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            
+            .slice_indoor_tit {
+                text-align: left;
+                font-size: 14px;
+                color: #4477ff;
+                font-weight: bold;
+            }
+            .slice_outdoor_tit {
+                text-align: right;
+                font-size: 14px;
+                color: #ff6678;
+                font-weight: bold;
+            }
+            .slice_percentage {
+                font-weight: 500;
+            }
+        }
+
     }
 }
 

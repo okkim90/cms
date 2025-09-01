@@ -486,9 +486,68 @@
                                                     <div class="count" data-value="12345">0</div><span
                                                         class="unit">건</span>
                                                 </div>
-                                                <div class="main_status_chart">
-                                                    <div class="chart" id="standbyChart"></div>
+                                                <!-- <div class="main_status_chart">
+                                                    <div class="chart" id="standbyChart"></div> 
+                                                </div> -->
+                                                <div class="main_status_chart" data-indoor="75753" data-outdoor="19577">
+                                                    <div class="chart_box">
+                                                        <div class="chart_slice slice_indoor"> </div>
+                                                        <div class="chart_slice slice_outdoor"></div>
+                                                    </div>
+                                                    <div class="txt_wrap">
+                                                        <div class="txt_box">
+                                                            <div class="slice_tit slice_indoor_tit ">사내</div>
+                                                            <span class="slice_count slice_indoor_count"></span>
+                                                            (<span
+                                                                class="slice_percentage slice_indoor_percentage"></span>)
+                                                        </div>
+                                                        <div class="txt_box">
+                                                            <div class="slice_outdoor_tit ">현장</div>
+                                                            <span class="slice_count slice_outdoor_count"></span>
+                                                            (<span
+                                                                class="slice_percentage slice_outdoor_percentage"></span>)
+                                                        </div>
+                                                    </div>
                                                 </div>
+
+                                                <script>
+                                                    const main_status_chart = document.querySelector('.main_status_chart');
+                                                    function commaSeparateNumber(val) {
+                                                        while (/(\d+)(\d{3})/.test(val.toString())) {
+                                                            val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                                                        }
+                                                        return val;
+                                                    }
+
+                                                    const indoorVal = Number(main_status_chart.dataset.indoor) || 0;
+                                                    const outdoorVal = Number(main_status_chart.dataset.outdoor) || 0;
+                                                    const total = indoorVal + outdoorVal;
+
+                                                    const slice_indoor = main_status_chart.querySelector('.slice_indoor');
+                                                    const slice_outdoor = main_status_chart.querySelector('.slice_outdoor');
+                                                    const slice_indoor_count = main_status_chart.querySelector('.slice_indoor_count');
+                                                    const slice_indoor_percentage = main_status_chart.querySelector('.slice_indoor_percentage');
+                                                    const slice_outdoor_count = main_status_chart.querySelector('.slice_outdoor_count');
+                                                    const slice_outdoor_percentage = main_status_chart.querySelector('.slice_outdoor_percentage');
+
+                                                    //건수
+                                                    slice_indoor_count.innerHTML = commaSeparateNumber(indoorVal);
+                                                    slice_outdoor_count.innerHTML = commaSeparateNumber(outdoorVal);
+
+                                                    //퍼센트 계산
+                                                    const indoorPct = total > 0 ? (indoorVal / total) * 100 : 0;
+                                                    const outdoorPct = total > 0 ? (outdoorVal / total) * 100 : 0;
+
+                                                    // 텍스트(퍼센트)
+                                                    slice_indoor_percentage.textContent = indoorPct.toFixed(1) + '%';
+                                                    slice_outdoor_percentage.textContent = outdoorPct.toFixed(1) + '%';
+
+                                                    // 실제 너비 적용
+                                                    slice_indoor.style.width = indoorPct + '%';
+                                                    slice_outdoor.style.width = outdoorPct + '%';
+
+
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="count_wrap" style="flex: 1">
@@ -659,6 +718,7 @@
                                         //legend: 'none',
                                         responsive: true,
                                         is3D: true,
+                                        pieSliceTextStyle: { fontSize: 11 },  // 파이 조각 안의 텍스트 크기
                                         legend: {
                                             alignment: 'center',
                                             textStyle: {
@@ -671,9 +731,10 @@
                                         chartArea: { right: 10, left: 15, top: 10, bottom: 10 },
                                         colors: ['#4477ff', '#ff6678']
                                     };
+                                    /*
                                     var standbyChart = new google.visualization.PieChart(document.getElementById('standbyChart'));
                                     standbyChart.draw(standbyData, standbyOptions);
-
+                                    */
                                 }
                             </script>
                         </section>
