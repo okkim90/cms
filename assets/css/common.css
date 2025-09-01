@@ -8038,10 +8038,16 @@ input::-webkit-search-results-decoration {
 .main_status {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 30px;
+  gap: 0 20px;
+  gap: 20px;
 }
 .main_status .col_item {
-  width: calc(25% - 22.5px);
+  width: calc(25% - 15px);
+}
+.main_status_tit {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
 }
 .main_status .txt_info {
   width: 100%;
@@ -8051,6 +8057,8 @@ input::-webkit-search-results-decoration {
 }
 .main_status_item {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .main_status_item .tit {
   display: flex;
@@ -8058,8 +8066,9 @@ input::-webkit-search-results-decoration {
   font-size: 20px;
   margin-bottom: 10px;
   justify-content: center;
+  width: 100%;
 }
-.main_status_item .tit i {
+.main_status_item .tit .tit_ico {
   font-size: 18px;
   width: 40px;
   height: 40px;
@@ -8070,26 +8079,46 @@ input::-webkit-search-results-decoration {
   margin-right: 10px;
   color: #fff;
 }
-.main_status_item.item1 .tit i {
+.main_status_item .tit .f_tooltip {
+  text-align: left;
+  margin-bottom: 15px;
+  margin-left: 4px;
+}
+.main_status_item .d_flex {
+  flex: 1;
+}
+.main_status_item.item1 {
+  flex: 2;
+}
+.main_status_item.item1 .tit .tit_ico {
   font-size: 16px;
   background-color: #ff5353;
 }
 .main_status_item.item1 .count_wrap {
   background-color: #ffecec;
 }
-.main_status_item.item2 .tit i {
+.main_status_item.item2 {
+  flex: 3;
+}
+.main_status_item.item2 .tit .tit_ico {
   background-color: rgb(255, 178.9130434783, 5);
 }
 .main_status_item.item2 .count_wrap {
   background-color: #fff1d1;
 }
-.main_status_item.item3 .tit i {
+.main_status_item.item3 {
+  flex: 2;
+}
+.main_status_item.item3 .tit .tit_ico {
   background-color: #2ad28c;
 }
 .main_status_item.item3 .count_wrap {
   background-color: #d2f6e7;
 }
-.main_status_item.item4 .tit i {
+.main_status_item.item4 {
+  flex: 1;
+}
+.main_status_item.item4 .tit .tit_ico {
   background-color: #c551ff;
 }
 .main_status_item.item4 .count_wrap {
@@ -8097,6 +8126,7 @@ input::-webkit-search-results-decoration {
 }
 .main_status .count_wrap {
   display: flex;
+  flex: 1;
   align-items: center;
   padding: 20px 10px;
   border-radius: 10px;
@@ -8124,14 +8154,28 @@ input::-webkit-search-results-decoration {
 }
 .main_status .count_box .count {
   font-family: "Roboto";
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1;
   font-weight: 500;
   letter-spacing: 0;
 }
 .main_status .count_box .unit {
-  font-size: 14px;
+  font-size: 13px;
   margin-left: 2px;
+}
+.main_status_chart {
+  width: 180px;
+  height: 120px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main_status_chart .chart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .chart_box {

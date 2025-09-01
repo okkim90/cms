@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
@@ -31,10 +32,11 @@
     <script type="text/javascript" src="../common/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
     -->
     <!--// 기존 cms js -->
-    
+
     <!-- 기존 cms css -->
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery-ui.css"> -->
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/admin.css?v=64336ec212b71">
     <link rel="stylesheet" type="text/css" href="../skin/basic/css/jquery.treeview.css">
@@ -44,7 +46,7 @@
     <!--// 기존 cms css -->
 
 
-    
+
     <!-- 신규 css -->
     <script src="https://kit.fontawesome.com/aa5544e91b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/datepicker.css">
@@ -58,14 +60,20 @@
 
 
     <!-- <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script>  cms에 적용되있는건데 안됨-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-    <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link id="load-css-0" rel="stylesheet" type="text/css"
+        href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
     <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script>
 </head>
+
 <body>
     <div id="skip-nav">
         <a href="#container"></a>
@@ -81,13 +89,16 @@
             </div>
             <div class="h_util">
                 <div class="h_util_sec h_user">
-                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님 
+                    <i class="fa-solid fa-user"></i> <a href="" class="user_name">홍길동</a> 님
                 </div>
                 <div class="h_util_sec h_branch">
-                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
+                    <span class="h_branch_current"><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 서울본사<i
+                            class="fa-solid fa-circle-chevron-down ico_arrow"></i></span>
                     <ul class="h_branch_list">
-                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a></li>
-                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a></li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 부산지사</a>
+                        </li>
+                        <li class="h_branch_item"><a href=""><i class="fa-solid fa-building"></i>코리아인스트먼트(주) 대전지사</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="h_util_sec h_btns">
@@ -228,7 +239,7 @@
             <!--[D] 메뉴명 검색 추가-->
             <div class="all_menu_srch">
                 <strong class="all_menu_srch_tit">메뉴명을 검색 해주세요</strong>
-                <input type="text" class="f_input ty_mid" placeholder="메뉴명 입력" ></span>  
+                <input type="text" class="f_input ty_mid" placeholder="메뉴명 입력"></span>
             </div>
             <ul class="all_menu_list">
                 <li class="all_menu_item">
@@ -354,44 +365,55 @@
             let gnb = document.querySelector('#gnb');
 
 
-            
 
-            btn_all_menu.addEventListener('click', function(){
-                if(this.classList.contains('on')){
+
+            btn_all_menu.addEventListener('click', function () {
+                if (this.classList.contains('on')) {
                     btn_all_menu.classList.remove('on');
                     all_menu.classList.remove('on');
                     gnb.classList.remove('gnb_off');
-                }else{
+                } else {
                     btn_all_menu.classList.add('on');
                     all_menu.classList.add('on');
                     gnb.classList.add('gnb_off');
                 }
             }); 
         </script>
-        
+
     </header>
     <!--//header-->
     <!--container-->
     <main class="container">
         <div id="tabs" class="jqgtabs tab_nav ui-tabs ui-widget ui-widget-content ui-corner-all">
-            <ul class="tab_nav_list ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                <li class="tab_nav_item ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="-1" aria-controls="tabs-main" aria-labelledby="ui-id-1" aria-selected="false">
-                    <a href="#tabs-main" class="tabs-anchor ui-tabs-anchor" id="ui-id-1" role="presentation" tabindex="-1">메인</a>
+            <ul class="tab_nav_list ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                role="tablist">
+                <li class="tab_nav_item ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab"
+                    tabindex="-1" aria-controls="tabs-main" aria-labelledby="ui-id-1" aria-selected="false">
+                    <a href="#tabs-main" class="tabs-anchor ui-tabs-anchor" id="ui-id-1" role="presentation"
+                        tabindex="-1">메인</a>
                 </li>
-                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_294" role="tab" tabindex="-1" aria-labelledby="ui-id-2" aria-selected="false">
-                    <a href="#tabs_294" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>전체 조회</span></a>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_294" role="tab"
+                    tabindex="-1" aria-labelledby="ui-id-2" aria-selected="false">
+                    <a href="#tabs_294" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>전체
+                            조회</span></a>
                     <button class="del_item"></button>
                 </li>
-                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_201" role="tab" tabindex="-1" aria-labelledby="ui-id-3" aria-selected="false">
-                    <a href="#tabs_201" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>입고</span></a>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_201" role="tab"
+                    tabindex="-1" aria-labelledby="ui-id-3" aria-selected="false">
+                    <a href="#tabs_201" class="ui-tabs-anchor" role="presentation" tabindex="-1"
+                        id="ui-id-3"><span>입고</span></a>
                     <button class="del_item"></button>
                 </li>
-                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_214" role="tab" tabindex="-1" aria-labelledby="ui-id-4" aria-selected="false">
-                    <a href="#tabs_214" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>교정 코드 관리</span></a>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_214" role="tab"
+                    tabindex="-1" aria-labelledby="ui-id-4" aria-selected="false">
+                    <a href="#tabs_214" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>교정
+                            코드 관리</span></a>
                     <button class="del_item"></button>
                 </li>
-                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_218" role="tab" tabindex="0" aria-labelledby="ui-id-5" aria-selected="true">
-                    <a href="#tabs_218" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>고객 코드 관리</span></a>
+                <li class="tab_nav_item ui-state-default ui-corner-top" aria-controls="tabs_218" role="tab" tabindex="0"
+                    aria-labelledby="ui-id-5" aria-selected="true">
+                    <a href="#tabs_218" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>고객
+                            코드 관리</span></a>
                     <button class="del_item"></button>
                 </li>
             </ul>
@@ -402,71 +424,123 @@
             <script>
                 let tab_nav = document.querySelector('#tabs');
                 let tab_nav_toggle = document.querySelector('.tab_nav_toggle');
-        
-                tab_nav_toggle.addEventListener('click', function(){
-                    if(tab_nav.classList.contains('off')){
+
+                tab_nav_toggle.addEventListener('click', function () {
+                    if (tab_nav.classList.contains('off')) {
                         tab_nav.classList.remove('off');
-                    }else{
+                    } else {
                         tab_nav.classList.add('off');
                     }
                 }); 
             </script>
             <!--// tabs 토글버튼 -->
-            <div id="tabs-main" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true">
+            <div id="tabs-main" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom"
+                role="tabpanel" aria-expanded="false" aria-hidden="true">
                 <div class="contents ty_main">
                     <div class="main_wrap">
                         <section class="main_sec main_top">
                             <div class="main_status">
+                                <p class="main_status_tit">
+                                    기준시간 : <b class="fc_key">2023-04-10 12:00</b>
+                                    <button type="button" class="btn_refresh">
+                                        <i class="fa-solid fa-arrows-rotate"></i>
+                                        <span class="blind">전체조회</span>
+                                    </button>
+                                </p>
+
                                 <div class="main_status_item col_item item1">
-                                    <strong class="tit"><i class="fa-solid fa-warehouse"></i> 입고현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">입고대기</strong>
-                                            <div class="count" data-value="235653">0</div><span class="unit">건</span> 
+                                    <strong class="tit">
+                                        <i class="tit_ico fa-solid fa-warehouse"></i> 입고현황
+                                        <div class="f_tooltip">
+                                            <i class="f_tooltip_ico fa-solid fa-circle-info" aria-hidden="true"></i>
+                                            <div class="f_tooltip_cont">
+                                                접수대기: CWIZ 예약 접수 대기 건 <br>
+                                                입고대기: 접수 완료 후 미입고 상태의 접수 건
+                                            </div>
                                         </div>
-                                        
+                                    </strong>
+                                    <div class="d_flex _gap10">
+                                        <div class="count_wrap">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">접수대기</strong>
+                                                <div class="count" data-value="1235">0</div><span class="unit">건</span>
+                                            </div>
+                                        </div>
+                                        <div class="count_wrap">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">입고대기</strong>
+                                                <div class="count" data-value="5545">0</div><span class="unit">건</span>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class="main_status_item col_item item2">
-                                    <strong class="tit"><i class="fa-solid fa-scale-unbalanced-flip"></i> 교정현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">교정대기</strong>
-                                            <div class="count" data-value="1643">0</div><span class="unit">건</span> 
+                                    <strong class="tit"><i class="tit_ico fa-solid fa-scale-unbalanced-flip"></i>
+                                        교정현황</strong>
+                                    <div class="d_flex _gap10">
+                                        <div class="count_wrap" style="flex: 3;">
+                                            <div class="d_flex ai_c " style="flex: 1;">
+                                                <div class="count_box">
+                                                    <strong class="count_box_tit">교정대기</strong>
+                                                    <div class="count" data-value="12345">0</div><span
+                                                        class="unit">건</span>
+                                                </div>
+                                                <div class="main_status_chart">
+                                                    <div class="chart" id="standbyChart"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        
+                                        <div class="count_wrap" style="flex: 1">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">교정진행</strong>
+                                                <div class="count" data-value="512551">0</div><span
+                                                    class="unit">건</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="main_status_item col_item item3">
-                                    <strong class="tit"><i class="fa-solid fa-file-signature"></i> 승인현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">승인대기</strong>
-                                            <div class="count" data-value="356534">0</div><span class="unit">건</span>  
+                                    <strong class="tit"><i class="tit_ico fa-solid fa-file-signature"></i> 승인현황</strong>
+                                    <div class="d_flex _gap10">
+                                        <div class="count_wrap">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">결재상신대기</strong>
+                                                <div class="count" data-value="356534">0</div><span
+                                                    class="unit">건</span>
+                                            </div>
                                         </div>
-                                        
+                                        <div class="count_wrap">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">승인대기</strong>
+                                                <div class="count" data-value="356534">0</div><span
+                                                    class="unit">건</span>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class="main_status_item col_item item4">
-                                    <strong class="tit"><i class="fa-solid fa-truck-fast"></i> 출고현황</strong>
-                                    <div class="count_wrap">
-                                        <div class="count_box">
-                                            <strong class="count_box_tit">출고대기</strong>
-                                            <div class="count" data-value="356534">0</div><span class="unit">건</span> 
+                                    <strong class="tit"><i class="tit_ico fa-solid fa-truck-fast"></i> 출고현황</strong>
+                                    <div class="d_flex _gap10">
+                                        <div class="count_wrap">
+                                            <div class="count_box">
+                                                <strong class="count_box_tit">출고대기</strong>
+                                                <div class="count" data-value="356534">0</div><span
+                                                    class="unit">건</span>
+                                            </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                                <p class="txt_info">기준시간: 2023-04-10 12:00</p>
                             </div>
                         </section>
                         <section class=" main_bot d_flex  _gap30">
-                            <section class="main_sec">
+                            <section class="main_sec" style="width: 64%;">
                                 <div class="main_sec_tit">
                                     <h2 class="tit">월별 교정 추이</h2>
                                     <div class="count_box">
                                         <span class="count" data-value="23123123">0</span>
-                                        <span class="unit">건</span> 
+                                        <span class="unit">건</span>
                                         <span class="info">(2023년 05월 기준)</span>
                                     </div>
                                 </div>
@@ -474,12 +548,12 @@
                                     <div class="chart" id="columnchart"></div>
                                 </div>
                             </section>
-                            <section class="main_sec">
+                            <section class="main_sec" style="width: 36%;">
                                 <div class="main_sec_tit">
                                     <h2 class="tit">당월 교정 분야별 비고</h2>
                                     <div class="count_box">
                                         <span class="count" data-value="112341">0</span>
-                                        <span class="unit">건</span> 
+                                        <span class="unit">건</span>
                                         <span class="info">(2023년 05월 기준)</span>
                                     </div>
                                 </div>
@@ -487,26 +561,33 @@
                                     <div class="chart" id="piechart"></div>
                                 </div>
                             </section>
-                            <script>                   
+                            <script>
                                 google.charts.load('current', {
                                     callback: function () {
                                         drawChart();
-                                        $(window).on('resize',drawChart);
+                                        $(window).on('resize', drawChart);
                                     },
-                                    packages:['corechart']
+                                    packages: ['corechart']
                                 });
-                                google.charts.setOnLoadCallback(drawChart);    
+                                google.charts.setOnLoadCallback(drawChart);
                                 function drawChart() {
                                     /* 월별 교정 */
                                     var columnData = new google.visualization.DataTable();
                                     columnData.addColumn('string', 'Topping');
-                                    columnData.addColumn('number', '교정 수(건)');   
+                                    columnData.addColumn('number', '교정 수(건)');
                                     columnData.addRows([
-                                        ['1월 교정', 8000],
-                                        ['2월 교정', 18000 ],
-                                        ['3월 교정', 32000 ],
-                                        ['4월 교정', 15000 ],
-                                        ['5월 교정', 43000 ],
+                                        ['24년 10월', 8000],
+                                        ['24년 11월', 18000],
+                                        ['24년 12월', 32000],
+                                        ['25년 1월', 15000],
+                                        ['25년 2월', 43000],
+                                        ['25년 3월', 43000],
+                                        ['25년 4월', 63000],
+                                        ['25년 5월', 43000],
+                                        ['25년 6월', 23000],
+                                        ['25년 7월', 43000],
+                                        ['25년 8월', 53000],
+                                        ['25년 9월', 65000],
                                     ]);
                                     var columnOptions = {
                                         legend: 'none',
@@ -514,53 +595,85 @@
                                         vAxis: {
                                             viewWindow: {
                                                 min: 0,
-                                                max: 50000
+                                                max: 100000
                                             }
                                         },
-                                        animation:{
+                                        animation: {
                                             duration: 1000,
                                             easing: 'out',
                                             startup: true
                                         },
-                                        chartArea: {right:30,left:60,top:20,bottom:30},
+                                        chartArea: { right: 10, left: 50, top: 20, bottom: 30 },
                                         colors: ['#63c1fc']
                                     };
-                                    var columnchart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+                                    var columnchart = new google.visualization.LineChart(document.getElementById('columnchart'));
                                     columnchart.draw(columnData, columnOptions);
 
 
 
                                     var pieData = new google.visualization.DataTable();
                                     pieData.addColumn('string', 'Topping');
-                                    pieData.addColumn('number', '교정 수(건)');   
+                                    pieData.addColumn('number', '교정 수(건)');
                                     pieData.addRows([
                                         ['물질량', 5],
-                                        ['길이 및 관련량', 5 ],
-                                        ['질량 및 관련량', 30 ],
-                                        ['시간 및 주파수', 1 ],
-                                        ['전기,자기,전자파', 5 ],
-                                        ['온도 및 습도', 28 ],
-                                        ['음향 및 진동', 4 ],
-                                        ['광량', 12 ],
-                                        ['전리방사선', 10 ]
+                                        ['길이 및 관련량', 5],
+                                        ['질량 및 관련량', 30],
+                                        ['시간 및 주파수', 1],
+                                        ['전기,자기,전자파', 5],
+                                        ['온도 및 습도', 28],
+                                        ['음향 및 진동', 4],
+                                        ['광량', 12],
+                                        ['전리방사선', 10]
                                     ]);
                                     var pieOptions = {
                                         //legend: 'none',
                                         responsive: true,
                                         //is3D: true,
                                         pieHole: 0.4,
-                                        legend: {alignment: 'center' },
-                                        animation:{
+                                        legend: {
+                                            alignment: 'center',
+                                            textStyle: {
+                                                fontSize: 13 // Set the desired font size here
+                                            }
+                                        },
+                                        animation: {
                                             duration: 1000,
-                                           // easing: 'out',
+                                            // easing: 'out',
                                             startup: true
                                         },
-                                        chartArea: {right:10,left:60,top:10,bottom:10},
+                                        chartArea: { right: 10, left: 10, top: 10, bottom: 10 },
                                         //colors: ['#63c1fc']
                                     };
                                     var piechart = new google.visualization.PieChart(document.getElementById('piechart'));
                                     piechart.draw(pieData, pieOptions);
-                                    
+
+
+                                    var standbyData = new google.visualization.DataTable();
+                                    standbyData.addColumn('string', 'Topping');
+                                    standbyData.addColumn('number', '교정 수(건)');
+                                    standbyData.addRows([
+                                        ['사내', 9999],
+                                        ['현장', 5266],
+                                    ]);
+                                    var standbyOptions = {
+                                        //legend: 'none',
+                                        responsive: true,
+                                        is3D: true,
+                                        legend: {
+                                            alignment: 'center',
+                                            textStyle: {
+                                                fontSize: 13 // Set the desired font size here
+                                            }
+                                        },
+                                        backgroundColor: '#fef8e8',
+
+
+                                        chartArea: { right: 10, left: 15, top: 10, bottom: 10 },
+                                        colors: ['#4477ff', '#ff6678']
+                                    };
+                                    var standbyChart = new google.visualization.PieChart(document.getElementById('standbyChart'));
+                                    standbyChart.draw(standbyData, standbyOptions);
+
                                 }
                             </script>
                         </section>
@@ -582,7 +695,8 @@
                                     <li class="main_sked_item">
                                         <a href="" class="main_sked_link">
                                             <span class="sked_tag ty_company"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
+                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정
+                                                내용 일정 내용</div>
                                         </a>
                                     </li>
                                     <li class="main_sked_item">
@@ -594,7 +708,8 @@
                                     <li class="main_sked_item">
                                         <a href="" class="main_sked_link">
                                             <span class="sked_tag ty_share"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
+                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정
+                                                내용 일정 내용</div>
                                         </a>
                                     </li>
                                     <li class="main_sked_item">
@@ -606,7 +721,8 @@
                                     <li class="main_sked_item">
                                         <a href="" class="main_sked_link">
                                             <span class="sked_tag ty_etc"></span>
-                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용</div>
+                                            <div class="txt">일정 내용 일정 내용 일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정 내용 일정 내용일정
+                                                내용 일정 내용</div>
                                         </a>
                                     </li>
                                 </ul>
@@ -627,22 +743,26 @@
                                     -->
                                     <li class="main_notice_item">
                                         <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
+                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목
+                                            </div>
                                         </a>
                                     </li>
                                     <li class="main_notice_item">
                                         <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
+                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목
+                                            </div>
                                         </a>
                                     </li>
                                     <li class="main_notice_item">
                                         <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
+                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목
+                                            </div>
                                         </a>
                                     </li>
                                     <li class="main_notice_item">
                                         <a href="" class="main_notice_link">
-                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 </div>
+                                            <div class="txt">공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목 공지 제목
+                                            </div>
                                         </a>
                                     </li>
                                 </ul>
@@ -650,7 +770,7 @@
                         </section>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
     <!--//container-->
@@ -675,7 +795,7 @@
             </ul>
             <p class="copy">Copyright@KIC, Korea Instrument All Rights Reserved.</p>
             <div class="contact">
-                <b><i class="fa-solid fa-phone"></i> CONTACT US</b> 
+                <b><i class="fa-solid fa-phone"></i> CONTACT US</b>
                 <span class="bar"></span>
                 <span>1600 - 4245</span>
             </div>
@@ -699,4 +819,5 @@
     </footer>
     <!--//footer-->
 </body>
+
 </html>
