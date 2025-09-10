@@ -631,7 +631,7 @@
                                 });
                                 google.charts.setOnLoadCallback(drawChart);
                                 function drawChart() {
-                                    /* 월별 교정 */
+                                    /* 월별 교정
                                     var columnData = new google.visualization.DataTable();
                                     columnData.addColumn('string', 'Topping');
                                     columnData.addColumn('number', '교정 수(건)');
@@ -672,6 +672,7 @@
                                             textStyle: { fontSize: 12 }  // y축 텍스트 크기
                                         }
                                     };
+                                     */
                                     //var columnchart = new google.visualization.LineChart(document.getElementById('columnchart'));
                                    // columnchart.draw(columnData, columnOptions);
 
@@ -720,7 +721,7 @@
 
 
                                      // 🔧 월별 목표/달성 (2025-09-10 새 버전)
-                                    const rows = [
+                                    const columnRows = [
                                         { label: '1월',  goal: 1200, achieved: 700  },
                                         { label: '2월',  goal: 900,  achieved: 820  },
                                         { label: '3월',  goal: 1500, achieved: 910  },
@@ -740,85 +741,85 @@
 
                                     ];
 
-                                    const maxGoal = Math.max(...rows.map(r => r.goal));
-                                    const maxAch  = Math.max(...rows.map(r => r.achieved));
-                                    const yMax    = Math.max(maxGoal, maxAch);
+                                    const columnMaxGoal = Math.max(...columnRows.map(r => r.goal));
+                                    const columnMaxAch  = Math.max(...columnRows.map(r => r.achieved));
+                                    const columnYMax    = Math.max(columnMaxGoal, columnMaxAch);
 
                                     // DataTable 정의
-                                    const data = new google.visualization.DataTable();
-                                    data.addColumn('string', '월');
+                                    const columnData = new google.visualization.DataTable();
+                                    columnData.addColumn('string', '월');
 
                                     // 시리즈 0: 달성수량 + annotation + tooltip
-                                    data.addColumn('number', '달성수량');
-                                    data.addColumn({ type: 'string', role: 'annotation' });
-                                    data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
+                                    columnData.addColumn('number', '달성수량');
+                                    columnData.addColumn({ type: 'string', role: 'annotation' });
+                                    columnData.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
 
                                     // 시리즈 1: 남은부분 + tooltip
-                                    data.addColumn('number', '미달수량');
-                                    data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
+                                    columnData.addColumn('number', '미달수량');
+                                    columnData.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
 
                                     // 시리즈 2: 초과달성 + tooltip
-                                    data.addColumn('number', '초과달성');
-                                    data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
+                                    columnData.addColumn('number', '초과달성');
+                                    columnData.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
 
                                     // 행 추가
-                                    rows.forEach(r => {
-                                    const goal = r.goal;
-                                    const ach  = r.achieved;
+                                    columnRows.forEach(r => {
+                                        const goal = r.goal;
+                                        const ach  = r.achieved;
 
-                                    const achievedWithinGoal = Math.min(ach, goal);
-                                    const remain = Math.max(goal - ach, 0);
-                                    const extra  = ach > goal ? (ach - goal) : null;  // 0 대신 null → 선 안보임
-                                    const pct    = Math.round((ach / goal) * 100);
+                                        const achievedWithinGoal = Math.min(ach, goal);
+                                        const remain = Math.max(goal - ach, 0);
+                                        const extra  = ach > goal ? (ach - goal) : null;  // 0 대신 null → 선 안보임
+                                        const pct    = Math.round((ach / goal) * 100);
 
-                                    const ann = `${ach.toLocaleString()} (${pct}%)`;
+                                        const ann = `${ach.toLocaleString()} (${pct}%)`;
 
-                                    // 공통 HTML 툴팁(모든 시리즈에 동일하게 사용)
-                                    const tooltipHTML = `
-                                        <div style="padding:8px 8px; line-height:1.5;">
-                                        <div style="font-weight:600; margin-bottom:4px;">${r.label}</div>
-                                        <div>목표:<b>${goal.toLocaleString()}</b></div>
-                                        <div>달성:<b>${ach.toLocaleString()}</b></div>
-                                        <div>미달:<b>${remain.toLocaleString()}</b></div>
-                                        <div>초과:<b>${extra ? extra.toLocaleString() : 0}</b></div>
-                                        <div>달성률:<b>${pct}%</b></div>
-                                        </div>
-                                    `.trim();
+                                        // 공통 HTML 툴팁(모든 시리즈에 동일하게 사용)
+                                        const tooltipHTML = `
+                                            <div style="padding:8px 8px; line-height:1.5;">
+                                            <div style="font-weight:600; margin-bottom:4px;">${r.label}</div>
+                                            <div>목표:<b>${goal.toLocaleString()}</b></div>
+                                            <div>달성:<b>${ach.toLocaleString()}</b></div>
+                                            <div>미달:<b>${remain.toLocaleString()}</b></div>
+                                            <div>초과:<b>${extra ? extra.toLocaleString() : 0}</b></div>
+                                            <div>달성률:<b>${pct}%</b></div>
+                                            </div>
+                                        `.trim();
 
-                                    data.addRow([
-                                        r.label,
-                                        achievedWithinGoal, ann, tooltipHTML,  // 시리즈0
-                                        remain,            tooltipHTML,        // 시리즈1
-                                        extra,             tooltipHTML         // 시리즈2 (null이면 표시 X)
-                                    ]);
+                                        columnData.addRow([
+                                            r.label,
+                                            achievedWithinGoal, ann, tooltipHTML,  // 시리즈0
+                                            remain,            tooltipHTML,        // 시리즈1
+                                            extra,             tooltipHTML         // 시리즈2 (null이면 표시 X)
+                                        ]);
                                     });
 
-                                    const options = {
-                                    //title: '월별 교정 현황',
-                                    isStacked: true,
-                                    //vAxis: {
-                                    //    title: '수량',
-                                    //    viewWindow: { min: 0, max: yMax }
-                                    //},
-                                    //hAxis: { title: '월' },
-                                    series: {
-                                        0: { color: '#1199ff' }, // 달성
-                                        1: { color: '#d9d9d9' }, // 남은
-                                        2: { color: '#ff6678' }  // 초과
-                                    },
-                                    annotations: {
-                                        alwaysOutside: false,
-                                        textStyle: { fontSize: 12, color: '#000' }
-                                    },
-                                    chartArea: { right: 20, left: 50, top: 40, bottom: 20 },
-                                    legend: { position: 'top' },
-                                    tooltip: { isHtml: true, trigger: 'focus' } // HTML 툴팁 활성화
+                                    const columnOptions = {
+                                        //title: '월별 교정 현황',
+                                        isStacked: true,
+                                        //vAxis: {
+                                        //    title: '수량',
+                                        //    viewWindow: { min: 0, max: columnYMax }
+                                        //},
+                                        //hAxis: { title: '월' },
+                                        series: {
+                                            0: { color: '#1199ff' }, // 달성
+                                            1: { color: '#d9d9d9' }, // 남은
+                                            2: { color: '#ff6678' }  // 초과
+                                        },
+                                        annotations: {
+                                            alwaysOutside: false,
+                                            textStyle: { fontSize: 12, color: '#000' }
+                                        },
+                                        chartArea: { right: 20, left: 50, top: 40, bottom: 20 },
+                                        legend: { position: 'top' },
+                                        tooltip: { isHtml: true, trigger: 'focus' } // HTML 툴팁 활성화
                                     };
 
                                     const chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
-                                    chart.draw(data, options);
+                                    chart.draw(columnData, columnOptions);
 
-                                    window.addEventListener('resize', () => chart.draw(data, options));
+                                    window.addEventListener('resize', () => chart.draw(columnData, columnOptions));
                                 }
                             </script>
                         </section>
