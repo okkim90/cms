@@ -605,7 +605,7 @@
                                     </div>
                                 </div>
                                 <div class="chart_box">
-                                    <div class="chart" id="chart_div"></div>
+                                    <div class="chart" id="columnchart"></div>
                                 </div>
                             </section>
                             <section class="main_sec" style="width: 36%;">
@@ -815,7 +815,7 @@
                                     tooltip: { isHtml: true, trigger: 'focus' } // HTML 툴팁 활성화
                                     };
 
-                                    const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                                    const chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
                                     chart.draw(data, options);
 
                                     window.addEventListener('resize', () => chart.draw(data, options));
