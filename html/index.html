@@ -722,18 +722,18 @@
 
                                      // 🔧 월별 목표/달성 (2025-09-10 새 버전)
                                     const columnRows = [
-                                        { label: '1월',  goal: 1200, achieved: 700  },
-                                        { label: '2월',  goal: 900,  achieved: 820  },
-                                        { label: '3월',  goal: 1500, achieved: 910  },
-                                        { label: '4월',  goal: 1000, achieved: 1230 }, 
-                                        { label: '5월',  goal: 1100, achieved: 960  },
-                                        { label: '6월',  goal: 1300, achieved: 1250 },
-                                        { label: '7월',  goal: 1400, achieved: 980  },
-                                        { label: '8월',  goal: 1600, achieved: 1600 },
-                                        { label: '9월',  goal: 1700, achieved: 1430 },
-                                        { label: '10월', goal: 1500, achieved: 1540 }, 
-                                        { label: '11월', goal: 1600, achieved: 940  },
-                                        { label: '12월', goal: 1700, achieved: 1900 }  
+                                        { label: '24년 1월',  goal: 1200, achieved: 700  },
+                                        { label: '24년 1월',  goal: 900,  achieved: 820  },
+                                        { label: '24년 1월',  goal: 1500, achieved: 910  },
+                                        { label: '24년 1월',  goal: 1000, achieved: 1230 }, 
+                                        { label: '24년 1월',  goal: 1100, achieved: 960  },
+                                        { label: '24년 1월',  goal: 1300, achieved: 1250 },
+                                        { label: '24년 1월',  goal: 1400, achieved: 980  },
+                                        { label: '24년 1월',  goal: 1600, achieved: 1600 },
+                                        { label: '24년 1월',  goal: 1700, achieved: 1430 },
+                                        { label: '24년 1월', goal: 1500, achieved: 1540 }, 
+                                        { label: '24년 1월', goal: 1600, achieved: 940  },
+                                        { label: '24년 1월', goal: 1700, achieved: 1900 },
                                         /* 
                                             goal : 목표 수량
                                             achieved : 달성 수량
@@ -811,7 +811,12 @@
                                             alwaysOutside: false,
                                             textStyle: { fontSize: 12, color: '#000' }
                                         },
-                                        chartArea: { right: 20, left: 50, top: 40, bottom: 20 },
+                                        hAxis: {
+                                            textStyle: {
+                                                fontSize: 12, // 하단 텍스트(레이블) 크기 조정
+                                            }
+                                        },
+                                        chartArea: { right: 20, left: 50, top: 40, bottom: 30 },
                                         legend: { position: 'top' },
                                         tooltip: { isHtml: true, trigger: 'focus' } // HTML 툴팁 활성화
                                     };
